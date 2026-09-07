@@ -14,5 +14,8 @@ BNB Rotation & Treasury Agent — Binance Agent OS Mini Hackathon Track A.
 ## Implemented
 Validation/alignment, BNB regime, relationship ranking, paper allocation, profit vault, deterministic demo, and regression tests.
 
+## Deployment vision
+V2 may execute only qualified Spot rotations inside a separately funded Binance Agentic sub-account. It must add a strict tool allowlist, symbol-filter validation, exposure caps, idempotency, human confirmation, order reconciliation, audit evidence, and an emergency stop. This path is documented but intentionally absent from V1.
+
 ## NEXT STEP
-Verify CI on `main`, then add a judge-facing GitHub Pages dashboard and a host-injected Binance MCP snapshot.
+Enable GitHub Pages from `/docs`, then record a time-bounded, read-only Binance MCP snapshot for BTCUSDT, BNBUSDT, and the candidate universe.

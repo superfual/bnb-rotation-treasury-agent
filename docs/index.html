@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>BNB Rotation & Treasury Control Room</title>
+  <style>
+    :root{--bg:#070a0f;--panel:#111722;--line:#253044;--text:#ecf1f8;--muted:#93a4ba;--gold:#f3ba2f;--green:#22c786;--red:#ff6b74;--blue:#66a6ff}
+    *{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 85% 0,#1c2230 0,transparent 34%),var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,sans-serif}
+    main{max-width:1180px;margin:auto;padding:28px 20px 56px}.top{display:flex;gap:20px;justify-content:space-between;align-items:flex-start}.eyebrow{color:var(--gold);font-weight:800;letter-spacing:.12em;font-size:12px}.title{font-size:clamp(32px,5vw,58px);line-height:1;margin:10px 0}.lead{max-width:760px;color:var(--muted);font-size:17px;line-height:1.6}.badge{border:1px solid #6b5720;background:#2c2512;color:#ffda72;padding:10px 14px;border-radius:999px;white-space:nowrap;font-weight:800}
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:14px;margin-top:24px}.card{background:linear-gradient(145deg,#131a26,#0d121b);border:1px solid var(--line);border-radius:18px;padding:20px}.metric{grid-column:span 3}.wide{grid-column:span 8}.side{grid-column:span 4}.full{grid-column:1/-1}.label{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.1em}.value{font-size:27px;font-weight:850;margin-top:8px}.green{color:var(--green)}.gold{color:var(--gold)}.red{color:var(--red)}
+    table{width:100%;border-collapse:collapse;margin-top:12px;font-size:14px}th,td{text-align:left;padding:12px 9px;border-bottom:1px solid var(--line)}th{color:var(--muted);font-size:11px;text-transform:uppercase}.score{font-weight:800}.pill{padding:5px 9px;border-radius:99px;background:#152c26;color:#5ce0ac;font-weight:750;font-size:11px}.watch{background:#292617;color:#f4cf63}.flow{display:flex;flex-wrap:wrap;gap:8px;margin-top:15px}.step{border:1px solid var(--line);background:#0b1018;padding:9px 11px;border-radius:10px;color:#bac7d7}.arrow{color:var(--gold);align-self:center}.note{color:var(--muted);font-size:13px;line-height:1.55}.links a{color:var(--blue);text-decoration:none;margin-right:18px}.footer{margin-top:22px;color:#71839a;font-size:12px}
+    @media(max-width:820px){.metric,.wide,.side{grid-column:1/-1}.top{display:block}.badge{display:inline-block;margin-top:12px}.table-wrap{overflow:auto}}
+  </style>
+</head>
+<body><main>
+  <div class="top"><div><div class="eyebrow">BINANCE AGENT OS · TRACK A</div><h1 class="title">BNB Rotation &<br>Treasury Agent</h1><p class="lead">Finds liquid Spot assets with stable, BTC-adjusted BNB sensitivity, then refuses rotation unless the BNB and market regime are qualified.</p></div><div class="badge">PAPER ONLY · FAIL CLOSED</div></div>
+  <section class="grid">
+    <div class="card metric"><div class="label">Data preflight</div><div class="value green">READY</div><p class="note">120 aligned closed candles per symbol</p></div>
+    <div class="card metric"><div class="label">BNB regime</div><div class="value red">DEFENSIVE</div><p class="note">Regime gate overrides ranking</p></div>
+    <div class="card metric"><div class="label">Portfolio action</div><div class="value gold">HOLD USDT</div><p class="note">Zero paper exposure</p></div>
+    <div class="card metric"><div class="label">Profit vault</div><div class="value gold">HOLD USDT</div><p class="note">DCA guard not confirmed</p></div>
+    <div class="card wide"><div class="label">Deterministic relationship ranking</div><div class="table-wrap"><table><thead><tr><th>#</th><th>Symbol</th><th>Score</th><th>BTC-adjusted corr.</th><th>Upside beta</th><th>Downside beta</th><th>Candidate gate</th></tr></thead><tbody>
+      <tr><td>1</td><td>XRPUSDT</td><td class="score">79.1</td><td>0.91</td><td>1.25</td><td>1.17</td><td><span class="pill">ROTATION READY</span></td></tr>
+      <tr><td>2</td><td>DOGEUSDT</td><td class="score">77.6</td><td>0.90</td><td>1.26</td><td>1.26</td><td><span class="pill">ROTATION READY</span></td></tr>
+      <tr><td>3</td><td>SOLUSDT</td><td class="score">76.9</td><td>0.90</td><td>1.16</td><td>1.19</td><td><span class="pill">ROTATION READY</span></td></tr>
+      <tr><td>4</td><td>ETHUSDT</td><td class="score">76.6</td><td>0.91</td><td>1.17</td><td>1.49</td><td><span class="pill">ROTATION READY</span></td></tr>
+      <tr><td>5</td><td>AAVEUSDT</td><td class="score">68.4</td><td>0.56</td><td>0.83</td><td>0.52</td><td><span class="pill watch">WATCH</span></td></tr>
+    </tbody></table></div><p class="note">Verified deterministic demo—not live prices or a profitability claim. A candidate pass does not authorize portfolio entry.</p></div>
+    <div class="card side"><div class="label">Why no rotation?</div><h2>Capital preservation wins.</h2><p class="note">Relationship gates identify candidates. The separate BNB regime checks leader trend, recent momentum, and the BTC risk filter. Because the regime is defensive, the portfolio remains in USDT.</p></div>
+    <div class="card full"><div class="label">One-way decision path</div><div class="flow"><span class="step">Binance MCP</span><span class="arrow">→</span><span class="step">Closed candles</span><span class="arrow">→</span><span class="step">BTC filter</span><span class="arrow">→</span><span class="step">BNB regime</span><span class="arrow">→</span><span class="step">Residual ranking</span><span class="arrow">→</span><span class="step">Risk gates</span><span class="arrow">→</span><span class="step">Paper treasury</span></div></div>
+    <div class="card wide"><div class="label">Guarded execution vision</div><h2>From analysis to an isolated Agentic sub-account</h2><p class="note">A future V2 can translate a qualified paper target into an immutable Spot order proposal, request explicit human confirmation, execute only through a Spot allowlist, and reconcile fills and balances. It denies Margin, Futures, Convert, withdrawals, and wallet transfers.</p><div class="flow"><span class="step">Qualified target</span><span class="arrow">→</span><span class="step">Preflight</span><span class="arrow">→</span><span class="step">Human confirm</span><span class="arrow">→</span><span class="step">Spot adapter</span><span class="arrow">→</span><span class="step">Reconcile</span></div></div>
+    <div class="card side"><div class="label">Evidence</div><h2>Reproducible by design</h2><p class="note">No credentials required. GitHub Actions runs the same deterministic pipeline plus no-look-ahead and fail-closed regression tests.</p><div class="links"><a href="https://github.com/superfual/bnb-rotation-treasury-agent">Repository</a><a href="https://github.com/superfual/bnb-rotation-treasury-agent/actions">CI</a><a href="LIVE_EXECUTION_ROADMAP.md">Roadmap</a></div></div>
+  </section>
+  <div class="footer">Educational hackathon prototype · Real orders disabled in V1 · Not financial advice</div>
+</main></body></html>

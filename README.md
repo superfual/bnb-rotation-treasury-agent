@@ -58,3 +58,9 @@ docs/PROJECT_STATE.md   durable project memory
 ```
 
 Educational hackathon prototype only; not financial advice.
+
+## Guarded live-execution vision
+
+V1 stops at deterministic paper decisions. Its next safe deployment target is a dedicated Binance Agentic sub-account—not a master account—with a Spot-only tool allowlist, capped exposure, idempotent client order IDs, an explicit human confirmation step, post-trade reconciliation, and an emergency stop. Margin, Futures, Convert, withdrawal, and cross-wallet transfer remain denied.
+
+This is an architectural extension, not a claim that V1 submits orders. See the [guarded execution roadmap](docs/LIVE_EXECUTION_ROADMAP.md).
