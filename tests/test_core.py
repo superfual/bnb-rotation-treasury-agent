@@ -1,6 +1,7 @@
 import copy,json,unittest
 from pathlib import Path
 from bnb_rotation.analytics import correlation,residuals
+from bnb_rotation.binance import candle_from_binance
 from bnb_rotation.demo import DAY,deterministic_market
 from bnb_rotation.pipeline import run_pipeline
 from bnb_rotation.treasury import bnb_dca_decision
@@ -27,5 +28,9 @@ class CoreTests(unittest.TestCase):
         self.assertEqual(baseline,run_pipeline(future,self.decision,self.config))
     def test_profit_does_not_force_dca(self):
         self.assertEqual(bnb_dca_decision(100,"RISK_ON",False),"HOLD_USDT")
+    def test_binance_kline_mapping(self):
+        row=[1000,"1","2","0.5","1.5","10",1999,"15",3,"4","6","0"]
+        candle=candle_from_binance(row)
+        self.assertEqual((candle.open_time,candle.close_time,candle.close,candle.quote_volume),(1000,1999,1.5,15.0))
 
 if __name__=="__main__": unittest.main()

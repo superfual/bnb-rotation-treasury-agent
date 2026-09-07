@@ -216,3 +216,6 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Host-injected live market snapshots (publish only hashes/summaries)
+evidence/live_snapshot.json

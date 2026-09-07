@@ -1,0 +1,30 @@
+{
+  "source": "Binance MCP Server spot.klines",
+  "mode": "READ_ONLY",
+  "decision_time_utc_ms": 1788807042450,
+  "symbols": 18,
+  "requested_daily_candles_per_symbol": 120,
+  "admitted_aligned_closed_candles_per_symbol": 119,
+  "snapshot_sha256": "92d4eeb4d38ef48085129320be531a995aa043f23a5914109034a743c58ed351",
+  "bnb_regime": "RISK_ON",
+  "portfolio_action": "ROTATION_READY",
+  "treasury_action": "HOLD_USDT",
+  "ranking": [
+    {"rank":1,"symbol":"CAKEUSDT","score":72.3,"correlation":0.80,"residual_correlation":0.66,"upside_beta":1.21,"downside_beta":1.15,"decision":"ROTATION_READY"},
+    {"rank":2,"symbol":"ARBUSDT","score":58.0,"correlation":0.50,"residual_correlation":0.26,"upside_beta":1.18,"downside_beta":0.87,"decision":"WATCH"},
+    {"rank":3,"symbol":"ENAUSDT","score":57.0,"correlation":0.40,"residual_correlation":0.10,"upside_beta":1.36,"downside_beta":-0.90,"decision":"WATCH"},
+    {"rank":4,"symbol":"DOGEUSDT","score":56.4,"correlation":0.75,"residual_correlation":0.42,"upside_beta":0.76,"downside_beta":0.94,"decision":"WATCH"},
+    {"rank":5,"symbol":"LINKUSDT","score":55.4,"correlation":0.66,"residual_correlation":0.20,"upside_beta":0.70,"downside_beta":0.99,"decision":"WATCH"},
+    {"rank":6,"symbol":"UNIUSDT","score":54.3,"correlation":0.44,"residual_correlation":0.12,"upside_beta":0.79,"downside_beta":0.70,"decision":"WATCH"},
+    {"rank":7,"symbol":"XRPUSDT","score":54.2,"correlation":0.67,"residual_correlation":0.15,"upside_beta":0.74,"downside_beta":0.68,"decision":"WATCH"},
+    {"rank":8,"symbol":"INJUSDT","score":50.7,"correlation":0.45,"residual_correlation":0.22,"upside_beta":0.67,"downside_beta":0.66,"decision":"WATCH"},
+    {"rank":9,"symbol":"SOLUSDT","score":50.3,"correlation":0.66,"residual_correlation":0.17,"upside_beta":0.37,"downside_beta":1.06,"decision":"WATCH"},
+    {"rank":10,"symbol":"ADAUSDT","score":49.6,"correlation":0.66,"residual_correlation":0.25,"upside_beta":0.80,"downside_beta":1.38,"decision":"WATCH"},
+    {"rank":11,"symbol":"AAVEUSDT","score":49.5,"correlation":0.49,"residual_correlation":0.08,"upside_beta":0.62,"downside_beta":0.89,"decision":"WATCH"},
+    {"rank":12,"symbol":"ETHUSDT","score":49.5,"correlation":0.65,"residual_correlation":0.04,"upside_beta":0.51,"downside_beta":1.03,"decision":"WATCH"},
+    {"rank":13,"symbol":"SUIUSDT","score":48.3,"correlation":0.65,"residual_correlation":0.23,"upside_beta":0.68,"downside_beta":0.74,"decision":"WATCH"},
+    {"rank":14,"symbol":"OPUSDT","score":48.1,"correlation":0.54,"residual_correlation":0.26,"upside_beta":0.75,"downside_beta":0.62,"decision":"WATCH"},
+    {"rank":15,"symbol":"AVAXUSDT","score":46.5,"correlation":0.60,"residual_correlation":0.21,"upside_beta":0.48,"downside_beta":1.13,"decision":"WATCH"},
+    {"rank":16,"symbol":"NEARUSDT","score":45.4,"correlation":0.27,"residual_correlation":0.02,"upside_beta":0.31,"downside_beta":0.35,"decision":"WATCH"}
+  ]
+}

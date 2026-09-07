@@ -45,6 +45,12 @@ Safety: CLOSED CANDLES | NO LOOK-AHEAD | REAL ORDERS DISABLED
 
 The deterministic demo contains candidates that merely follow BTC and candidates with measurable BNB-specific sensitivity. It proves reproducibility and defensive behavior, not profitability.
 
+## Verified Binance MCP snapshot
+
+A time-bounded read-only snapshot at decision time `1788807042450` UTC-ms requested 120 daily candles for all 18 symbols. The current daily candle was excluded, leaving 119 aligned closed candles. Result: BNB `RISK_ON`; CAKEUSDT was the only candidate to pass every configured gate; paper portfolio `ROTATION_READY`; BNB profit vault `HOLD_USDT`. Snapshot SHA-256: `92d4eeb4d38ef48085129320be531a995aa043f23a5914109034a743c58ed351`.
+
+The committed evidence summary records the input hash and complete ranking. Raw market rows are intentionally not served by the public dashboard. No account or trading tool was called during acquisition.
+
 ## Evidence model
 
 The engine combines return correlation, split-window stability, BNB upside/downside beta, BTC-adjusted residual correlation, relative strength, drawdown, and liquidity. Eligibility is conjunctive: a high score cannot override a failed gate. See [methodology](docs/METHODOLOGY.md).
