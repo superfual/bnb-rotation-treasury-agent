@@ -1,0 +1,21 @@
+name: Control-Room Demo
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  demo:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Verify safety and no-look-ahead tests
+        run: PYTHONPATH=src python -m unittest discover -s tests -v
+      - name: Run deterministic control-room pipeline
+        run: python scripts/run_demo.py
+      - name: Run deterministic walk-forward replay
+        run: python scripts/run_replay.py
+      - name: Show verified Binance MCP evidence
+        run: python scripts/show_evidence.py

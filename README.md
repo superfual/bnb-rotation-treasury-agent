@@ -46,6 +46,12 @@ Safety: CLOSED CANDLES | NO LOOK-AHEAD | REAL ORDERS DISABLED
 
 The deterministic demo contains candidates that merely follow BTC and candidates with measurable BNB-specific sensitivity. It proves reproducibility and defensive behavior, not profitability.
 
+### One-click GitHub demo
+
+Open **Actions → Control-Room Demo → Run workflow**. The workflow runs safety tests, the deterministic decision pipeline, the deterministic replay, and a concise report of the verified Binance MCP evidence. It requires no exchange credentials and cannot place an order.
+
+[Open Control-Room Demo](https://github.com/superfual/bnb-rotation-treasury-agent/actions/workflows/control-room-demo.yml)
+
 ## Walk-forward replay
 
 The replay freezes information at each daily close and applies the resulting paper allocation only to the next close-to-close period. It reports the strategy beside BNB hold, equal-weight candidates, and USDT, and records BNB-to-alt lead/lag correlations separately without claiming causality.
