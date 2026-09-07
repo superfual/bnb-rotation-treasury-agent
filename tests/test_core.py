@@ -5,6 +5,7 @@ from bnb_rotation.binance import candle_from_binance
 from bnb_rotation.demo import DAY,deterministic_market
 from bnb_rotation.pipeline import run_pipeline
 from bnb_rotation.replay import lead_lag_profile,walk_forward_replay
+from bnb_rotation.research import evaluate_viability
 from bnb_rotation.treasury import bnb_dca_decision
 from bnb_rotation.validation import DataValidationError,closed_history
 ROOT=Path(__file__).resolve().parents[1]
@@ -65,6 +66,14 @@ class CoreTests(unittest.TestCase):
         for previous,current in zip(first["records"],first["records"][1:]):
             if previous["allocations"]==current["allocations"]:
                 self.assertEqual(current["turnover"],0)
+        self.assertIn(first["viability"]["status"],{"PASSED_PAPER_RESEARCH","FAILED_NOT_LIVE_READY"})
+        self.assertEqual(sum(first["diagnostics"]["action_counts"].values()),first["periods"])
+    def test_research_gate_is_conjunctive(self):
+        replay={"periods":300,"strategy":{"cumulative_return":.10,"maximum_drawdown":.12,"invested_periods":40},"benchmarks":{"bnb_hold":{"cumulative_return":.15}}}
+        limits={"minimum_periods":252,"minimum_invested_periods":20,"minimum_strategy_return":0,"minimum_excess_return_vs_bnb":0,"maximum_strategy_drawdown":.25}
+        result=evaluate_viability(replay,limits)
+        self.assertEqual(result["status"],"FAILED_NOT_LIVE_READY")
+        self.assertEqual(result["blockers"],["UNDERPERFORMS_BNB"])
     def test_lead_lag_alignment(self):
         market=deterministic_market(self.config["candidates"],count=120)
         profile=lead_lag_profile(market["ETHUSDT"],market["BNBUSDT"],3)

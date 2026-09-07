@@ -8,6 +8,10 @@ Trading cost is approximated as 10 bps multiplied by the absolute change in targ
 
 Lead/lag diagnostics report the correlation between BNB return at `t` and candidate return at `t + lag` for lags zero through three. They are descriptive diagnostics and are not treated as proof that BNB causes a later altcoin move.
 
+## Research viability gate
+
+The replay is not live-ready unless every pre-declared gate passes: at least 252 periods, at least 20 invested periods, non-negative strategy return, return no lower than BNB hold, and maximum drawdown no greater than 25%. The gate is conjunctive; lower drawdown cannot compensate for failed return requirements.
+
 The agent uses aligned close-to-close returns from candles admitted by one decision time.
 
 ## BTC factor separation

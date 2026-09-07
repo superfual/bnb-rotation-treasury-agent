@@ -50,7 +50,7 @@ The deterministic demo contains candidates that merely follow BTC and candidates
 
 The replay freezes information at each daily close and applies the resulting paper allocation only to the next close-to-close period. It reports the strategy beside BNB hold, equal-weight candidates, and USDT, and records BNB-to-alt lead/lag correlations separately without claiming causality.
 
-The expanded Binance MCP snapshot provides 409 out-of-sample periods from 2025-07-24 through 2026-09-06. With a rolling 120-candle analysis window and 10 bps turnover-cost approximation, the strategy returned -13.91% with 21.90% maximum drawdown and invested in 86 periods. BNB hold returned -2.30% with 58.20% drawdown; equal-weight candidates returned -49.52% with 74.00% drawdown; USDT was flat. The agent reduced drawdown materially but failed to outperform BNB and USDT. Therefore the research gate is **NOT LIVE READY**.
+The expanded Binance MCP snapshot provides 409 out-of-sample periods from 2025-07-24 through 2026-09-06. With a rolling 120-candle analysis window and 10 bps turnover-cost approximation, the strategy returned -13.91% with 21.90% maximum drawdown and invested in 86 periods. BNB hold returned -2.30% with 58.20% drawdown; equal-weight candidates returned -49.52% with 74.00% drawdown; USDT was flat. The agent reduced drawdown materially but failed to outperform BNB and USDT. Therefore the research gate is **NOT LIVE READY**. The gate is implemented in code and cannot be overridden by a current candidate ranking. See the [loss attribution and research diagnostics](docs/RESEARCH_DIAGNOSTICS.md).
 
 ## Verified Binance MCP snapshot
 

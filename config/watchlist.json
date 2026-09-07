@@ -5,5 +5,6 @@
   "timeframe": "1d",
   "history": {"minimum_closed_candles": 90, "lookback_closed_candles": 120, "maximum_age_seconds": 172800},
   "ranking": {"minimum_correlation": 0.45, "minimum_residual_correlation": 0.20, "minimum_upside_beta": 1.05, "maximum_downside_beta": 1.80, "minimum_quote_volume": 1000000, "maximum_drawdown": 0.45, "minimum_score": 60},
-  "portfolio": {"maximum_positions": 4, "maximum_weight": 0.20, "minimum_usdt_reserve": 0.20}
+  "portfolio": {"maximum_positions": 4, "maximum_weight": 0.20, "minimum_usdt_reserve": 0.20},
+  "research_gate": {"minimum_periods": 252, "minimum_invested_periods": 20, "minimum_strategy_return": 0.0, "minimum_excess_return_vs_bnb": 0.0, "maximum_strategy_drawdown": 0.25}
 }

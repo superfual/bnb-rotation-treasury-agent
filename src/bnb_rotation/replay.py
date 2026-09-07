@@ -3,6 +3,7 @@ from statistics import fmean
 
 from .analytics import correlation, returns
 from .pipeline import run_pipeline
+from .research import diagnose_records, evaluate_viability
 
 
 @dataclass(frozen=True)
@@ -59,8 +60,9 @@ def walk_forward_replay(raw, decision_times, config, fee_rate=0.0):
             abs(allocations.get(symbol, 0.0) - previous_allocations.get(symbol, 0.0))
             for symbol in set(allocations) | set(previous_allocations)
         )
-        strategy_return = sum(weight * next_returns[symbol] for symbol, weight in allocations.items())
-        strategy_return -= fee_rate * turnover
+        asset_contributions = {symbol: weight * next_returns[symbol] for symbol, weight in allocations.items()}
+        transaction_cost = fee_rate * turnover
+        strategy_return = sum(asset_contributions.values()) - transaction_cost
         if allocations:
             invested_periods += 1
 
@@ -75,6 +77,10 @@ def walk_forward_replay(raw, decision_times, config, fee_rate=0.0):
             "action": result["portfolio"]["action"],
             "allocations": allocations,
             "turnover": turnover,
+            "transaction_cost": transaction_cost,
+            "asset_contributions": asset_contributions,
+            "bnb_return": next_returns[config["leader"]],
+            "equal_weight_return": equal_weight_returns[-1],
             "strategy_return": strategy_return,
         })
         previous_allocations = allocations
@@ -88,7 +94,7 @@ def walk_forward_replay(raw, decision_times, config, fee_rate=0.0):
         symbol: lead_lag_profile(aligned[symbol], aligned[config["leader"]])
         for symbol in config["candidates"]
     }
-    return {
+    replay = {
         "method": "decision_at_t_applied_to_t_plus_1_close",
         "fee_rate": fee_rate,
         "periods": len(records),
@@ -101,3 +107,6 @@ def walk_forward_replay(raw, decision_times, config, fee_rate=0.0):
         "lead_lag_correlations": lead_lag,
         "records": records,
     }
+    replay["diagnostics"] = diagnose_records(records)
+    replay["viability"] = evaluate_viability(replay, config["research_gate"])
+    return replay

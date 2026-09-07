@@ -35,7 +35,94 @@
       "total_periods": 409
     }
   },
-  "research_gate": "FAILED_NOT_LIVE_READY",
+  "viability": {
+    "status": "FAILED_NOT_LIVE_READY",
+    "blockers": [
+      "STRATEGY_RETURN_BELOW_FLOOR",
+      "UNDERPERFORMS_BNB"
+    ],
+    "observations": {
+      "strategy_return": -0.13910485378540816,
+      "excess_return_vs_bnb": -0.11608801282736869,
+      "strategy_maximum_drawdown": 0.21895418455575888
+    }
+  },
+  "diagnostics": {
+    "action_counts": {
+      "HOLD_USDT": 284,
+      "NO_ACTION": 39,
+      "ROTATION_READY": 86
+    },
+    "winning_invested_periods": 36,
+    "losing_invested_periods": 50,
+    "average_gross_exposure": 0.12469437652811732,
+    "total_transaction_cost": 0.016200000000000003,
+    "gross_contribution_by_symbol": {
+      "ETHUSDT": -0.035657562116192296,
+      "SOLUSDT": -0.027702167266194812,
+      "AVAXUSDT": -0.024448514869274577,
+      "LINKUSDT": -0.023964875575546746,
+      "DOGEUSDT": -0.010496847380713749,
+      "UNIUSDT": -0.010106223201089183,
+      "CAKEUSDT": -0.009962859563016336,
+      "ADAUSDT": -0.0004264086895604941,
+      "INJUSDT": 0.005219661600555047,
+      "AAVEUSDT": 0.007042620294551627,
+      "NEARUSDT": 0.01564986737400531
+    },
+    "worst_periods": [
+      {
+        "decision_time": 1760054399999,
+        "execution_period_end": 1760140799999,
+        "strategy_return": -0.04741771474444743,
+        "allocations": {
+          "CAKEUSDT": 0.2
+        }
+      },
+      {
+        "decision_time": 1755561599999,
+        "execution_period_end": 1755647999999,
+        "strategy_return": -0.045133732903613916,
+        "allocations": {
+          "ETHUSDT": 0.2,
+          "CAKEUSDT": 0.2,
+          "SOLUSDT": 0.2,
+          "LINKUSDT": 0.2
+        }
+      },
+      {
+        "decision_time": 1755129599999,
+        "execution_period_end": 1755215999999,
+        "strategy_return": -0.04428013713697734,
+        "allocations": {
+          "ETHUSDT": 0.2,
+          "CAKEUSDT": 0.2,
+          "SOLUSDT": 0.2,
+          "LINKUSDT": 0.2
+        }
+      },
+      {
+        "decision_time": 1758499199999,
+        "execution_period_end": 1758585599999,
+        "strategy_return": -0.042432945873528194,
+        "allocations": {
+          "CAKEUSDT": 0.2,
+          "ETHUSDT": 0.2,
+          "SOLUSDT": 0.2
+        }
+      },
+      {
+        "decision_time": 1754006399999,
+        "execution_period_end": 1754092799999,
+        "strategy_return": -0.03236633329808756,
+        "allocations": {
+          "ETHUSDT": 0.2,
+          "CAKEUSDT": 0.2,
+          "SOLUSDT": 0.2
+        }
+      }
+    ]
+  },
   "limitations": [
     "Close-to-close model with a 10 bps turnover-cost approximation",
     "No slippage, spread, tax, or market-impact model",

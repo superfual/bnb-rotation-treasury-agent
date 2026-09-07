@@ -18,3 +18,5 @@ print(f"Method: {result['method']}")
 print(f"Periods: {result['periods']}")
 for name, metrics in [("strategy", result["strategy"]), *result["benchmarks"].items()]:
     print(f"{name}: return={metrics['cumulative_return']:.2%} max_drawdown={metrics['maximum_drawdown']:.2%}")
+print(f"Research gate: {result['viability']['status']}")
+print(f"Blockers: {', '.join(result['viability']['blockers']) or 'none'}")
