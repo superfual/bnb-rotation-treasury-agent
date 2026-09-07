@@ -52,6 +52,8 @@ Open **Actions → Control-Room Demo → Run workflow**. The workflow runs safet
 
 [Open Control-Room Demo](https://github.com/superfual/bnb-rotation-treasury-agent/actions/workflows/control-room-demo.yml)
 
+The ready-to-record voice-over, shot list, social post, survey description, and replication guide are collected in the [Track A submission package](docs/SUBMISSION_PACKAGE.md).
+
 ## Walk-forward replay
 
 The replay freezes information at each daily close and applies the resulting paper allocation only to the next close-to-close period. It reports the strategy beside BNB hold, equal-weight candidates, and USDT, and records BNB-to-alt lead/lag correlations separately without claiming causality.

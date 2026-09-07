@@ -32,4 +32,4 @@ At `1788807042450` UTC-ms, Binance MCP returned 500 daily candles for all 18 sym
 V2 may execute only qualified Spot rotations inside a separately funded Binance Agentic sub-account. It must add a strict tool allowlist, symbol-filter validation, exposure caps, idempotency, human confirmation, order reconciliation, audit evidence, and an emergency stop. This path is documented but intentionally absent from V1.
 
 ## NEXT STEP
-Record the Track A submission video using the Pages dashboard and Control-Room Demo workflow. Do not enable live execution from the present evidence.
+Record the Track A submission video using `docs/SUBMISSION_PACKAGE.md`, publish it, add the public video URL to the package and X submission, then complete the survey. Do not enable live execution from the present evidence.
