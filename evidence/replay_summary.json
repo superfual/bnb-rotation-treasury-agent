@@ -1,0 +1,26 @@
+{
+  "source": "verified Binance MCP snapshot",
+  "snapshot_sha256": "92d4eeb4d38ef48085129320be531a995aa043f23a5914109034a743c58ed351",
+  "method": "decision_at_t_applied_to_t_plus_1_close",
+  "fee_rate": 0.001,
+  "decision_start_utc_ms": 1786233599999,
+  "decision_end_utc_ms": 1788739199999,
+  "periods": 29,
+  "risk_on_periods": 24,
+  "strategy": {
+    "cumulative_return": 0.02146135410975658,
+    "maximum_drawdown": 0.00494074074074069,
+    "invested_periods": 3
+  },
+  "benchmarks": {
+    "bnb_hold": {"cumulative_return": 0.25362101688143057, "maximum_drawdown": 0.040528201165975775},
+    "equal_weight_candidates": {"cumulative_return": 0.47215912608644905, "maximum_drawdown": 0.07758285976145429},
+    "usdt_hold": {"cumulative_return": 0.0, "maximum_drawdown": 0.0}
+  },
+  "limitations": [
+    "Short 29-period validation window",
+    "Close-to-close model with a 10 bps entry cost approximation",
+    "No slippage, spread, tax, or market-impact model",
+    "Evidence validates timing and fail-closed behavior, not future profitability"
+  ]
+}

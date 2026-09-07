@@ -4,6 +4,7 @@ from bnb_rotation.analytics import correlation,residuals
 from bnb_rotation.binance import candle_from_binance
 from bnb_rotation.demo import DAY,deterministic_market
 from bnb_rotation.pipeline import run_pipeline
+from bnb_rotation.replay import lead_lag_profile,walk_forward_replay
 from bnb_rotation.treasury import bnb_dca_decision
 from bnb_rotation.validation import DataValidationError,closed_history
 ROOT=Path(__file__).resolve().parents[1]
@@ -32,5 +33,29 @@ class CoreTests(unittest.TestCase):
         row=[1000,"1","2","0.5","1.5","10",1999,"15",3,"4","6","0"]
         candle=candle_from_binance(row)
         self.assertEqual((candle.open_time,candle.close_time,candle.close,candle.quote_volume),(1000,1999,1.5,15.0))
+    def test_walk_forward_uses_next_period_only(self):
+        market=deterministic_market(self.config["candidates"],count=130)
+        times=[c.close_time for c in market["BTCUSDT"]][89:]
+        baseline=walk_forward_replay(market,times,self.config)
+        changed=copy.deepcopy(market)
+        future_time=times[-1]
+        for candles in changed.values():
+            candle=candles[-1]
+            if candle.close_time==future_time:
+                object.__setattr__(candle,"close",candle.close*10)
+        earlier=walk_forward_replay(changed,times[:-1],self.config)
+        self.assertEqual(baseline["records"][:-1],earlier["records"])
+    def test_walk_forward_is_deterministic_and_has_benchmarks(self):
+        market=deterministic_market(self.config["candidates"],count=130)
+        times=[c.close_time for c in market["BTCUSDT"]][89:]
+        first=walk_forward_replay(market,times,self.config,fee_rate=.001)
+        second=walk_forward_replay(copy.deepcopy(market),times,self.config,fee_rate=.001)
+        self.assertEqual(first,second)
+        self.assertEqual(set(first["benchmarks"]),{"bnb_hold","equal_weight_candidates","usdt_hold"})
+        self.assertEqual(first["periods"],40)
+    def test_lead_lag_alignment(self):
+        market=deterministic_market(self.config["candidates"],count=120)
+        profile=lead_lag_profile(market["ETHUSDT"],market["BNBUSDT"],3)
+        self.assertEqual(set(profile),{"0","1","2","3"})
 
 if __name__=="__main__": unittest.main()

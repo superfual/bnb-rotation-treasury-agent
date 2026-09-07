@@ -33,6 +33,7 @@ Python 3.11+, no runtime dependencies or credentials:
 
 ```bash
 python scripts/run_demo.py
+python scripts/run_replay.py
 PYTHONPATH=src python -m unittest discover -s tests -v
 ```
 
@@ -44,6 +45,12 @@ Safety: CLOSED CANDLES | NO LOOK-AHEAD | REAL ORDERS DISABLED
 ```
 
 The deterministic demo contains candidates that merely follow BTC and candidates with measurable BNB-specific sensitivity. It proves reproducibility and defensive behavior, not profitability.
+
+## Walk-forward replay
+
+The replay freezes information at each daily close and applies the resulting paper allocation only to the next close-to-close period. It reports the strategy beside BNB hold, equal-weight candidates, and USDT, and records BNB-to-alt lead/lag correlations separately without claiming causality.
+
+On the verified Binance MCP snapshot, the available validation window contains 29 out-of-sample periods from 2026-08-08 through 2026-09-06. With a 10 bps entry-cost approximation, the strategy returned 2.15% with 0.49% maximum drawdown and invested in 3 periods. BNB hold returned 25.36% with 4.05% drawdown; equal-weight candidates returned 47.22% with 7.76% drawdown; USDT was flat. This short window validates chronology and defensive selectivity—not long-run profitability.
 
 ## Verified Binance MCP snapshot
 
@@ -61,6 +68,7 @@ The engine combines return correlation, split-window stability, BNB upside/downs
 config/watchlist.json   universe and fail-closed thresholds
 src/bnb_rotation/       validation, analytics, regime, treasury
 scripts/run_demo.py     deterministic control-room run
+scripts/run_replay.py   deterministic walk-forward replay
 tests/                  no-look-ahead and safety regressions
 docs/PROJECT_STATE.md   durable project memory
 ```

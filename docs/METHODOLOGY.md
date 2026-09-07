@@ -1,5 +1,11 @@
 # Methodology
 
+## Walk-forward chronology
+
+For a decision time `t`, the engine admits only candles whose close time is at or before `t`. The resulting target allocation is applied to the next observed close-to-close return, `t → t+1`. All benchmarks use the identical period. Future mutations therefore cannot alter earlier records.
+
+Lead/lag diagnostics report the correlation between BNB return at `t` and candidate return at `t + lag` for lags zero through three. They are descriptive diagnostics and are not treated as proof that BNB causes a later altcoin move.
+
 The agent uses aligned close-to-close returns from candles admitted by one decision time.
 
 ## BTC factor separation
