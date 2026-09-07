@@ -1,10 +1,13 @@
 import json
+import sys
 from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "src"))
 
 from bnb_rotation.demo import deterministic_market
 from bnb_rotation.replay import walk_forward_replay
 
-ROOT = Path(__file__).resolve().parents[1]
 config = json.loads((ROOT / "config/watchlist.json").read_text())
 market = deterministic_market(config["candidates"], count=180)
 decision_times = [c.close_time for c in market[config["benchmark"]]][89:]
