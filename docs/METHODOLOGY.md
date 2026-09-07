@@ -2,7 +2,9 @@
 
 ## Walk-forward chronology
 
-For a decision time `t`, the engine admits only candles whose close time is at or before `t`. The resulting target allocation is applied to the next observed close-to-close return, `t → t+1`. All benchmarks use the identical period. Future mutations therefore cannot alter earlier records.
+For a decision time `t`, the engine admits only candles whose close time is at or before `t` and keeps at most the latest 120. The resulting target allocation is applied to the next observed close-to-close return, `t → t+1`. All benchmarks use the identical period. Future mutations and observations before the rolling lookback therefore cannot alter the decision.
+
+Trading cost is approximated as 10 bps multiplied by the absolute change in target asset weights. Unchanged allocations have zero turnover cost. Slippage, spread, tax, and market impact are not modeled.
 
 Lead/lag diagnostics report the correlation between BNB return at `t` and candidate return at `t + lag` for lags zero through three. They are descriptive diagnostics and are not treated as proof that BNB causes a later altcoin move.
 

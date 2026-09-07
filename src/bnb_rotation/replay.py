@@ -41,6 +41,7 @@ def walk_forward_replay(raw, decision_times, config, fee_rate=0.0):
     strategy_returns, bnb_returns, equal_weight_returns, usdt_returns = [], [], [], []
     records = []
     invested_periods = 0
+    previous_allocations = {}
 
     for decision_time, next_time in zip(decision_times, decision_times[1:]):
         result = run_pipeline(raw, decision_time, config)
@@ -54,11 +55,14 @@ def walk_forward_replay(raw, decision_times, config, fee_rate=0.0):
             for symbol in symbols
         }
         allocations = result["portfolio"]["allocations"]
-        turnover = sum(allocations.values()) if allocations else 0.0
+        turnover = sum(
+            abs(allocations.get(symbol, 0.0) - previous_allocations.get(symbol, 0.0))
+            for symbol in set(allocations) | set(previous_allocations)
+        )
         strategy_return = sum(weight * next_returns[symbol] for symbol, weight in allocations.items())
+        strategy_return -= fee_rate * turnover
         if allocations:
             invested_periods += 1
-            strategy_return -= fee_rate * turnover
 
         strategy_returns.append(strategy_return)
         bnb_returns.append(next_returns[config["leader"]])
@@ -70,8 +74,10 @@ def walk_forward_replay(raw, decision_times, config, fee_rate=0.0):
             "regime": result["bnb_regime"],
             "action": result["portfolio"]["action"],
             "allocations": allocations,
+            "turnover": turnover,
             "strategy_return": strategy_return,
         })
+        previous_allocations = allocations
 
     if not records:
         raise ValueError("NO_REPLAY_PERIODS")

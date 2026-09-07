@@ -2,29 +2,304 @@
   "source": "Binance MCP Server spot.klines",
   "mode": "READ_ONLY",
   "decision_time_utc_ms": 1788807042450,
-  "symbols": 18,
-  "requested_daily_candles_per_symbol": 120,
-  "admitted_aligned_closed_candles_per_symbol": 119,
-  "snapshot_sha256": "92d4eeb4d38ef48085129320be531a995aa043f23a5914109034a743c58ed351",
+  "requested_candles_per_symbol": 500,
+  "aligned_closed_candles": 499,
+  "analysis_lookback_candles": 120,
+  "raw_snapshot_sha256": "263a6c59216bd8888be2eec45ec5bfa50a59f627f0d018dd407d37828822bcdb",
+  "status": "READY",
   "bnb_regime": "RISK_ON",
-  "portfolio_action": "ROTATION_READY",
-  "treasury_action": "HOLD_USDT",
+  "regime_blockers": [],
+  "portfolio": {
+    "action": "ROTATION_READY",
+    "allocations": {
+      "CAKEUSDT": 0.2
+    }
+  },
+  "treasury": "HOLD_USDT",
   "ranking": [
-    {"rank":1,"symbol":"CAKEUSDT","score":72.3,"correlation":0.80,"residual_correlation":0.66,"upside_beta":1.21,"downside_beta":1.15,"decision":"ROTATION_READY"},
-    {"rank":2,"symbol":"ARBUSDT","score":58.0,"correlation":0.50,"residual_correlation":0.26,"upside_beta":1.18,"downside_beta":0.87,"decision":"WATCH"},
-    {"rank":3,"symbol":"ENAUSDT","score":57.0,"correlation":0.40,"residual_correlation":0.10,"upside_beta":1.36,"downside_beta":-0.90,"decision":"WATCH"},
-    {"rank":4,"symbol":"DOGEUSDT","score":56.4,"correlation":0.75,"residual_correlation":0.42,"upside_beta":0.76,"downside_beta":0.94,"decision":"WATCH"},
-    {"rank":5,"symbol":"LINKUSDT","score":55.4,"correlation":0.66,"residual_correlation":0.20,"upside_beta":0.70,"downside_beta":0.99,"decision":"WATCH"},
-    {"rank":6,"symbol":"UNIUSDT","score":54.3,"correlation":0.44,"residual_correlation":0.12,"upside_beta":0.79,"downside_beta":0.70,"decision":"WATCH"},
-    {"rank":7,"symbol":"XRPUSDT","score":54.2,"correlation":0.67,"residual_correlation":0.15,"upside_beta":0.74,"downside_beta":0.68,"decision":"WATCH"},
-    {"rank":8,"symbol":"INJUSDT","score":50.7,"correlation":0.45,"residual_correlation":0.22,"upside_beta":0.67,"downside_beta":0.66,"decision":"WATCH"},
-    {"rank":9,"symbol":"SOLUSDT","score":50.3,"correlation":0.66,"residual_correlation":0.17,"upside_beta":0.37,"downside_beta":1.06,"decision":"WATCH"},
-    {"rank":10,"symbol":"ADAUSDT","score":49.6,"correlation":0.66,"residual_correlation":0.25,"upside_beta":0.80,"downside_beta":1.38,"decision":"WATCH"},
-    {"rank":11,"symbol":"AAVEUSDT","score":49.5,"correlation":0.49,"residual_correlation":0.08,"upside_beta":0.62,"downside_beta":0.89,"decision":"WATCH"},
-    {"rank":12,"symbol":"ETHUSDT","score":49.5,"correlation":0.65,"residual_correlation":0.04,"upside_beta":0.51,"downside_beta":1.03,"decision":"WATCH"},
-    {"rank":13,"symbol":"SUIUSDT","score":48.3,"correlation":0.65,"residual_correlation":0.23,"upside_beta":0.68,"downside_beta":0.74,"decision":"WATCH"},
-    {"rank":14,"symbol":"OPUSDT","score":48.1,"correlation":0.54,"residual_correlation":0.26,"upside_beta":0.75,"downside_beta":0.62,"decision":"WATCH"},
-    {"rank":15,"symbol":"AVAXUSDT","score":46.5,"correlation":0.60,"residual_correlation":0.21,"upside_beta":0.48,"downside_beta":1.13,"decision":"WATCH"},
-    {"rank":16,"symbol":"NEARUSDT","score":45.4,"correlation":0.27,"residual_correlation":0.02,"upside_beta":0.31,"downside_beta":0.35,"decision":"WATCH"}
+    {
+      "symbol": "CAKEUSDT",
+      "correlation": 0.7952395386041559,
+      "stability": 0.9769481265998607,
+      "upside_beta": 1.2200208186731707,
+      "downside_beta": 1.1526004898167141,
+      "residual_correlation": 0.6411418377328174,
+      "relative_strength": 0.25233145847374483,
+      "max_drawdown": 0.28076685219542363,
+      "average_quote_volume": 3883997.147484,
+      "score": 71.32899203750465,
+      "decision": "ROTATION_READY",
+      "blockers": []
+    },
+    {
+      "symbol": "ARBUSDT",
+      "correlation": 0.49721061223348867,
+      "stability": 0.9925000429285291,
+      "upside_beta": 1.193244898516319,
+      "downside_beta": 0.8655671532900112,
+      "residual_correlation": 0.25163576450801634,
+      "relative_strength": 0.1788658473854512,
+      "max_drawdown": 0.49479528105482307,
+      "average_quote_volume": 15797599.065969335,
+      "score": 58.05156823823737,
+      "decision": "WATCH",
+      "blockers": [
+        "EXCESS_DRAWDOWN",
+        "LOW_SCORE"
+      ]
+    },
+    {
+      "symbol": "ENAUSDT",
+      "correlation": 0.3992180113260593,
+      "stability": 0.7251824931012328,
+      "upside_beta": 1.3697980150251867,
+      "downside_beta": -0.8980206009243202,
+      "residual_correlation": 0.09748971404507437,
+      "relative_strength": 0.19802383252142475,
+      "max_drawdown": 0.45990922844175497,
+      "average_quote_volume": 41675168.75355443,
+      "score": 56.403569524764364,
+      "decision": "WATCH",
+      "blockers": [
+        "LOW_CORRELATION",
+        "BTC_EXPLAINS_RELATIONSHIP",
+        "EXCESS_DRAWDOWN",
+        "LOW_SCORE"
+      ]
+    },
+    {
+      "symbol": "DOGEUSDT",
+      "correlation": 0.7468190921190163,
+      "stability": 0.9470027128970522,
+      "upside_beta": 0.7678714351270252,
+      "downside_beta": 0.9366474390435313,
+      "residual_correlation": 0.4198594777587911,
+      "relative_strength": -0.3263399822946954,
+      "max_drawdown": 0.4016109475142906,
+      "average_quote_volume": 62288473.19806667,
+      "score": 56.15528256018071,
+      "decision": "WATCH",
+      "blockers": [
+        "WEAK_UPSIDE_CAPTURE",
+        "LOW_SCORE"
+      ]
+    },
+    {
+      "symbol": "LINKUSDT",
+      "correlation": 0.6532265909219992,
+      "stability": 0.9551586955615021,
+      "upside_beta": 0.7012784463186879,
+      "downside_beta": 0.9902822182841742,
+      "residual_correlation": 0.19398235127610428,
+      "relative_strength": 0.09961642741383114,
+      "max_drawdown": 0.32826492537313445,
+      "average_quote_volume": 30964196.844596334,
+      "score": 55.07653591317705,
+      "decision": "WATCH",
+      "blockers": [
+        "BTC_EXPLAINS_RELATIONSHIP",
+        "WEAK_UPSIDE_CAPTURE",
+        "LOW_SCORE"
+      ]
+    },
+    {
+      "symbol": "XRPUSDT",
+      "correlation": 0.6731284418450098,
+      "stability": 0.9585920905468975,
+      "upside_beta": 0.7391232358974836,
+      "downside_beta": 0.6776849006560084,
+      "residual_correlation": 0.15785889204778128,
+      "relative_strength": -0.16867246020319437,
+      "max_drawdown": 0.33099919202800976,
+      "average_quote_volume": 195085991.04407266,
+      "score": 54.21542490920312,
+      "decision": "WATCH",
+      "blockers": [
+        "BTC_EXPLAINS_RELATIONSHIP",
+        "WEAK_UPSIDE_CAPTURE",
+        "LOW_SCORE"
+      ]
+    },
+    {
+      "symbol": "UNIUSDT",
+      "correlation": 0.4314197775571293,
+      "stability": 0.8762976116046838,
+      "upside_beta": 0.7977977293166632,
+      "downside_beta": 0.69828023671302,
+      "residual_correlation": 0.11876657315859926,
+      "relative_strength": 0.6916845202246891,
+      "max_drawdown": 0.40010015022533807,
+      "average_quote_volume": 35891351.544809,
+      "score": 54.03993292993998,
+      "decision": "WATCH",
+      "blockers": [
+        "LOW_CORRELATION",
+        "BTC_EXPLAINS_RELATIONSHIP",
+        "WEAK_UPSIDE_CAPTURE",
+        "LOW_SCORE"
+      ]
+    },
+    {
+      "symbol": "INJUSDT",
+      "correlation": 0.45553331387356394,
+      "stability": 0.9149834673276658,
+      "upside_beta": 0.6612205548069716,
+      "downside_beta": 0.65771767619609,
+      "residual_correlation": 0.23285438441159514,
+      "relative_strength": 0.10602636702900003,
+      "max_drawdown": 0.41602288984263236,
+      "average_quote_volume": 6368313.084474,
+      "score": 51.551885992513135,
+      "decision": "WATCH",
+      "blockers": [
+        "WEAK_UPSIDE_CAPTURE",
+        "LOW_SCORE"
+      ]
+    },
+    {
+      "symbol": "SOLUSDT",
+      "correlation": 0.6629452389086672,
+      "stability": 0.9962563520308301,
+      "upside_beta": 0.3701388387248724,
+      "downside_beta": 1.061322246299017,
+      "residual_correlation": 0.17777323251333657,
+      "relative_strength": -0.030316772374518575,
+      "max_drawdown": 0.361199548115436,
+      "average_quote_volume": 245316546.18103302,
+      "score": 50.34896249718993,
+      "decision": "WATCH",
+      "blockers": [
+        "BTC_EXPLAINS_RELATIONSHIP",
+        "WEAK_UPSIDE_CAPTURE",
+        "LOW_SCORE"
+      ]
+    },
+    {
+      "symbol": "ADAUSDT",
+      "correlation": 0.6614462711987166,
+      "stability": 0.9668657802528922,
+      "upside_beta": 0.8099114542359142,
+      "downside_beta": 1.3787263278191557,
+      "residual_correlation": 0.25460994842120843,
+      "relative_strength": -0.34372872712508895,
+      "max_drawdown": 0.4907932011331444,
+      "average_quote_volume": 26930131.324688002,
+      "score": 49.41132497476687,
+      "decision": "WATCH",
+      "blockers": [
+        "WEAK_UPSIDE_CAPTURE",
+        "EXCESS_DRAWDOWN",
+        "LOW_SCORE"
+      ]
+    },
+    {
+      "symbol": "AAVEUSDT",
+      "correlation": 0.48727946387783044,
+      "stability": 0.9002430884062355,
+      "upside_beta": 0.6255560081002678,
+      "downside_beta": 0.894255155743148,
+      "residual_correlation": 0.08071231863274193,
+      "relative_strength": 0.20508710084549797,
+      "max_drawdown": 0.40323054331864905,
+      "average_quote_volume": 16879613.657175336,
+      "score": 49.26277026069669,
+      "decision": "WATCH",
+      "blockers": [
+        "BTC_EXPLAINS_RELATIONSHIP",
+        "WEAK_UPSIDE_CAPTURE",
+        "LOW_SCORE"
+      ]
+    },
+    {
+      "symbol": "ETHUSDT",
+      "correlation": 0.6423873834389494,
+      "stability": 0.9832408342125905,
+      "upside_beta": 0.5203904324661826,
+      "downside_beta": 1.0310128232689757,
+      "residual_correlation": 0.04015473556944125,
+      "relative_strength": -0.07441141696063935,
+      "max_drawdown": 0.33881843906429887,
+      "average_quote_volume": 659390569.8127396,
+      "score": 49.11522286357703,
+      "decision": "WATCH",
+      "blockers": [
+        "BTC_EXPLAINS_RELATIONSHIP",
+        "WEAK_UPSIDE_CAPTURE",
+        "LOW_SCORE"
+      ]
+    },
+    {
+      "symbol": "SUIUSDT",
+      "correlation": 0.6416795693737878,
+      "stability": 0.9154446441518753,
+      "upside_beta": 0.690219160024991,
+      "downside_beta": 0.7435395647265436,
+      "residual_correlation": 0.21971533930088924,
+      "relative_strength": -0.5255744451464444,
+      "max_drawdown": 0.5109193245778612,
+      "average_quote_volume": 43023805.99497166,
+      "score": 47.9362916701058,
+      "decision": "WATCH",
+      "blockers": [
+        "WEAK_UPSIDE_CAPTURE",
+        "EXCESS_DRAWDOWN",
+        "LOW_SCORE"
+      ]
+    },
+    {
+      "symbol": "OPUSDT",
+      "correlation": 0.5391919867885101,
+      "stability": 0.8564755640466608,
+      "upside_beta": 0.7608414493189266,
+      "downside_beta": 0.6151147380361304,
+      "residual_correlation": 0.2502845653186798,
+      "relative_strength": -0.45997361609184917,
+      "max_drawdown": 0.4972443355786895,
+      "average_quote_volume": 4099920.6273059333,
+      "score": 47.345902962553545,
+      "decision": "WATCH",
+      "blockers": [
+        "WEAK_UPSIDE_CAPTURE",
+        "EXCESS_DRAWDOWN",
+        "LOW_SCORE"
+      ]
+    },
+    {
+      "symbol": "AVAXUSDT",
+      "correlation": 0.6030518239230372,
+      "stability": 0.9920818774934945,
+      "upside_beta": 0.48730406028433626,
+      "downside_beta": 1.1320181244186167,
+      "residual_correlation": 0.20529184624484176,
+      "relative_strength": -0.361784686517976,
+      "max_drawdown": 0.42365591397849467,
+      "average_quote_volume": 15949707.145621,
+      "score": 46.38018631032137,
+      "decision": "WATCH",
+      "blockers": [
+        "WEAK_UPSIDE_CAPTURE",
+        "LOW_SCORE"
+      ]
+    },
+    {
+      "symbol": "NEARUSDT",
+      "correlation": 0.264759130929422,
+      "stability": 0.8854526478723457,
+      "upside_beta": 0.32120939823658057,
+      "downside_beta": 0.3513435622693105,
+      "residual_correlation": 0.015031750584376398,
+      "relative_strength": 0.4246577012238093,
+      "max_drawdown": 0.43627973020944266,
+      "average_quote_volume": 32270610.850423332,
+      "score": 45.14160447660219,
+      "decision": "WATCH",
+      "blockers": [
+        "LOW_CORRELATION",
+        "BTC_EXPLAINS_RELATIONSHIP",
+        "WEAK_UPSIDE_CAPTURE",
+        "LOW_SCORE"
+      ]
+    }
   ]
 }
+

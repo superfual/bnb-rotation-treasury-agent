@@ -3,7 +3,7 @@
   "leader": "BNBUSDT",
   "candidates": ["ETHUSDT", "SOLUSDT", "XRPUSDT", "DOGEUSDT", "ADAUSDT", "LINKUSDT", "AVAXUSDT", "SUIUSDT", "UNIUSDT", "AAVEUSDT", "CAKEUSDT", "ENAUSDT", "NEARUSDT", "ARBUSDT", "OPUSDT", "INJUSDT"],
   "timeframe": "1d",
-  "history": {"minimum_closed_candles": 90, "maximum_age_seconds": 172800},
+  "history": {"minimum_closed_candles": 90, "lookback_closed_candles": 120, "maximum_age_seconds": 172800},
   "ranking": {"minimum_correlation": 0.45, "minimum_residual_correlation": 0.20, "minimum_upside_beta": 1.05, "maximum_downside_beta": 1.80, "minimum_quote_volume": 1000000, "maximum_drawdown": 0.45, "minimum_score": 60},
   "portfolio": {"maximum_positions": 4, "maximum_weight": 0.20, "minimum_usdt_reserve": 0.20}
 }

@@ -50,11 +50,11 @@ The deterministic demo contains candidates that merely follow BTC and candidates
 
 The replay freezes information at each daily close and applies the resulting paper allocation only to the next close-to-close period. It reports the strategy beside BNB hold, equal-weight candidates, and USDT, and records BNB-to-alt lead/lag correlations separately without claiming causality.
 
-On the verified Binance MCP snapshot, the available validation window contains 29 out-of-sample periods from 2026-08-08 through 2026-09-06. With a 10 bps entry-cost approximation, the strategy returned 2.15% with 0.49% maximum drawdown and invested in 3 periods. BNB hold returned 25.36% with 4.05% drawdown; equal-weight candidates returned 47.22% with 7.76% drawdown; USDT was flat. This short window validates chronology and defensive selectivity—not long-run profitability.
+The expanded Binance MCP snapshot provides 409 out-of-sample periods from 2025-07-24 through 2026-09-06. With a rolling 120-candle analysis window and 10 bps turnover-cost approximation, the strategy returned -13.91% with 21.90% maximum drawdown and invested in 86 periods. BNB hold returned -2.30% with 58.20% drawdown; equal-weight candidates returned -49.52% with 74.00% drawdown; USDT was flat. The agent reduced drawdown materially but failed to outperform BNB and USDT. Therefore the research gate is **NOT LIVE READY**.
 
 ## Verified Binance MCP snapshot
 
-A time-bounded read-only snapshot at decision time `1788807042450` UTC-ms requested 120 daily candles for all 18 symbols. The current daily candle was excluded, leaving 119 aligned closed candles. Result: BNB `RISK_ON`; CAKEUSDT was the only candidate to pass every configured gate; paper portfolio `ROTATION_READY`; BNB profit vault `HOLD_USDT`. Snapshot SHA-256: `92d4eeb4d38ef48085129320be531a995aa043f23a5914109034a743c58ed351`.
+A time-bounded read-only snapshot at decision time `1788807042450` UTC-ms requested 500 daily candles for all 18 symbols. The current daily candle was excluded, leaving 499 aligned closed candles; each decision uses at most the latest 120. Result: BNB `RISK_ON`; CAKEUSDT was the only current candidate to pass every configured gate; paper portfolio `ROTATION_READY`; BNB profit vault `HOLD_USDT`. Snapshot SHA-256: `263a6c59216bd8888be2eec45ec5bfa50a59f627f0d018dd407d37828822bcdb`.
 
 The committed evidence summary records the input hash and complete ranking. Raw market rows are intentionally not served by the public dashboard. No account or trading tool was called during acquisition.
 

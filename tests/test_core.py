@@ -27,6 +27,14 @@ class CoreTests(unittest.TestCase):
         for candles in future.values():
             c=copy.copy(candles[-1]); object.__setattr__(c,"open_time",self.decision+1); object.__setattr__(c,"close_time",self.decision+DAY); object.__setattr__(c,"close",c.close*20); candles.append(c)
         self.assertEqual(baseline,run_pipeline(future,self.decision,self.config))
+    def test_history_before_lookback_does_not_change_decision(self):
+        market=deterministic_market(self.config["candidates"],count=140)
+        decision=market["BTCUSDT"][-1].close_time
+        baseline=run_pipeline(market,decision,self.config)
+        changed=copy.deepcopy(market)
+        for candles in changed.values():
+            object.__setattr__(candles[0],"close",candles[0].close*50)
+        self.assertEqual(baseline,run_pipeline(changed,decision,self.config))
     def test_profit_does_not_force_dca(self):
         self.assertEqual(bnb_dca_decision(100,"RISK_ON",False),"HOLD_USDT")
     def test_binance_kline_mapping(self):
@@ -53,6 +61,10 @@ class CoreTests(unittest.TestCase):
         self.assertEqual(first,second)
         self.assertEqual(set(first["benchmarks"]),{"bnb_hold","equal_weight_candidates","usdt_hold"})
         self.assertEqual(first["periods"],40)
+        self.assertTrue(all(record["turnover"]>=0 for record in first["records"]))
+        for previous,current in zip(first["records"],first["records"][1:]):
+            if previous["allocations"]==current["allocations"]:
+                self.assertEqual(current["turnover"],0)
     def test_lead_lag_alignment(self):
         market=deterministic_market(self.config["candidates"],count=120)
         profile=lead_lag_profile(market["ETHUSDT"],market["BNBUSDT"],3)

@@ -9,7 +9,7 @@ def run_pipeline(raw, decision_time, config, realized_profit_usdt=0, pullback_co
     if missing: return {"status":"BLOCKED","reason":"MISSING_SYMBOLS","missing":missing}
     history=config["history"]
     try:
-        admitted={s:closed_history(raw[s],decision_time,history["minimum_closed_candles"],history["maximum_age_seconds"]) for s in required}
+        admitted={s:closed_history(raw[s],decision_time,history["minimum_closed_candles"],history["maximum_age_seconds"])[-history["lookback_closed_candles"]:] for s in required}
         aligned=align_histories(admitted)
     except ValueError as error:
         return {"status":"BLOCKED","reason":str(error)}
