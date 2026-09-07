@@ -4,6 +4,8 @@
 
 **Binance Agent OS Mini Hackathon — Track A**
 
+**[Open the BNB Rotation Control Room](https://superfual.github.io/bnb-rotation-treasury-agent/)**
+
 ## Safety boundary
 
 - PAPER ONLY; no exchange-order path exists.
