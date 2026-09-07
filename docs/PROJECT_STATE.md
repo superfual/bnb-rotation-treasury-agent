@@ -21,6 +21,8 @@ The replay makes each decision at close `t` and applies it only to `t → t+1`, 
 
 Loss attribution: 36 winning versus 50 losing invested periods, 12.47% average gross exposure, and 1.62% estimated additive transaction cost. ETH, SOL, AVAX, and LINK were the largest negative contributors. The worst five next-day periods lost between 3.24% and 4.74%. See `docs/RESEARCH_DIAGNOSTICS.md`.
 
+Experiment 001 pre-registered a closed-candle shock/extension filter. Frozen split results: train +4.66%, validation -7.11%, holdout +3.18%; respective BNB returns were -18.41%, -3.80%, and +24.48%. Full sample improved to +0.32% / 10.81% drawdown, but the experiment gate failed validation return and BNB-relative checks. Thresholds were not retuned after holdout.
+
 ## Verified live snapshot
 At `1788807042450` UTC-ms, Binance MCP returned 500 daily candles for all 18 symbols. Preflight found 499 aligned closed candles and admitted the latest 120 for the current decision. BNB was `RISK_ON`; only CAKEUSDT passed all relationship gates; paper portfolio was `ROTATION_READY`; treasury remained `HOLD_USDT`. Snapshot SHA-256: `263a6c59216bd8888be2eec45ec5bfa50a59f627f0d018dd407d37828822bcdb`.
 
@@ -28,4 +30,4 @@ At `1788807042450` UTC-ms, Binance MCP returned 500 daily candles for all 18 sym
 V2 may execute only qualified Spot rotations inside a separately funded Binance Agentic sub-account. It must add a strict tool allowlist, symbol-filter validation, exposure caps, idempotency, human confirmation, order reconciliation, audit evidence, and an emergency stop. This path is documented but intentionally absent from V1.
 
 ## NEXT STEP
-Pre-declare a shock/exit-filter hypothesis, split history into train/validation/holdout windows, and test it without tuning on the holdout. Do not enable live execution from the present evidence.
+Prepare the Track A demo around the honest fail-closed experiment, or pre-register Experiment 002 on fresh data. Do not enable live execution from the present evidence.

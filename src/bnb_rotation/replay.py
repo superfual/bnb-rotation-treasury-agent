@@ -3,7 +3,7 @@ from statistics import fmean
 
 from .analytics import correlation, returns
 from .pipeline import run_pipeline
-from .research import diagnose_records, evaluate_viability
+from .research import diagnose_records, evaluate_split_experiment, evaluate_viability
 
 
 @dataclass(frozen=True)
@@ -110,3 +110,20 @@ def walk_forward_replay(raw, decision_times, config, fee_rate=0.0):
     replay["diagnostics"] = diagnose_records(records)
     replay["viability"] = evaluate_viability(replay, config["research_gate"])
     return replay
+
+
+def chronological_split_replay(raw, decision_times, config, fee_rate=0.0):
+    periods = len(decision_times) - 1
+    train_end = int(periods * 0.60)
+    validation_end = int(periods * 0.80)
+    ranges = {
+        "train": decision_times[: train_end + 1],
+        "validation": decision_times[train_end : validation_end + 1],
+        "holdout": decision_times[validation_end:],
+    }
+    splits = {name: walk_forward_replay(raw, times, config, fee_rate) for name, times in ranges.items()}
+    return {
+        "allocation": {name: replay["periods"] for name, replay in splits.items()},
+        "splits": splits,
+        "experiment_viability": evaluate_split_experiment(splits),
+    }

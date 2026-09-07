@@ -12,6 +12,12 @@ Lead/lag diagnostics report the correlation between BNB return at `t` and candid
 
 The replay is not live-ready unless every pre-declared gate passes: at least 252 periods, at least 20 invested periods, non-negative strategy return, return no lower than BNB hold, and maximum drawdown no greater than 25%. The gate is conjunctive; lower drawdown cannot compensate for failed return requirements.
 
+The split-level experiment gate separately requires validation and holdout returns to be non-negative and no lower than BNB in the same split. A full-sample pass cannot override a validation or holdout failure.
+
+## Shock and extension filter
+
+Experiment 001 uses only the latest closed daily candle. It blocks all rotation after a BNB or BTC daily loss of 3% or more, or when BNB closes below 35% of its daily range. It also removes a candidate that has risen 8% or more in that candle. These thresholds were fixed before the chronological holdout was opened.
+
 The agent uses aligned close-to-close returns from candles admitted by one decision time.
 
 ## BTC factor separation

@@ -1,133 +1,484 @@
 {
   "source": "verified Binance MCP snapshot",
   "snapshot_sha256": "263a6c59216bd8888be2eec45ec5bfa50a59f627f0d018dd407d37828822bcdb",
+  "experiment": "EXPERIMENT_001",
+  "parameters": {
+    "leader_daily_return_floor": -0.03,
+    "benchmark_daily_return_floor": -0.03,
+    "minimum_leader_close_location": 0.35,
+    "candidate_daily_return_ceiling": 0.08
+  },
   "method": "decision_at_t_applied_to_t_plus_1_close",
   "lookback_closed_candles": 120,
   "fee_rate": 0.001,
   "decision_start_utc_ms": 1753401599999,
   "decision_end_utc_ms": 1788739199999,
-  "periods": 409,
-  "risk_on_periods": 125,
-  "total_turnover": 16.200000000000003,
-  "strategy": {
-    "cumulative_return": -0.13910485378540816,
-    "maximum_drawdown": 0.21895418455575888,
-    "invested_periods": 86,
-    "total_periods": 409
-  },
-  "benchmarks": {
-    "bnb_hold": {
-      "cumulative_return": -0.023016840958039464,
-      "maximum_drawdown": 0.5819795013002904,
-      "invested_periods": 409,
+  "full_sample": {
+    "periods": 409,
+    "strategy": {
+      "cumulative_return": 0.0031713042591776652,
+      "maximum_drawdown": 0.10813754735895531,
+      "invested_periods": 54,
       "total_periods": 409
     },
-    "equal_weight_candidates": {
-      "cumulative_return": -0.4951907067891642,
-      "maximum_drawdown": 0.7399899768764349,
-      "invested_periods": 409,
-      "total_periods": 409
+    "benchmarks": {
+      "bnb_hold": {
+        "cumulative_return": -0.023016840958039464,
+        "maximum_drawdown": 0.5819795013002904,
+        "invested_periods": 409,
+        "total_periods": 409
+      },
+      "equal_weight_candidates": {
+        "cumulative_return": -0.4951907067891642,
+        "maximum_drawdown": 0.7399899768764349,
+        "invested_periods": 409,
+        "total_periods": 409
+      },
+      "usdt_hold": {
+        "cumulative_return": 0,
+        "maximum_drawdown": 0,
+        "invested_periods": 0,
+        "total_periods": 409
+      }
     },
-    "usdt_hold": {
-      "cumulative_return": 0.0,
-      "maximum_drawdown": 0.0,
-      "invested_periods": 0,
-      "total_periods": 409
+    "viability": {
+      "status": "PASSED_PAPER_RESEARCH",
+      "blockers": [],
+      "observations": {
+        "strategy_return": 0.0031713042591776652,
+        "excess_return_vs_bnb": 0.02618814521721713,
+        "strategy_maximum_drawdown": 0.10813754735895531
+      }
+    },
+    "diagnostics": {
+      "action_counts": {
+        "HOLD_USDT": 316,
+        "NO_ACTION": 39,
+        "ROTATION_READY": 54
+      },
+      "winning_invested_periods": 24,
+      "losing_invested_periods": 30,
+      "average_gross_exposure": 0.08215158924205387,
+      "total_transaction_cost": 0.030399999999999976,
+      "gross_contribution_by_symbol": {
+        "LINKUSDT": -0.025487425798334816,
+        "AVAXUSDT": -0.023244535046485142,
+        "ADAUSDT": -0.008477878051867817,
+        "DOGEUSDT": -0.006885677949682889,
+        "ETHUSDT": -0.004610920670569784,
+        "UNIUSDT": -0.002747399471173107,
+        "SOLUSDT": 0.004786270928392367,
+        "INJUSDT": 0.015272571653465095,
+        "NEARUSDT": 0.01564986737400531,
+        "CAKEUSDT": 0.08102842434532773
+      },
+      "worst_periods": [
+        {
+          "decision_time": 1755561599999,
+          "execution_period_end": 1755647999999,
+          "strategy_return": -0.045333732903613914,
+          "allocations": {
+            "ETHUSDT": 0.2,
+            "CAKEUSDT": 0.2,
+            "SOLUSDT": 0.2,
+            "LINKUSDT": 0.2
+          }
+        },
+        {
+          "decision_time": 1755129599999,
+          "execution_period_end": 1755215999999,
+          "strategy_return": -0.04488013713697735,
+          "allocations": {
+            "ETHUSDT": 0.2,
+            "CAKEUSDT": 0.2,
+            "SOLUSDT": 0.2,
+            "LINKUSDT": 0.2
+          }
+        },
+        {
+          "decision_time": 1776470399999,
+          "execution_period_end": 1776556799999,
+          "strategy_return": -0.028474493791316058,
+          "allocations": {
+            "LINKUSDT": 0.2,
+            "CAKEUSDT": 0.2,
+            "ADAUSDT": 0.2,
+            "AVAXUSDT": 0.2
+          }
+        },
+        {
+          "decision_time": 1778803199999,
+          "execution_period_end": 1778889599999,
+          "strategy_return": -0.026134959898752166,
+          "allocations": {
+            "UNIUSDT": 0.2,
+            "LINKUSDT": 0.2,
+            "CAKEUSDT": 0.2,
+            "ADAUSDT": 0.2
+          }
+        },
+        {
+          "decision_time": 1754870399999,
+          "execution_period_end": 1754956799999,
+          "strategy_return": -0.02432060160543159,
+          "allocations": {
+            "ETHUSDT": 0.2,
+            "CAKEUSDT": 0.2,
+            "SOLUSDT": 0.2,
+            "LINKUSDT": 0.2
+          }
+        }
+      ]
     }
   },
-  "viability": {
+  "split_allocation": {
+    "train": 245,
+    "validation": 82,
+    "holdout": 82
+  },
+  "splits": {
+    "train": {
+      "periods": 245,
+      "strategy": {
+        "cumulative_return": 0.04662133127101775,
+        "maximum_drawdown": 0.0860770296334381,
+        "invested_periods": 25,
+        "total_periods": 245
+      },
+      "benchmarks": {
+        "bnb_hold": {
+          "cumulative_return": -0.1840828294885437,
+          "maximum_drawdown": 0.553617867523329,
+          "invested_periods": 245,
+          "total_periods": 245
+        },
+        "equal_weight_candidates": {
+          "cumulative_return": -0.6381052055141909,
+          "maximum_drawdown": 0.7117921314072484,
+          "invested_periods": 245,
+          "total_periods": 245
+        },
+        "usdt_hold": {
+          "cumulative_return": 0,
+          "maximum_drawdown": 0,
+          "invested_periods": 0,
+          "total_periods": 245
+        }
+      },
+      "viability": {
+        "status": "FAILED_NOT_LIVE_READY",
+        "blockers": [
+          "INSUFFICIENT_REPLAY_PERIODS"
+        ],
+        "observations": {
+          "strategy_return": 0.04662133127101775,
+          "excess_return_vs_bnb": 0.23070416075956146,
+          "strategy_maximum_drawdown": 0.0860770296334381
+        }
+      },
+      "diagnostics": {
+        "action_counts": {
+          "HOLD_USDT": 201,
+          "NO_ACTION": 19,
+          "ROTATION_READY": 25
+        },
+        "winning_invested_periods": 13,
+        "losing_invested_periods": 12,
+        "average_gross_exposure": 0.0669387755102041,
+        "total_transaction_cost": 0.014800000000000006,
+        "gross_contribution_by_symbol": {
+          "LINKUSDT": -0.013252809531492308,
+          "AVAXUSDT": -0.0055290753098188984,
+          "ETHUSDT": -0.004610920670569784,
+          "DOGEUSDT": -0.0015759434364085445,
+          "SOLUSDT": 0.004786270928392367,
+          "ADAUSDT": 0.0063887299862002145,
+          "INJUSDT": 0.015272571653465095,
+          "CAKEUSDT": 0.06718593233389175
+        },
+        "worst_periods": [
+          {
+            "decision_time": 1755561599999,
+            "execution_period_end": 1755647999999,
+            "strategy_return": -0.045333732903613914,
+            "allocations": {
+              "ETHUSDT": 0.2,
+              "CAKEUSDT": 0.2,
+              "SOLUSDT": 0.2,
+              "LINKUSDT": 0.2
+            }
+          },
+          {
+            "decision_time": 1755129599999,
+            "execution_period_end": 1755215999999,
+            "strategy_return": -0.04488013713697735,
+            "allocations": {
+              "ETHUSDT": 0.2,
+              "CAKEUSDT": 0.2,
+              "SOLUSDT": 0.2,
+              "LINKUSDT": 0.2
+            }
+          },
+          {
+            "decision_time": 1754870399999,
+            "execution_period_end": 1754956799999,
+            "strategy_return": -0.02432060160543159,
+            "allocations": {
+              "ETHUSDT": 0.2,
+              "CAKEUSDT": 0.2,
+              "SOLUSDT": 0.2,
+              "LINKUSDT": 0.2
+            }
+          },
+          {
+            "decision_time": 1755475199999,
+            "execution_period_end": 1755561599999,
+            "strategy_return": -0.021905859485565404,
+            "allocations": {
+              "ETHUSDT": 0.2,
+              "CAKEUSDT": 0.2,
+              "SOLUSDT": 0.2
+            }
+          },
+          {
+            "decision_time": 1753919999999,
+            "execution_period_end": 1754006399999,
+            "strategy_return": -0.018433474852720535,
+            "allocations": {
+              "CAKEUSDT": 0.2,
+              "ETHUSDT": 0.2,
+              "SOLUSDT": 0.2
+            }
+          }
+        ]
+      }
+    },
+    "validation": {
+      "periods": 82,
+      "strategy": {
+        "cumulative_return": -0.07105970574125753,
+        "maximum_drawdown": 0.08801120880983493,
+        "invested_periods": 20,
+        "total_periods": 82
+      },
+      "benchmarks": {
+        "bnb_hold": {
+          "cumulative_return": -0.03803708297554309,
+          "maximum_drawdown": 0.20385674931129494,
+          "invested_periods": 82,
+          "total_periods": 82
+        },
+        "equal_weight_candidates": {
+          "cumulative_return": -0.018491068036736946,
+          "maximum_drawdown": 0.30625144470229504,
+          "invested_periods": 82,
+          "total_periods": 82
+        },
+        "usdt_hold": {
+          "cumulative_return": 0,
+          "maximum_drawdown": 0,
+          "invested_periods": 0,
+          "total_periods": 82
+        }
+      },
+      "viability": {
+        "status": "FAILED_NOT_LIVE_READY",
+        "blockers": [
+          "INSUFFICIENT_REPLAY_PERIODS",
+          "STRATEGY_RETURN_BELOW_FLOOR",
+          "UNDERPERFORMS_BNB"
+        ],
+        "observations": {
+          "strategy_return": -0.07105970574125753,
+          "excess_return_vs_bnb": -0.03302262276571444,
+          "strategy_maximum_drawdown": 0.08801120880983493
+        }
+      },
+      "diagnostics": {
+        "action_counts": {
+          "HOLD_USDT": 62,
+          "ROTATION_READY": 20
+        },
+        "winning_invested_periods": 6,
+        "losing_invested_periods": 14,
+        "average_gross_exposure": 0.18780487804878054,
+        "total_transaction_cost": 0.013600000000000003,
+        "gross_contribution_by_symbol": {
+          "CAKEUSDT": -0.019907454883411148,
+          "AVAXUSDT": -0.01771545973666624,
+          "ADAUSDT": -0.014866608038068028,
+          "LINKUSDT": -0.0122346162668425,
+          "DOGEUSDT": -0.005309734513274345,
+          "UNIUSDT": -0.002747399471173107,
+          "NEARUSDT": 0.01564986737400531
+        },
+        "worst_periods": [
+          {
+            "decision_time": 1776470399999,
+            "execution_period_end": 1776556799999,
+            "strategy_return": -0.028474493791316058,
+            "allocations": {
+              "LINKUSDT": 0.2,
+              "CAKEUSDT": 0.2,
+              "ADAUSDT": 0.2,
+              "AVAXUSDT": 0.2
+            }
+          },
+          {
+            "decision_time": 1778803199999,
+            "execution_period_end": 1778889599999,
+            "strategy_return": -0.026134959898752166,
+            "allocations": {
+              "UNIUSDT": 0.2,
+              "LINKUSDT": 0.2,
+              "CAKEUSDT": 0.2,
+              "ADAUSDT": 0.2
+            }
+          },
+          {
+            "decision_time": 1776124799999,
+            "execution_period_end": 1776211199999,
+            "strategy_return": -0.022351881140107357,
+            "allocations": {
+              "LINKUSDT": 0.2,
+              "ADAUSDT": 0.2,
+              "AVAXUSDT": 0.2
+            }
+          },
+          {
+            "decision_time": 1778543999999,
+            "execution_period_end": 1778630399999,
+            "strategy_return": -0.02209972803004041,
+            "allocations": {
+              "LINKUSDT": 0.2,
+              "ADAUSDT": 0.2,
+              "CAKEUSDT": 0.2,
+              "AVAXUSDT": 0.2
+            }
+          },
+          {
+            "decision_time": 1778111999999,
+            "execution_period_end": 1778198399999,
+            "strategy_return": -0.01557420508030849,
+            "allocations": {
+              "CAKEUSDT": 0.2,
+              "LINKUSDT": 0.2,
+              "ADAUSDT": 0.2,
+              "AVAXUSDT": 0.2
+            }
+          }
+        ]
+      }
+    },
+    "holdout": {
+      "periods": 82,
+      "strategy": {
+        "cumulative_return": 0.03180521191522234,
+        "maximum_drawdown": 0.005465819323603238,
+        "invested_periods": 9,
+        "total_periods": 82
+      },
+      "benchmarks": {
+        "bnb_hold": {
+          "cumulative_return": 0.2447515456078302,
+          "maximum_drawdown": 0.09657156081594864,
+          "invested_periods": 82,
+          "total_periods": 82
+        },
+        "equal_weight_candidates": {
+          "cumulative_return": 0.4211854383883098,
+          "maximum_drawdown": 0.11288396993891081,
+          "invested_periods": 82,
+          "total_periods": 82
+        },
+        "usdt_hold": {
+          "cumulative_return": 0,
+          "maximum_drawdown": 0,
+          "invested_periods": 0,
+          "total_periods": 82
+        }
+      },
+      "viability": {
+        "status": "FAILED_NOT_LIVE_READY",
+        "blockers": [
+          "INSUFFICIENT_REPLAY_PERIODS",
+          "INSUFFICIENT_INVESTED_PERIODS",
+          "UNDERPERFORMS_BNB"
+        ],
+        "observations": {
+          "strategy_return": 0.03180521191522234,
+          "excess_return_vs_bnb": -0.21294633369260785,
+          "strategy_maximum_drawdown": 0.005465819323603238
+        }
+      },
+      "diagnostics": {
+        "action_counts": {
+          "HOLD_USDT": 53,
+          "NO_ACTION": 20,
+          "ROTATION_READY": 9
+        },
+        "winning_invested_periods": 5,
+        "losing_invested_periods": 4,
+        "average_gross_exposure": 0.02195121951219512,
+        "total_transaction_cost": 0.0020000000000000005,
+        "gross_contribution_by_symbol": {
+          "CAKEUSDT": 0.033749946894847144
+        },
+        "worst_periods": [
+          {
+            "decision_time": 1785110399999,
+            "execution_period_end": 1785196799999,
+            "strategy_return": -0.0050056537102473484,
+            "allocations": {
+              "CAKEUSDT": 0.2
+            }
+          },
+          {
+            "decision_time": 1785801599999,
+            "execution_period_end": 1785887999999,
+            "strategy_return": -0.00347947112038971,
+            "allocations": {
+              "CAKEUSDT": 0.2
+            }
+          },
+          {
+            "decision_time": 1785715199999,
+            "execution_period_end": 1785801599999,
+            "strategy_return": -0.001169529085872556,
+            "allocations": {
+              "CAKEUSDT": 0.2
+            }
+          },
+          {
+            "decision_time": 1785887999999,
+            "execution_period_end": 1785974399999,
+            "strategy_return": -0.00042492917847023474,
+            "allocations": {
+              "CAKEUSDT": 0.2
+            }
+          },
+          {
+            "decision_time": 1785196799999,
+            "execution_period_end": 1785283199999,
+            "strategy_return": -0.0002,
+            "allocations": {}
+          }
+        ]
+      }
+    }
+  },
+  "experiment_viability": {
     "status": "FAILED_NOT_LIVE_READY",
     "blockers": [
-      "STRATEGY_RETURN_BELOW_FLOOR",
-      "UNDERPERFORMS_BNB"
-    ],
-    "observations": {
-      "strategy_return": -0.13910485378540816,
-      "excess_return_vs_bnb": -0.11608801282736869,
-      "strategy_maximum_drawdown": 0.21895418455575888
-    }
-  },
-  "diagnostics": {
-    "action_counts": {
-      "HOLD_USDT": 284,
-      "NO_ACTION": 39,
-      "ROTATION_READY": 86
-    },
-    "winning_invested_periods": 36,
-    "losing_invested_periods": 50,
-    "average_gross_exposure": 0.12469437652811732,
-    "total_transaction_cost": 0.016200000000000003,
-    "gross_contribution_by_symbol": {
-      "ETHUSDT": -0.035657562116192296,
-      "SOLUSDT": -0.027702167266194812,
-      "AVAXUSDT": -0.024448514869274577,
-      "LINKUSDT": -0.023964875575546746,
-      "DOGEUSDT": -0.010496847380713749,
-      "UNIUSDT": -0.010106223201089183,
-      "CAKEUSDT": -0.009962859563016336,
-      "ADAUSDT": -0.0004264086895604941,
-      "INJUSDT": 0.005219661600555047,
-      "AAVEUSDT": 0.007042620294551627,
-      "NEARUSDT": 0.01564986737400531
-    },
-    "worst_periods": [
-      {
-        "decision_time": 1760054399999,
-        "execution_period_end": 1760140799999,
-        "strategy_return": -0.04741771474444743,
-        "allocations": {
-          "CAKEUSDT": 0.2
-        }
-      },
-      {
-        "decision_time": 1755561599999,
-        "execution_period_end": 1755647999999,
-        "strategy_return": -0.045133732903613916,
-        "allocations": {
-          "ETHUSDT": 0.2,
-          "CAKEUSDT": 0.2,
-          "SOLUSDT": 0.2,
-          "LINKUSDT": 0.2
-        }
-      },
-      {
-        "decision_time": 1755129599999,
-        "execution_period_end": 1755215999999,
-        "strategy_return": -0.04428013713697734,
-        "allocations": {
-          "ETHUSDT": 0.2,
-          "CAKEUSDT": 0.2,
-          "SOLUSDT": 0.2,
-          "LINKUSDT": 0.2
-        }
-      },
-      {
-        "decision_time": 1758499199999,
-        "execution_period_end": 1758585599999,
-        "strategy_return": -0.042432945873528194,
-        "allocations": {
-          "CAKEUSDT": 0.2,
-          "ETHUSDT": 0.2,
-          "SOLUSDT": 0.2
-        }
-      },
-      {
-        "decision_time": 1754006399999,
-        "execution_period_end": 1754092799999,
-        "strategy_return": -0.03236633329808756,
-        "allocations": {
-          "ETHUSDT": 0.2,
-          "CAKEUSDT": 0.2,
-          "SOLUSDT": 0.2
-        }
-      }
+      "VALIDATION_RETURN_BELOW_FLOOR",
+      "VALIDATION_UNDERPERFORMS_BNB",
+      "HOLDOUT_UNDERPERFORMS_BNB"
     ]
   },
   "limitations": [
     "Close-to-close model with a 10 bps turnover-cost approximation",
     "No slippage, spread, tax, or market-impact model",
-    "One historical window is insufficient for parameter selection",
+    "Thresholds were not retuned after holdout",
     "Evidence validates chronology and defensive behavior, not future profitability"
   ]
 }
-

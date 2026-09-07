@@ -24,3 +24,7 @@ The five worst next-day paper periods began on 2025-10-09 (-4.74%), 2025-08-18 (
 ## Research discipline
 
 No thresholds are changed from this result. Tuning them on the same evaluation window would contaminate the evidence. The next experiment must introduce a pre-declared shock/exit hypothesis, freeze its parameters, and evaluate it on separated train, validation, and holdout windows.
+
+## Experiment 001 outcome
+
+The pre-registered shock/extension filter improved the full sample from -13.91% / 21.90% drawdown to +0.32% / 10.81% drawdown. However, validation returned -7.11% and underperformed BNB, while holdout returned +3.18% versus +24.48% for BNB. The split-level experiment gate therefore remains `FAILED_NOT_LIVE_READY`. See `EXPERIMENT_001.md`.

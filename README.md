@@ -52,6 +52,8 @@ The replay freezes information at each daily close and applies the resulting pap
 
 The expanded Binance MCP snapshot provides 409 out-of-sample periods from 2025-07-24 through 2026-09-06. With a rolling 120-candle analysis window and 10 bps turnover-cost approximation, the strategy returned -13.91% with 21.90% maximum drawdown and invested in 86 periods. BNB hold returned -2.30% with 58.20% drawdown; equal-weight candidates returned -49.52% with 74.00% drawdown; USDT was flat. The agent reduced drawdown materially but failed to outperform BNB and USDT. Therefore the research gate is **NOT LIVE READY**. The gate is implemented in code and cannot be overridden by a current candidate ranking. See the [loss attribution and research diagnostics](docs/RESEARCH_DIAGNOSTICS.md).
 
+Experiment 001 pre-registered a closed-candle shock and anti-extension filter before opening chronological 60/20/20 splits. Full-sample performance improved to +0.32% / 10.81% drawdown, but validation returned -7.11% and holdout returned +3.18% versus +24.48% for BNB. The independent split gate therefore remains **NOT LIVE READY**. Parameters were not retuned after seeing holdout. See the [frozen experiment record](docs/EXPERIMENT_001.md).
+
 ## Verified Binance MCP snapshot
 
 A time-bounded read-only snapshot at decision time `1788807042450` UTC-ms requested 500 daily candles for all 18 symbols. The current daily candle was excluded, leaving 499 aligned closed candles; each decision uses at most the latest 120. Result: BNB `RISK_ON`; CAKEUSDT was the only current candidate to pass every configured gate; paper portfolio `ROTATION_READY`; BNB profit vault `HOLD_USDT`. Snapshot SHA-256: `263a6c59216bd8888be2eec45ec5bfa50a59f627f0d018dd407d37828822bcdb`.

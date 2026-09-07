@@ -9,6 +9,7 @@
   "status": "READY",
   "bnb_regime": "RISK_ON",
   "regime_blockers": [],
+  "shock_blockers": [],
   "portfolio": {
     "action": "ROTATION_READY",
     "allocations": {
@@ -302,4 +303,3 @@
     }
   ]
 }
-

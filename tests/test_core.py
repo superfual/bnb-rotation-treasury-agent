@@ -4,8 +4,9 @@ from bnb_rotation.analytics import correlation,residuals
 from bnb_rotation.binance import candle_from_binance
 from bnb_rotation.demo import DAY,deterministic_market
 from bnb_rotation.pipeline import run_pipeline
-from bnb_rotation.replay import lead_lag_profile,walk_forward_replay
+from bnb_rotation.replay import chronological_split_replay,lead_lag_profile,walk_forward_replay
 from bnb_rotation.research import evaluate_viability
+from bnb_rotation.shock import apply_shock_filter
 from bnb_rotation.treasury import bnb_dca_decision
 from bnb_rotation.validation import DataValidationError,closed_history
 ROOT=Path(__file__).resolve().parents[1]
@@ -74,6 +75,22 @@ class CoreTests(unittest.TestCase):
         result=evaluate_viability(replay,limits)
         self.assertEqual(result["status"],"FAILED_NOT_LIVE_READY")
         self.assertEqual(result["blockers"],["UNDERPERFORMS_BNB"])
+    def test_chronological_split_has_no_gap(self):
+        market=deterministic_market(self.config["candidates"],count=130)
+        times=[c.close_time for c in market["BTCUSDT"]][89:]
+        experiment=chronological_split_replay(market,times,self.config); split=experiment["splits"]
+        self.assertEqual(sum(x["periods"] for x in split.values()),40)
+        self.assertEqual(experiment["allocation"],{"train":24,"validation":8,"holdout":8})
+        self.assertEqual(split["train"]["records"][-1]["execution_period_end"],split["validation"]["records"][0]["decision_time"])
+        self.assertEqual(split["validation"]["records"][-1]["execution_period_end"],split["holdout"]["records"][0]["decision_time"])
+        self.assertIn(experiment["experiment_viability"]["status"],{"PASSED_PAPER_EXPERIMENT","FAILED_NOT_LIVE_READY"})
+    def test_shock_filter_fails_closed(self):
+        bnb=copy.deepcopy(self.market["BNBUSDT"]); btc=self.market["BTCUSDT"]
+        object.__setattr__(bnb[-1],"close",bnb[-2].close*.95)
+        portfolio={"action":"ROTATION_READY","allocations":{"ETHUSDT":.2}}
+        filtered,blockers=apply_shock_filter(portfolio,bnb,btc,self.market,self.config["shock_filter"])
+        self.assertEqual(filtered,{"action":"HOLD_USDT","allocations":{}})
+        self.assertIn("BNB_DAILY_SHOCK",blockers)
     def test_lead_lag_alignment(self):
         market=deterministic_market(self.config["candidates"],count=120)
         profile=lead_lag_profile(market["ETHUSDT"],market["BNBUSDT"],3)

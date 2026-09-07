@@ -58,3 +58,19 @@ def diagnose_records(records, worst_count=5):
             key=lambda r: r["strategy_return"],
         )[:worst_count],
     }
+
+
+def evaluate_split_experiment(splits):
+    blockers = []
+    for name in ("validation", "holdout"):
+        replay = splits[name]
+        strategy_return = replay["strategy"]["cumulative_return"]
+        bnb_return = replay["benchmarks"]["bnb_hold"]["cumulative_return"]
+        if strategy_return < 0:
+            blockers.append(f"{name.upper()}_RETURN_BELOW_FLOOR")
+        if strategy_return < bnb_return:
+            blockers.append(f"{name.upper()}_UNDERPERFORMS_BNB")
+    return {
+        "status": "PASSED_PAPER_EXPERIMENT" if not blockers else "FAILED_NOT_LIVE_READY",
+        "blockers": blockers,
+    }
