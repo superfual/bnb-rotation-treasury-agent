@@ -1,0 +1,7 @@
+{
+  "request_id": "DEMO-RESEARCH-001",
+  "symbols": ["CAKEUSDT", "XVSUSDT", "THEUSDT"],
+  "time_horizon": "One month; daily Spot research",
+  "question": "Compare BNB-relative strength and concentration risks for these three assets.",
+  "weights": {"CAKEUSDT": 0.3, "XVSUSDT": 0.2, "THEUSDT": 0.1, "USDT": 0.4}
+}

@@ -85,6 +85,22 @@ docs/PROJECT_STATE.md   durable project memory
 
 Educational hackathon prototype only; not financial advice.
 
+## TermiX research report adapter
+
+`scripts/build_service_report.py` creates an operator-reviewed research draft
+from a structured client request and fresh Binance MCP daily Spot snapshot.
+It checks 120 aligned closed candles, reports BNB/BTC regime and candidate risk
+gates, and flags portfolio concentration/reserve settings when weights exist.
+It is separate from TermiX cloud FAQ hosting and is not a deployed order worker.
+`scripts/termix_research_queue.py` reads this agent's provider orders, checks
+indexed state/deadlines and queues one report per reviewed intake for human
+review. It does not upload or submit deliveries.
+The review commands bind human approval to exact report bytes and create a
+local delivery plan after rechecking the live order. Upload and wallet signing
+remain explicit operator steps.
+See [research service integration](docs/TERMIX_RESEARCH_SERVICE.md) for the
+intake schema, reproduction command, review boundary and remaining deployment.
+
 ## Guarded live-execution vision
 
 V1 stops at deterministic paper decisions. Its next safe deployment target is a dedicated Binance Agentic sub-account—not a master account—with a Spot-only tool allowlist, capped exposure, idempotent client order IDs, an explicit human confirmation step, post-trade reconciliation, and an emergency stop. Margin, Futures, Convert, withdrawal, and cross-wallet transfer remain denied.
