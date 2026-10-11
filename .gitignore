@@ -219,3 +219,7 @@ __marimo__/
 
 # Host-injected live market snapshots (publish only hashes/summaries)
 evidence/live_snapshot.json
+
+# Client intake, report artifacts, and host account credentials
+service-local/
+.termix-*.env
