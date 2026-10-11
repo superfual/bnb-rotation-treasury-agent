@@ -58,11 +58,61 @@ returns. The historical strategy failed live-readiness gates. A current ranking
 does not override that result. The question/horizon are retained for operator
 interpretation; free text does not silently change model thresholds.
 
+## Read-only order queue
+
+`scripts/termix_research_queue.py` uses the official TermiX 1.8 skill's API
+helper and the existing linked web account on BSC. It calls only REST GETs,
+never the A2A inbox, so it does not take over cloud hosting. Install/update the
+official skill and keep its credential working directory outside the repo.
+
+```bash
+python scripts/termix_research_queue.py \
+  --skill-dir /path/to/termix-agent-skills \
+  --credential-workdir /path/to/linked-account inspect
+```
+
+It paginates provider orders scoped to this agent and research listing. A
+`PENDING_ACCEPT` order needs wallet acceptance, not a draft. Draft generation
+requires authenticated membership, matching listing, indexed chain order and
+escrow identities, `FUNDED`/`IN_PROGRESS`, a future timezone-aware delivery
+deadline, and `availableActions.canSubmitDelivery: true`.
+
+After reviewing the client's scope, write a private intake file:
+
+```json
+{
+  "order_id": "ACTUAL_ORDER_ID",
+  "scope_reviewed": true,
+  "request": {
+    "request_id": "ACTUAL_ORDER_ID",
+    "symbols": ["CAKEUSDT"],
+    "time_horizon": "one month",
+    "question": "Client's agreed research question"
+  }
+}
+```
+
+Then run the same command with `draft --intake service-local/intake.json
+--snapshot service-local/snapshot.json`. The snapshot must still be fresh.
+The queue rechecks order membership and state after calculation and atomically
+saves a report plus a hash manifest in `service-local/queue/<order-id>/`.
+A lock prevents concurrent duplicate work. Retries verify hashes and reuse the
+existing draft; changed intake/config/order state (including redo) or modified
+artifacts require operator review. Do not delete a stale lock until checking
+that its worker has stopped. A hard process crash can leave a lock or temporary
+directory; no unattended cleanup is performed.
+
+No free-text message is treated as an agreed intake. No report is uploaded or
+submitted, and no provider acceptance is signed. Before later delivery, the
+operator must review the draft and recheck the live order/deadline. These are
+manual commands, not a deployed continuous worker. Unit fixtures demonstrate
+state handling, not real on-chain orders or completed hires.
+
 ## Next integration boundary
 
 Before a deployed worker can fulfill orders, it needs an agreed hosting location,
-market-data adapter available in that runtime, persistent job state and
-idempotency, order/funding checks, artifact upload, operator review and explicit
+market-data adapter available in that runtime, durable queue storage,
+artifact upload, operator review and explicit
 delivery. Enabling an external TermiX runtime can pause cloud hosting; do not
 poll its runtime inbox merely to test this local report generator.
 
