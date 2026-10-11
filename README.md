@@ -95,6 +95,9 @@ It is separate from TermiX cloud FAQ hosting and is not a deployed order worker.
 `scripts/termix_research_queue.py` reads this agent's provider orders, checks
 indexed state/deadlines and queues one report per reviewed intake for human
 review. It does not upload or submit deliveries.
+The review commands bind human approval to exact report bytes and create a
+local delivery plan after rechecking the live order. Upload and wallet signing
+remain explicit operator steps.
 See [research service integration](docs/TERMIX_RESEARCH_SERVICE.md) for the
 intake schema, reproduction command, review boundary and remaining deployment.
 

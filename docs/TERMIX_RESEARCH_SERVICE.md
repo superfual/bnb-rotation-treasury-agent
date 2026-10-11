@@ -108,6 +108,57 @@ operator must review the draft and recheck the live order/deadline. These are
 manual commands, not a deployed continuous worker. Unit fixtures demonstrate
 state handling, not real on-chain orders or completed hires.
 
+## Review and delivery handoff
+
+The queue CLI also supports `review`, `approve` and `prepare-delivery`, with
+the same `--skill-dir` and `--credential-workdir` arguments. None of these
+commands uploads a file, prepares a real transaction, signs or submits a
+delivery. The actual API steps below remain an operator-driven workflow.
+
+1. Run `review --order ACTUAL_ORDER_ID`. It checks the live order and original
+   artifact hashes, then creates `review/report.md`. Inspect and, if needed,
+   edit this client-facing copy. Re-running review preserves your edits.
+   The copied draft retains its labels and limitations until the operator
+   revises them; this command does not imply approval or complete the client's
+   requested interpretation.
+2. Review the final exact file bytes. Only after the human approves that
+   version, run `approve --order ACTUAL_ORDER_ID --report-sha256 FINAL_HASH
+   --reviewer "Operator name" --note "What was checked"`. The hash is an
+   acknowledgement of the exact content reviewed, not evidence that a human
+   approved it unless the command follows their explicit instruction. Never
+   approve a real client report solely because its generator/tests passed.
+3. Run `prepare-delivery --order ACTUAL_ORDER_ID`. It verifies approval binds
+   the source manifest, report bytes and unchanged live order. It emits
+   `delivery-plan.json`, including the approved Markdown file, checksum,
+   upload/register request shapes and final transaction handoff. Editing the
+   approved report invalidates approval. A new approval clears the old plan.
+
+The plan is a local recipe with response placeholders, not an unsigned
+transaction returned by TermiX. Always rerun preparation immediately before
+starting upload, and re-read the order/deadline immediately before submission.
+Old plan files are not authorization to upload or sign. Original private
+`report.json`, manifest, approval notes and client intake are not deliverables;
+only the approved client-facing Markdown copy is selected for upload.
+
+For an approved real order, use the documented official skill workflow:
+
+- `POST /api/v1/orders/:id/delivery/upload-url` with the plan's file metadata;
+  PUT exactly the approved bytes to the returned presigned URL.
+- Verify the uploaded checksum and register its actual `s3Key`/`publicUrl`
+  through `POST /api/v1/orders/:id/delivery/artifacts`.
+- Recheck the live order. Use the returned real artifact ID in
+  `POST /api/v1/orders/:id/delivery/submit`, which returns a tx-intent.
+- `validate_delivery_intent` checks the envelope action, BSC chain, escrow
+  contract, calldata format and zero native value. It does not decode calldata
+  or replace wallet simulation/review. Verify the actual order/artifact binding
+  and use the official transaction helper for web-wallet signing.
+- Wait for the indexer to show `DELIVERED`. A plan, upload, API intent or
+  transaction broadcast is not proof of indexed delivery or payment.
+
+Source: official TermiX 1.8 `docs/provider-order-delivery.md` and
+[Orders API reference](https://docs.termix.ai/api-reference/orders).
+No self-hire or mock order is represented as campaign evidence.
+
 ## Next integration boundary
 
 Before a deployed worker can fulfill orders, it needs an agreed hosting location,

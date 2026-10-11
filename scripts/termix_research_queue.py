@@ -9,6 +9,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 from bnb_rotation.termix import TermixReader, queue_draft, readiness
+from bnb_rotation.delivery import review_copy, approve_report, prepare_delivery
 
 
 def main():
@@ -21,6 +22,14 @@ def main():
     draft.add_argument("--intake", type=Path, required=True)
     draft.add_argument("--snapshot", type=Path, required=True)
     draft.add_argument("--queue", type=Path, default=ROOT / "service-local/queue")
+    for command in ("review", "approve", "prepare-delivery"):
+        step = sub.add_parser(command)
+        step.add_argument("--order", required=True)
+        step.add_argument("--queue", type=Path, default=ROOT / "service-local/queue")
+        if command == "approve":
+            step.add_argument("--report-sha256", required=True)
+            step.add_argument("--reviewer", required=True)
+            step.add_argument("--note", required=True)
     args = parser.parse_args()
     try:
         reader = TermixReader(args.skill_dir, args.credential_workdir)
@@ -32,10 +41,17 @@ def main():
                 detail = reader.detail(row["id"])
                 result["orders"].append({"order_id": row["id"], "status": detail.get("status"),
                                          "readiness": readiness(detail, now)})
-        else:
+        elif args.command == "draft":
             result = queue_draft(reader, json.loads(args.intake.read_text()),
                                  json.loads(args.snapshot.read_text()),
                                  json.loads((ROOT / "config/watchlist.json").read_text()), args.queue, now)
+        elif args.command == "review":
+            result = review_copy(reader, args.queue, args.order, now)
+        elif args.command == "approve":
+            result = approve_report(reader, args.queue, args.order, args.report_sha256,
+                                    args.reviewer, args.note, now)
+        else:
+            result = prepare_delivery(reader, args.queue, args.order, now)
         print(json.dumps(result))
         return 0
     except (ValueError, KeyError, TypeError, OSError, subprocess.TimeoutExpired):
