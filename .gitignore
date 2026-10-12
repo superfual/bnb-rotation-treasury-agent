@@ -223,3 +223,4 @@ evidence/live_snapshot.json
 # Client intake, report artifacts, and host account credentials
 service-local/
 .termix-*.env
+execution-local/

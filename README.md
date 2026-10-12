@@ -103,6 +103,15 @@ intake schema, reproduction command, review boundary and remaining deployment.
 
 ## Guarded live-execution vision
 
+### Owner-reviewed on-chain testnet experiment
+
+The chain-97 treasury adapter reads balances and DEX quotes, builds one bounded
+simulated approval/swap plan, and hands it to the owner's keyless wallet for
+review. Receipt verification distinguishes approval from DEX call success.
+It has not been deployed or executed with a real wallet; there is no unattended
+runner. This experiment does not override the failed mainnet research gate or
+establish Set & Earn qualification. See [testnet execution](docs/TESTNET_EXECUTION.md).
+
 V1 stops at deterministic paper decisions. Its next safe deployment target is a dedicated Binance Agentic sub-account—not a master account—with a Spot-only tool allowlist, capped exposure, idempotent client order IDs, an explicit human confirmation step, post-trade reconciliation, and an emergency stop. Margin, Futures, Convert, withdrawal, and cross-wallet transfer remain denied.
 
 This is an architectural extension, not a claim that V1 submits orders. See the [guarded execution roadmap](docs/LIVE_EXECUTION_ROADMAP.md).
