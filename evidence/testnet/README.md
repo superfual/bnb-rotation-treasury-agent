@@ -42,3 +42,23 @@ No new transaction was sent and no private key/session was granted.
 Existing agent identity 370316 remains on chain 56. Attribution of this
 owner-wallet chain-97 swap to that identity, a public live agent endpoint,
 independent marketplace hires and campaign eligibility remain unresolved.
+
+## Controller execution and final HOLD (13 October 2026)
+
+The owner completed two more swaps using the private controller in Binance
+Wallet, with explicit wallet confirmation for each transaction:
+
+| Transaction | U spent | WBNB received | Fee (tBNB) |
+| --- | --- | --- | --- |
+| [20:05:08 Vietnam](https://testnet.bscscan.com/tx/0x6f1d2b1a5048e03a0f6fad886dd1778c7b1256e53e8c915ec31fc909bc0cf335) | 1 | 0.004975922484200346 | 0.000015559764 |
+| [20:36:31 Vietnam](https://testnet.bscscan.com/tx/0xc369f993a5ad7d17754bc4bd5b2f5fcfc1616175345650f899f3a1be6db64d14) | 0.984677938294667515 | 0.004837845329537469 | 0.000015562932 |
+
+The retained JSON verifies decoded input, recipient, path, status, canonical
+block, deadline, fee and token transfers. This retrospective verification
+does not independently retain the original reviewed browser plan. Final
+balances were 7.015322061705332485 U and 0.014854197280056039 WBNB;
+U allowance was zero. Reserve-ratio valuation returned 30.20% WBNB and HOLD.
+The owner also reported the final HOLD screen. Nothing runs unattended.
+
+All three swaps occurred on one day. Exact approvals are not swap actions.
+Agent identity attribution and campaign qualification remain unconfirmed.

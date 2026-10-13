@@ -125,8 +125,8 @@ https://fual-treasury-control.phamphuanloc.chatgpt.site. Its browser runtime
 reads live balances, builds and simulates exact bounded calls, and opens the
 owner wallet only after an explicit review click. It automatically fills the
 transaction fields; no BscScan form entry or private-key import is required.
-Source and 21 mock engine/UI checks are in `control-ui/`. A live public-RPC
+Source and 24 mock engine/UI checks are in `control-ui/`. A live public-RPC
 check returned an exact 1 U approval candidate; no transaction was broadcast.
-A real Binance Wallet end-to-end test of this controller is still pending.
+The owner completed two swaps through this controller in Binance Wallet on 13 October 2026, followed by a HOLD decision; see the retained evidence.
 It is neither an unattended signer nor a public A2A endpoint, and it does not
 establish campaign attribution to the existing mainnet identity.

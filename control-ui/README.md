@@ -26,8 +26,10 @@ Run `node tests/engine.test.cjs` and syntax checks for `dist/engine.js` and
 `dist/app.js`. Test contract bytecode was captured from public testnet RPC and
 checked against retained SHA-256 pins. Mock RPC tests perform no signing.
 Managed preview/browser QA is skipped because control-browser is unavailable;
-a real Binance Wallet end-to-end test of this Site still needs the owner.
+the owner completed exact approvals and two swaps in Binance Wallet on 13 October 2026, then reported HOLD. See ../evidence/testnet/README.md.
 
 The live domain is private control UI, not a public agent card or A2A endpoint.
 Existing ERC-8004 identity 370316 is on chain 56. Testnet owner swaps have not
 been attributed to it or confirmed as qualifying Set & Earn activity.
+
+The connect button requests wallet_switchEthereumChain for chain 97 and only adds the fixed testnet if the wallet returns unknown-chain (4902). Rejection or unsupported switching prevents signing. Eight UI mock checks plus sixteen engine checks pass.
