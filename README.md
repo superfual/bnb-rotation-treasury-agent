@@ -117,3 +117,16 @@ establish Set & Earn qualification. See [testnet execution](docs/TESTNET_EXECUTI
 V1 stops at deterministic paper decisions. Its next safe deployment target is a dedicated Binance Agentic sub-account—not a master account—with a Spot-only tool allowlist, capped exposure, idempotent client order IDs, an explicit human confirmation step, post-trade reconciliation, and an emergency stop. Margin, Futures, Convert, withdrawal, and cross-wallet transfer remain denied.
 
 This is an architectural extension, not a claim that V1 submits orders. See the [guarded execution roadmap](docs/LIVE_EXECUTION_ROADMAP.md).
+
+### Private testnet controller
+
+The owner-private controller is deployed at
+https://fual-treasury-control.phamphuanloc.chatgpt.site. Its browser runtime
+reads live balances, builds and simulates exact bounded calls, and opens the
+owner wallet only after an explicit review click. It automatically fills the
+transaction fields; no BscScan form entry or private-key import is required.
+Source and 21 mock engine/UI checks are in `control-ui/`. A live public-RPC
+check returned an exact 1 U approval candidate; no transaction was broadcast.
+A real Binance Wallet end-to-end test of this controller is still pending.
+It is neither an unattended signer nor a public A2A endpoint, and it does not
+establish campaign attribution to the existing mainnet identity.
