@@ -13,6 +13,10 @@ alpha decisions from the failed research strategy.
   target drift, per-trade test notional, quote-impact/slippage limits and gas
   cap. No transfers, native swaps, bridges, leverage or key loading.
 - `plan_testnet_rebalance.py`: builds one simulated unsigned transaction.
+  Portfolio value and quote impact use the verified factory pair's reserve
+  ratio, with exact token-order checks. A large reverse one-token quote is not
+  a spot-price reference for a small testnet pool. The live router quote still
+  determines minimum output; fee and price impact together remain capped.
   No signing/broadcast method exists in its RPC allowlist.
 - An insufficient allowance produces only a zero-reset/exact approval. A
   receipt and fresh plan are required before a swap; the initial swap is never
@@ -48,7 +52,8 @@ On 13 October 2026 UTC+7 a read of the actual pool returned
 `1 test U -> 0.005040429466318224 WBNB`. This is a historical quote, not a
 current executable price or proof that the pool is safe. Runtime bytecode pins
 were collected from chain 97; independent source/implementation review remains
-required. Test $U is not USDC, USDT or real dollars. No funds were sent.
+required. Test $U is not USDC, USDT or real dollars. A later owner-signed
+testnet swap is recorded in [execution evidence](../evidence/testnet/README.md).
 
 ```bash
 python scripts/plan_testnet_rebalance.py \
@@ -82,12 +87,14 @@ Broadcast is not success. A reverted or pending transaction does not generate
 evidence. A successful router call is not a verified portfolio result: inspect
 actual output/transfer logs and post-swap balances independently. Reconciliation
 of amounts, fee-on-transfer behavior and multi-block finality are not implemented.
-Private local receipt files are not a public campaign evidence index.
+One real manually signed swap has an independently reconciled public record
+in `evidence/testnet/`; this does not implement general automated reconciliation
+or establish campaign qualification.
 
 ## Remaining deployment boundaries
 
-No testnet transaction, session grant, liquidity deployment, contract funding or
-hosting was performed by this change. There is no unattended runner, durable
+One testnet swap was signed manually through BscScan inside Binance Wallet.
+No session grant, liquidity deployment or hosting was performed. There is no unattended runner, durable
 wallet session or daily spend ledger. Repeated owner-approved plans each respect
 a per-trade cap; they do not implement an aggregate daily authorization.
 The browser page has syntax/unit checks, not a real Binance keyless wallet

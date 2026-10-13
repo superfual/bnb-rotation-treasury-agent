@@ -2,7 +2,6 @@
 import argparse
 import json
 import sys
-import time
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -18,7 +17,7 @@ def main():
     args = parser.parse_args()
     if args.output.exists():
         raise ValueError("use a new output path; stale plans must not be reused")
-    plan = build_plan(json.loads(args.policy.read_text()), RPC(args.rpc), int(time.time()))
+    plan = build_plan(json.loads(args.policy.read_text()), RPC(args.rpc))
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(plan, indent=2) + "\n")
     print(json.dumps({"status": plan["status"], "chain_id": plan["chain_id"], "executed": False}))

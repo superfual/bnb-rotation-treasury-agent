@@ -108,7 +108,9 @@ intake schema, reproduction command, review boundary and remaining deployment.
 The chain-97 treasury adapter reads balances and DEX quotes, builds one bounded
 simulated approval/swap plan, and hands it to the owner's keyless wallet for
 review. Receipt verification distinguishes approval from DEX call success.
-It has not been deployed or executed with a real wallet; there is no unattended
+One owner-reviewed swap was executed manually through BscScan in Binance
+Wallet on 13 October 2026; see [verified testnet evidence](evidence/testnet/README.md).
+The HTML signing page is not deployed or wallet-tested; there is no unattended
 runner. This experiment does not override the failed mainnet research gate or
 establish Set & Earn qualification. See [testnet execution](docs/TESTNET_EXECUTION.md).
 

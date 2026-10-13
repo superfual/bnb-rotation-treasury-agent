@@ -16,6 +16,11 @@ async function trial(p,chain=97){
   if(method==='eth_sendTransaction'){sent++;return '0x'+'b'.repeat(64);}
   if(method==='eth_call'){
    const tx=params[0],s=tx.data.slice(2,10);
+   if(s==='c45a0155')return '0x'+'6725f303b657a9451d8ba641348b6761a6cc7a17'.padStart(64,'0');
+   if(s==='e6a43905')return '0x'+'5'.repeat(40).padStart(64,'0');
+   if(s==='0dfe1681')return '0x'+fixture.policy.settlement.slice(2).padStart(64,'0');
+   if(s==='d21220a7')return '0x'+fixture.policy.asset.slice(2).padStart(64,'0');
+   if(s==='0902f1ac')return '0x'+word(200n*10n**18n)+word(100n*10n**18n)+word(1000);
    if(s==='313ce567')return '0x'+word(18);
    if(s==='70a08231')return '0x'+word(tx.to===fixture.policy.settlement?100n*10n**18n:0);
    if(s==='d06ca61f'){const n=BigInt('0x'+tx.data.slice(10,74));return '0x'+word(32)+word(2)+word(n)+word(n*2n);}

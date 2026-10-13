@@ -2,11 +2,13 @@
 import hashlib
 import json
 import re
+import time
 from decimal import Decimal, InvalidOperation, ROUND_DOWN
 from urllib.request import Request, urlopen
 from urllib.parse import urlsplit
 
 CHAIN = 97
+FACTORY = '0x6725f303b657a9451d8ba641348b6761a6cc7a17'
 SELECTORS = {"balance": "70a08231", "allowance": "dd62ed3e", "decimals": "313ce567",
              "quote": "d06ca61f", "approve": "095ea7b3", "swap": "38ed1739"}
 
@@ -118,12 +120,14 @@ def validate_policy(policy):
     return policy
 
 
-def build_plan(policy, rpc, now):
+def build_plan(policy, rpc, now=None):
     validate_policy(policy)
     if int(rpc("eth_chainId", []), 16) != CHAIN:
         raise ValueError("RPC chain mismatch")
     block = rpc("eth_blockNumber", [])
     head = rpc("eth_getBlockByNumber", [block, False])
+    if now is None:
+        now = int(time.time())
     if not isinstance(now, int) or not 0 <= now - int(head["timestamp"], 16) <= 60:
         raise ValueError("stale or future chain head")
     wallet, router, settlement, asset = [address(policy[k]) for k in ("wallet", "router", "settlement", "asset")]
@@ -152,8 +156,28 @@ def build_plan(policy, rpc, now):
 
     sd, ad = decimals(settlement), decimals(asset)
     sb, ab = balance(settlement), balance(asset)
-    unit_price = quote(10**ad, [asset, settlement])
-    asset_value = ab * unit_price // 10**ad
+    # Value holdings at the pool reserve ratio, not an executable one-token
+    # reverse quote, which embeds fees and may exhaust a small testnet pool.
+    def returned_address(value):
+        if not re.fullmatch(r'0x0{24}[0-9a-fA-F]{40}', value):
+            raise ValueError('invalid pool address result')
+        return address('0x' + value[-40:])
+    factory = returned_address(call(router, '0xc45a0155'))
+    if factory != FACTORY:
+        raise ValueError('unexpected testnet factory')
+    pair = returned_address(call(factory, '0xe6a43905' + addr_word(settlement) + addr_word(asset)))
+    token0 = returned_address(call(pair, '0x0dfe1681'))
+    token1 = returned_address(call(pair, '0xd21220a7'))
+    if {token0, token1} != {settlement, asset}:
+        raise ValueError('pool token mismatch')
+    reserves = call(pair, '0x0902f1ac')
+    if not re.fullmatch(r'0x[0-9a-fA-F]{192}', reserves):
+        raise ValueError('invalid pool reserves')
+    r0, r1, stamp = [int(reserves[2+i*64:66+i*64], 16) for i in range(3)]
+    if not 0 < r0 < 2**112 or not 0 < r1 < 2**112 or stamp >= 2**32:
+        raise ValueError('empty or invalid pool reserves')
+    sr, ar = (r0, r1) if token0 == settlement else (r1, r0)
+    asset_value = ab * sr // ar
     total = sb + asset_value
     if total == 0:
         raise ValueError("empty test treasury")
@@ -169,12 +193,12 @@ def build_plan(policy, rpc, now):
     notional = min(abs(delta), cap)
     buying = delta > 0
     path = [settlement, asset] if buying else [asset, settlement]
-    amount = min(sb, notional) if buying else min(ab, notional * 10**ad // unit_price)
+    amount = min(sb, notional) if buying else min(ab, notional * ar // sr)
     if amount <= 0:
         return base
     # Direct two-token paths only. No bridging, lending, native transfers or fee-on-transfer tokens.
     output = quote(amount, path)
-    expected = amount * 10**ad // unit_price if buying else amount * unit_price // 10**ad
+    expected = amount * ar // sr if buying else amount * sr // ar
     if expected <= 0 or output * 10000 < expected * (10000 - policy["max_price_impact_bps"]):
         raise ValueError("quote impact exceeds policy")
     minimum = output * (10000 - policy["slippage_bps"]) // 10000

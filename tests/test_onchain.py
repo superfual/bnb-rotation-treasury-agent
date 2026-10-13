@@ -1,12 +1,14 @@
 import copy
 import hashlib
 import unittest
+from unittest.mock import patch
 
 from bnb_rotation.onchain import (build_plan, checksum, decode_quote, quote_data,
-                                  raw, uint, validate_policy, verify_receipt)
+                                  raw, uint, validate_policy, verify_receipt, FACTORY, addr_word)
 
 W, R, S, A = ['0x'+x*40 for x in '1234']
 CODE = '0x60016000'
+PAIR = '0x'+'5'*40
 PIN = hashlib.sha256(bytes.fromhex(CODE[2:])).hexdigest()
 
 
@@ -36,6 +38,11 @@ class FakeRPC:
         if method=='eth_getTransactionReceipt':return self.receipt
         if method=='eth_call':
             tx=params[0];data=tx['data'];selector=data[2:10]
+            if selector=='c45a0155':return '0x'+addr_word(FACTORY)
+            if selector=='e6a43905':return '0x'+addr_word(PAIR)
+            if selector=='0dfe1681':return '0x'+addr_word(S)
+            if selector=='d21220a7':return '0x'+addr_word(A)
+            if selector=='0902f1ac':return '0x'+uint(200*10**18)+uint(100*10**18)+uint(1000)
             if selector=='313ce567':return '0x'+uint(18)
             if selector=='70a08231':return '0x'+uint(self.cash if tx['to']==S else self.asset)
             if selector=='dd62ed3e':return '0x'+uint(self.allowance)
@@ -50,6 +57,36 @@ class FakeRPC:
 
 
 class OnchainTests(unittest.TestCase):
+    def test_small_pool_reserve_price_avoids_large_reverse_quote_bias(self):
+        class PoolRPC(FakeRPC):
+            def __call__(self, method, params):
+                if method == 'eth_call':
+                    data = params[0]['data']
+                    if data.startswith('0x0902f1ac'):
+                        return '0x'+uint(200*10**18)+uint(10**18)+uint(1000)
+                    if data.startswith('0xd06ca61f'):
+                        n = int(data[10:74],16)
+                        first = '0x'+data[202:266][-40:]
+                        rin,rout = (200*10**18,10**18) if first==S else (10**18,200*10**18)
+                        out = n*9975*rout//(rin*10000+n*9975)
+                        return '0x'+uint(32)+uint(2)+uint(n)+uint(out)
+                return super().__call__(method, params)
+        rpc=PoolRPC();rpc.allowance=10**18
+        self.assertEqual(build_plan(policy(),rpc,1000)['status'],'SWAP_REQUIRES_WALLET_SIGNATURE')
+        p=policy();p['max_trade_settlement']='10';rpc.allowance=10**19
+        with self.assertRaisesRegex(ValueError,'quote impact'):
+            build_plan(p,rpc,1000)
+
+    def test_live_clock_is_read_after_chain_head(self):
+        rpc = FakeRPC()
+        def clock():
+            self.assertIn('eth_getBlockByNumber', rpc.calls)
+            return 1001
+        with patch('bnb_rotation.onchain.time.time', side_effect=clock):
+            p = build_plan(policy(), rpc)
+        self.assertEqual(p['created_at'], 1001)
+        self.assertEqual(p['expires_at'], 1181)
+
     def test_mainnet_automatic_mode_and_unknown_fields_denied(self):
         for field,value in [('chain_id',56),('mode','AUTO_ALPHA'),('extra',True),('target_asset_bps',5001),('slippage_bps',101),('max_trade_settlement','11')]:
             p=policy();p[field]=value
