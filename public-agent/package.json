@@ -1,0 +1,8 @@
+{
+  "name": "fual-treasury-public-agent",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node tests/endpoint.test.mjs"
+  }
+}
