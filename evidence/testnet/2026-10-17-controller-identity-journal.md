@@ -17,6 +17,8 @@ Sixteen engine checks and twelve fake-wallet UI checks pass. New evidence checks
 
 ## Limits and qualification
 
+User-browser follow-up passed at 17 October 04:04:49 Vietnam: exported journal has one DECISION entry, identity #370316 on chain 56 / execution chain 97, HOLD at 30.2%. The verifier accepted the journal hash chain and re-derived the plan digest after decoding exact integer values. See 2026-10-17-controller-browser-journal-check.json for the source file SHA-256 and checked metadata. This verifies the new preparation/export path in the user's browser, not an actual new wallet transaction or post-trade journal. No action/day is added.
+
 This is local controller provenance, not a signature or attestation from the ERC-8004 registry and not a smart-contract-enforced attribution. A determined local editor can recompute hashes. Browser storage can be deleted and is not remote durable storage; export before clearing or switching devices. No unattended signer, session grant or aggregate daily budget enforcement was added. Previous swaps are not retroactively attributed.
 
 No action is needed while allocation remains inside the drift band. This deployment adds no swap day, customer engagement, or qualifying execution. Category alignment, genuine independent customer usage, action/day coverage and organizer acceptance remain unresolved.

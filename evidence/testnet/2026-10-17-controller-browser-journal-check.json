@@ -1,0 +1,29 @@
+{
+  "verifiedAt": "2026-10-16T21:06:45.024Z",
+  "sourceFile": "fual-agent-370316-evidence-2026-10-16T21-05-14-234Z.json",
+  "sourceSHA256": "1f7477286706d34adb733d2e51bc71f5abb3ff9f1e803d7ff7e14f7b09bbae78",
+  "journalHashChainValid": true,
+  "planDigestValid": true,
+  "entryCount": 1,
+  "event": "DECISION",
+  "recordedAt": "2026-10-16T21:04:49.838Z",
+  "binding": {
+    "agentId": 370316,
+    "chainId": 56,
+    "checkedAt": "2026-10-16T21:04:49.000Z",
+    "executionChainId": 97,
+    "owner": "0xdcf64cddc4a2b06f756f21a125ca393792dfa709",
+    "registrationURI": "https://fual-treasury-agent.phamphuanloc.chatgpt.site/registration.json",
+    "registry": "0x8004a169fb4a3325136eb29fa0ceb6d2e539a432",
+    "registryBlock": "0x7a1d885",
+    "registryBlockHash": "0xc94622bdb61371901c1268094d74ee68d2bfb065dfcd2a138318a1ead97ef464",
+    "registryObservedAt": "2026-10-16T21:04:43.000Z"
+  },
+  "planKind": "HOLD",
+  "allocationWBNBPercent": 30.2,
+  "planHash": "0xa3896ead6ea89893db00038dd3c72bbbb8b4f0e832d9a205188c2f36101107e1",
+  "entryHash": "0x9af838d3ba6c478d9971be7cbe6631a6ec144fba47f079b38eaa78a1ded5ee60",
+  "newTransactionCount": 0,
+  "qualifyingActionCountAdded": 0,
+  "scope": "User-browser decision journal exported and structurally verified. Hashes are not signatures or independent registry attestations; no new chain transaction."
+}

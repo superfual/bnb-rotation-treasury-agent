@@ -45,6 +45,8 @@ Each receipt transfers 1.96 USDC (18 decimals) to campaign wallet and 0.04 USDC 
 
 ## Remaining work in dependency order
 
+User-browser preparation/export check passed at 17 October 04:04:49 Vietnam. Its one HOLD/30.2% decision is linked to identity #370316; journal chain and exact plan digest verified. See [browser journal check](2026-10-17-controller-browser-journal-check.json). No transaction/action/day was added.
+
 Implementation update, 17 October 04:02 Vietnam: the owner-private controller now verifies registry owner/URI before preparing and signing, binds reviewed plans to the identity observation and fixed policy, and records/export decisions and receipt proofs. The new flow has passed unit/fake-wallet and real-RPC module checks and is deployed. See [controller identity journal](2026-10-17-controller-identity-journal.md). This is a controller provenance improvement, not onchain agent attestation; prior trades are not retroactively reclassified and no extra action/day is counted.
 
 1. Implement a coherent rebalancing service under the existing agent identity, with bounded execution, explicit user authority, durable decision/action records and clear listing terms. Preserve the research service's actual historical scope; do not relabel completed reports as automatic trades or register a cosmetic clone.
