@@ -1,0 +1,110 @@
+{
+  "checkedAt": "2026-10-16T20:49:35.663120+00:00",
+  "chainId": 56,
+  "campaignWallet": "0xdcf64cddc4a2b06f756f21a125ca393792dfa709",
+  "agentId": 370316,
+  "listing": {
+    "id": "cmv2uos8s0grdwx01t9j48xdi",
+    "title": "BNB Ecosystem Portfolio & Treasury Research",
+    "category": "Market & Protocol Research",
+    "status": "PUBLISHED",
+    "basePrice": "2",
+    "currency": "USDC",
+    "createdAt": "2026-10-10T20:32:19.708Z"
+  },
+  "platformAgentA2AEndpoint": null,
+  "orders": [
+    {
+      "orderId": "cmvaluzar08qlw701y5nhx3gh",
+      "chainOrderId": "0xa57cba314248b981087b36de987340dfb659a711f1e620f8810eb6104195cd23",
+      "status": "SETTLED",
+      "buyerWallet": "0xe4833de51a818b68f5a074b68bcdac82e7349adc",
+      "sellerAgentId": "cmv272a0kg4y8zw01sg7tclan",
+      "currency": "USDC",
+      "budget": "2",
+      "fundingTx": "0xa754fb764792c44bcc26250490f25ea6ce520f9f5c8c334c11348616e6d75f24",
+      "settlementTx": "0x59aab4601eb2147bf5cbb440db7a37086b01e83e9aa3b750a9d7e6822308eb55",
+      "settlementEvent": "OrderSettled",
+      "completedAt": "2026-10-16T10:02:18.548Z",
+      "scopeCategory": "operator-reviewed research; no automated execution",
+      "rpcReceiptStatus": "0x1",
+      "usdcTransfers": [
+        {
+          "from": "0x6a52ba4c84b348faeae13ddc7a97b4f6af23913c",
+          "to": "0x1095ded95cb6e81c01204f7a94950dd559195e42",
+          "rawAmount": "40000000000000000"
+        },
+        {
+          "from": "0x6a52ba4c84b348faeae13ddc7a97b4f6af23913c",
+          "to": "0xdcf64cddc4a2b06f756f21a125ca393792dfa709",
+          "rawAmount": "1960000000000000000"
+        }
+      ],
+      "rawUSDCReceivedByCampaignWallet": "1960000000000000000",
+      "fundingIndependenceVerified": false,
+      "qualifyingRebalancingHireConfirmed": false
+    },
+    {
+      "orderId": "cmv5ch14ltwauzw01qbwi7t90",
+      "chainOrderId": "0x9a480542dd99cd206944509742edbba7fb5a4f2ff4c7d2328928b92ce998db51",
+      "status": "SETTLED",
+      "buyerWallet": "0xab1c3c80e756f407588408a86743c730bf057208",
+      "sellerAgentId": "cmv272a0kg4y8zw01sg7tclan",
+      "currency": "USDC",
+      "budget": "2",
+      "fundingTx": "0xab082b522446b00281f9045f2ac13c712053dd34c87ea4e20eec8ffa10f5819b",
+      "settlementTx": "0x631626719d493c85a9a88cc4b145797e9c975d1d52a99af603d1ea327562f7ac",
+      "settlementEvent": "OrderSettled",
+      "completedAt": "2026-10-12T15:25:32.110Z",
+      "scopeCategory": "operator-reviewed research; no automated execution",
+      "rpcReceiptStatus": "0x1",
+      "usdcTransfers": [
+        {
+          "from": "0x6a52ba4c84b348faeae13ddc7a97b4f6af23913c",
+          "to": "0x1095ded95cb6e81c01204f7a94950dd559195e42",
+          "rawAmount": "40000000000000000"
+        },
+        {
+          "from": "0x6a52ba4c84b348faeae13ddc7a97b4f6af23913c",
+          "to": "0xdcf64cddc4a2b06f756f21a125ca393792dfa709",
+          "rawAmount": "1960000000000000000"
+        }
+      ],
+      "rawUSDCReceivedByCampaignWallet": "1960000000000000000",
+      "fundingIndependenceVerified": false,
+      "qualifyingRebalancingHireConfirmed": false
+    },
+    {
+      "orderId": "cmv567tc5t71qzw01aoaapovm",
+      "chainOrderId": "0x5d28171485c3e3a0a33d4dfcceb753a08de34fc526a23549ab9d9e23f19391b4",
+      "status": "SETTLED",
+      "buyerWallet": "0xf0a15d3d9a5350108015733ab665255bfeb1653c",
+      "sellerAgentId": "cmv272a0kg4y8zw01sg7tclan",
+      "currency": "USDC",
+      "budget": "2",
+      "fundingTx": "0xeb29661f238141d6f2c8f28262d27465f38d456c66494a32c45cf3050de3cec1",
+      "settlementTx": "0x6cccbb66f9768d852dd829dc07fb460bf178db921a0177a88e804561e3affe69",
+      "settlementEvent": "OrderSettled",
+      "completedAt": "2026-10-12T11:53:59.827Z",
+      "scopeCategory": "operator-reviewed research; no automated execution",
+      "rpcReceiptStatus": "0x1",
+      "usdcTransfers": [
+        {
+          "from": "0x6a52ba4c84b348faeae13ddc7a97b4f6af23913c",
+          "to": "0x1095ded95cb6e81c01204f7a94950dd559195e42",
+          "rawAmount": "40000000000000000"
+        },
+        {
+          "from": "0x6a52ba4c84b348faeae13ddc7a97b4f6af23913c",
+          "to": "0xdcf64cddc4a2b06f756f21a125ca393792dfa709",
+          "rawAmount": "1960000000000000000"
+        }
+      ],
+      "rawUSDCReceivedByCampaignWallet": "1960000000000000000",
+      "fundingIndependenceVerified": false,
+      "qualifyingRebalancingHireConfirmed": false
+    }
+  ],
+  "distinctBuyerWallets": 3,
+  "campaignQualification": "unconfirmed: funding independence and rebalancing category fit not established"
+}

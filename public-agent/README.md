@@ -28,3 +28,11 @@ Publication succeeded from source commit
 all external probes pass: a new successful production invocation is still
 needed. Platform Cloudflare 1010 restrictions cannot be removed in worker
 application code. Do not spoof clients or retry a non-retryable block.
+
+## 17 October verified public-browser invocation
+
+Worker 0.1.2 / Site version 5 adds bounded semantic A2A response logs, excluding caller text, request IDs and headers. The audit regression check distinguishes HTTP-200 JSON-RPC errors from successful agent messages. Run `node tests/a2a-audit.test.mjs`.
+
+The external user-browser probe at 2026-10-16T20:37:09Z passed: status message/send returned fresh chain-97 data, HOLD and WBNB 30.2%, with matching request/reply IDs. Production audit logged rpcSuccess true and the same block/time. Evidence: `../evidence/testnet/2026-10-17-a2a-production-success.json`. This supersedes the earlier pending-probe wording. The checker's Cloudflare 1010 persists; general automated-client reachability is still limited.
+
+Current deployment source: `78a2bb8df8d335ee0b095b13f4d4c8643c2ea410`.
