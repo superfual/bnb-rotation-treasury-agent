@@ -45,6 +45,8 @@ Each receipt transfers 1.96 USDC (18 decimals) to campaign wallet and 0.04 USDC 
 
 ## Remaining work in dependency order
 
+Implementation update, 17 October 04:02 Vietnam: the owner-private controller now verifies registry owner/URI before preparing and signing, binds reviewed plans to the identity observation and fixed policy, and records/export decisions and receipt proofs. The new flow has passed unit/fake-wallet and real-RPC module checks and is deployed. See [controller identity journal](2026-10-17-controller-identity-journal.md). This is a controller provenance improvement, not onchain agent attestation; prior trades are not retroactively reclassified and no extra action/day is counted.
+
 1. Implement a coherent rebalancing service under the existing agent identity, with bounded execution, explicit user authority, durable decision/action records and clear listing terms. Preserve the research service's actual historical scope; do not relabel completed reports as automatic trades or register a cosmetic clone.
 2. Tie controller execution to identity #370316 on chain 56 with reviewable evidence. The execution chain is 97. Confirm this attribution with organizer requirements before counting historical swaps.
 3. Accumulate genuine category-consistent actions on the required separate dates when the strategy warrants them. Current fresh result is HOLD at 30.2%; it does not justify extra trades. No artificial drift, circular flows or counter-filling trades.

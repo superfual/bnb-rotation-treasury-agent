@@ -26,10 +26,18 @@ Run `node tests/engine.test.cjs` and syntax checks for `dist/engine.js` and
 `dist/app.js`. Test contract bytecode was captured from public testnet RPC and
 checked against retained SHA-256 pins. Mock RPC tests perform no signing.
 Managed preview/browser QA is skipped because control-browser is unavailable;
-the owner completed exact approvals and two swaps in Binance Wallet on 13 October 2026, then reported HOLD. See ../evidence/testnet/README.md.
+a real Binance Wallet end-to-end test of this Site still needs the owner.
 
 The live domain is private control UI, not a public agent card or A2A endpoint.
 Existing ERC-8004 identity 370316 is on chain 56. Testnet owner swaps have not
 been attributed to it or confirmed as qualifying Set & Earn activity.
 
-The connect button requests wallet_switchEthereumChain for chain 97 and only adds the fixed testnet if the wallet returns unknown-chain (4902). Rejection or unsupported switching prevents signing. Eight UI mock checks plus sixteen engine checks pass.
+## Identity-linked owner execution journal (17 October 2026)
+
+Before preparing a plan and again before opening a transaction, evidence.js reads ERC-8004 ownerOf(370316) and tokenURI from one fresh chain-56 block. Both must match the fixed owner and public registration URI. This is a read-only mainnet call; transactions remain testnet-97 only. An ownership/URI change, stale head or unavailable identity RPC prevents opening the transaction.
+
+Each decision, actual pre-sign plan, broadcast hash and verified receipt is recorded locally. The plan digest binds identity observation, fixed policy and exact transaction. Journal entries form a SHA-256 hash chain to detect accidental alteration; this is NOT a wallet signature, independent registry attestation or organizer acceptance. Existing historical trades are not retroactively marked identity-bound. Pending requests retain the reviewed plan and proof; receipt verification saves its journal entry before clearing pending state. Legacy pending records are marked unbound.
+
+Export JSON before changing browsers or clearing storage. The journal exists only in this browser, is not a remote backup, and a determined local editor can recompute hashes. Storage failure blocks a new wallet request; post-receipt storage failure leaves pending state for recovery. No unattended signing, aggregate daily budget enforcement, private key or new spending authority is added.
+
+Tests: evidence.test.cjs covers identity, URI and stale data rejection, plan alteration, journal corruption, deduplication and storage errors. app.test.cjs includes fail-closed identity/storage and receipt-save ordering; engine limits are unchanged.
