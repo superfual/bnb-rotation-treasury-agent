@@ -1,5 +1,9 @@
 # Public treasury invocation endpoint
 
+Customer-wallet Testnet beta: https://fual-treasury-agent.phamphuanloc.chatgpt.site/rebalance/ . Free, explicit customer approval, no marketplace order or autonomous server signing. See ../docs/CLIENT_TESTNET_BETA.md. Worker 0.1.3 / Site version 6 deployment source b4d0b48fadc1104ba7c1501de6f0f6ce30181043. Original owner A2A invocation remains read-only.
+
+`client-ui/` contains the five served beta assets; `scripts/build-client-assets.mjs` deterministically embeds them in the Worker. Re-run it before route tests/deployment when those assets change. Client engine/UI, route and receipt reconciliation tests live in `tests/client-*`. From this directory, `node scripts/verify-client-journal.cjs <exports...>` checks chain-97 receipts and candidate date counts without signing. Publication and HOLD do not add paid hires or execution days.
+
 Live URL: https://fual-treasury-agent.phamphuanloc.chatgpt.site
 
 Public read-only Cloudflare Worker. GET /health, /.well-known/agent-card.json, /registration.json, /api/decision and /evidence. POST /a2a accepts stateless A2A 0.3.0 JSON-RPC message/send for status, decision, evidence. No streaming, task continuation, custody, signing, transaction submission or visitor-supplied wallet/RPC/targets.
