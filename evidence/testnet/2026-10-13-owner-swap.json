@@ -1,0 +1,34 @@
+{
+  "kind": "MANUAL_OWNER_TESTNET_DEX_SWAP",
+  "transaction_hash": "0xf4c9421b4b9c99bd0448505a2d7a187119db65ffc422ec51bcb646f876d9e3c4",
+  "chain_id": 97,
+  "receipt_success": true,
+  "transaction_matches_review": true,
+  "U_spent_raw": "1000000000000000000",
+  "WBNB_received_raw": "5040429466318224",
+  "U_balance_raw": "9000000000000000000",
+  "WBNB_balance_raw": "5040429466318224",
+  "tBNB_balance_raw": "99961952188000000",
+  "gas_fee_raw": "17816964000000",
+  "block_number": 136519572,
+  "block_hash": "0xb7ad96a81e3278b1f2e813869d7ac0554afd0a958b64f6cc701d7182e1c43193",
+  "transfers": [
+    {
+      "token": "0xc70b8741b8b07a6d61e54fd4b20f22fa648e5565",
+      "from": "0xdcf64cddc4a2b06f756f21a125ca393792dfa709",
+      "to": "0x55ed32b1808d4bb9ad8df8201494b74b982915f8",
+      "amount_raw": "1000000000000000000"
+    },
+    {
+      "token": "0xae13d989dac2f0debff460ac112a837c89baa7cd",
+      "from": "0x55ed32b1808d4bb9ad8df8201494b74b982915f8",
+      "to": "0xdcf64cddc4a2b06f756f21a125ca393792dfa709",
+      "amount_raw": "5040429466318224"
+    }
+  ],
+  "campaign_qualified": false,
+  "automatic_agent_execution": false,
+  "canonical_block_rechecked": true,
+  "confirmations": 549,
+  "block_timestamp": 1791880786
+}

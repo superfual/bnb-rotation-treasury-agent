@@ -1,0 +1,20 @@
+{
+  "chain_id": 97,
+  "mode": "OWNER_TARGET_TESTNET",
+  "wallet": "0xdcf64CdDC4a2b06F756f21a125ca393792DFA709",
+  "router": "0xd99d1c33f9fc3444f8101754abc46c52416550d1",
+  "settlement": "0xc70b8741b8b07a6d61e54fd4b20f22fa648e5565",
+  "asset": "0xae13d989dac2f0debff460ac112a837c89baa7cd",
+  "code_sha256": {
+    "0xd99d1c33f9fc3444f8101754abc46c52416550d1": "ccef702d8eec64389ce804466d05635e3b123f99ab6502304d11fded2ad203a0",
+    "0xc70b8741b8b07a6d61e54fd4b20f22fa648e5565": "1076ca0b58e992bba671ddbde6a9d96685c712113eee50caa891c458fc2b48a9",
+    "0xae13d989dac2f0debff460ac112a837c89baa7cd": "e96eee25c3a063ffcfbe4ae2aa2c44e5c99ddf236adb7828676f6fd7f8605742"
+  },
+  "target_asset_bps": 3000,
+  "drift_bps": 500,
+  "max_trade_settlement": "1",
+  "slippage_bps": 50,
+  "max_price_impact_bps": 100,
+  "max_gas_bnb": "0.0001",
+  "ttl_seconds": 180
+}

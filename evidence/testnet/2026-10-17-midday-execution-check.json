@@ -1,0 +1,31 @@
+{
+  "checkedAt": "2026-10-17T05:13:54.311Z",
+  "localTime": "2026-10-17T12:13:54.311+07:00",
+  "scope": "Read-only preparation using the deployed customer engine with the campaign owner's wallet; not a user-browser journal or a signed execution",
+  "chainId": 97,
+  "wallet": "0xdcf64cddc4a2b06f756f21a125ca393792dfa709",
+  "engine": "public-agent/client-ui/engine.js",
+  "decision": "HOLD",
+  "reason": "Tỷ trọng đang trong vùng mục tiêu.",
+  "block": "0x82e6ba8",
+  "blockHash": "0xcf8dabf75665ad37c71987daea4752be9840ba29461816b55ac5f0c626b74b49",
+  "cashRaw": "7015322061705332485",
+  "assetRaw": "14854197280056039",
+  "nativeRaw": "99488033325344502",
+  "assetWeightBps": 3020,
+  "targetBps": 3000,
+  "driftThresholdBps": 500,
+  "valuation": "Verified test pool reserve ratio, not USD market price",
+  "checks": [
+    "chain 97",
+    "aligned fresh block",
+    "pinned router and token runtime bytecode hashes",
+    "router factory, factory pair, token order and reserves",
+    "token decimals, owner balances and allowances",
+    "unchanged allocation policy"
+  ],
+  "newBroadcasts": 0,
+  "addedCandidateSwaps": 0,
+  "addedExecutionDays": 0,
+  "qualification": "Unconfirmed; HOLD is excluded from execution action/day counts"
+}

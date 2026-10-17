@@ -1,0 +1,11 @@
+import {readFile,writeFile} from 'node:fs/promises';
+const root=new URL('../',import.meta.url);
+const names=['index.html','app.js','engine.js','evidence.js','style.css'];
+const assets=Object.fromEntries(await Promise.all(names.map(async name=>[name,await readFile(new URL('client-ui/'+name,root),'utf8')])));
+const sourceURL=new URL('worker/index.js',root);
+const source=await readFile(sourceURL,'utf8');
+const begin='// BEGIN CLIENT ASSETS',end='// END CLIENT ASSETS';
+const start=source.indexOf(begin),finish=source.indexOf(end);
+if(start<0||finish<start)throw Error('Missing client asset boundaries');
+await writeFile(sourceURL,source.slice(0,start)+begin+'\nconst CLIENT_ASSETS='+JSON.stringify(assets)+';\n'+source.slice(finish));
+console.log('Embedded five fixed public beta assets; no private files included');

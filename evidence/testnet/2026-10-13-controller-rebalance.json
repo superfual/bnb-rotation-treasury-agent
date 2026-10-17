@@ -1,0 +1,68 @@
+{
+  "chain": 97,
+  "wallet": "0xdcf64cddc4a2b06f756f21a125ca393792dfa709",
+  "kind": "OWNER_SIGNED_CONTROLLER_REBALANCE",
+  "controller_source_commit": "bece424fd9d2a0bf103c78ee88eca7164d9177ce",
+  "records": [
+    {
+      "hash": "0x6f1d2b1a5048e03a0f6fad886dd1778c7b1256e53e8c915ec31fc909bc0cf335",
+      "calldata": "0x38ed17390000000000000000000000000000000000000000000000000de0b6b3a7640000000000000000000000000000000000000000000000000000001196f27fa3e01000000000000000000000000000000000000000000000000000000000000000a0000000000000000000000000dcf64cddc4a2b06f756f21a125ca393792dfa709000000000000000000000000000000000000000000000000000000006ace2cf30000000000000000000000000000000000000000000000000000000000000002000000000000000000000000c70b8741b8b07a6d61e54fd4b20f22fa648e5565000000000000000000000000ae13d989dac2f0debff460ac112a837c89baa7cd",
+      "amount": "1000000000000000000",
+      "minimum": "4951042871779344",
+      "deadline": 1791896819,
+      "verification": {
+        "pending": false,
+        "kind": "SWAP",
+        "hash": "0x6f1d2b1a5048e03a0f6fad886dd1778c7b1256e53e8c915ec31fc909bc0cf335",
+        "confirmations": 6314,
+        "fee": "15559764000000",
+        "input": "1000000000000000000",
+        "output": "4975922484200346",
+        "block": 136554954,
+        "campaignQualified": false
+      },
+      "verification_scope": "decoded on-chain call and receipt; original browser plan is not independently retained"
+    },
+    {
+      "hash": "0xc369f993a5ad7d17754bc4bd5b2f5fcfc1616175345650f899f3a1be6db64d14",
+      "calldata": "0x38ed17390000000000000000000000000000000000000000000000000daa475e2a37b8fb000000000000000000000000000000000000000000000000001119fea615693500000000000000000000000000000000000000000000000000000000000000a0000000000000000000000000dcf64cddc4a2b06f756f21a125ca393792dfa709000000000000000000000000000000000000000000000000000000006ace34830000000000000000000000000000000000000000000000000000000000000002000000000000000000000000c70b8741b8b07a6d61e54fd4b20f22fa648e5565000000000000000000000000ae13d989dac2f0debff460ac112a837c89baa7cd",
+      "amount": "984677938294667515",
+      "minimum": "4813656102889781",
+      "deadline": 1791898755,
+      "verification": {
+        "pending": false,
+        "kind": "SWAP",
+        "hash": "0xc369f993a5ad7d17754bc4bd5b2f5fcfc1616175345650f899f3a1be6db64d14",
+        "confirmations": 2130,
+        "fee": "15562932000000",
+        "input": "984677938294667515",
+        "output": "4837845329537469",
+        "block": 136559139,
+        "campaignQualified": false
+      },
+      "verification_scope": "decoded on-chain call and receipt; original browser plan is not independently retained"
+    }
+  ],
+  "snapshot": {
+    "now": 1791899550,
+    "block": "0x823c274",
+    "blockHash": "0xea70141d8045856dfdc009b6c3d638284b76e6a028e50cbe1ce1034b14e5036b",
+    "cash": "7015322061705332485",
+    "asset": "14854197280056039",
+    "value": "3036354748107426286",
+    "total": "10051676809812758771",
+    "weight": 3020,
+    "ar": "768580028814645010",
+    "sr": "157105872218703010975",
+    "cashAllowance": "0",
+    "assetAllowance": "0",
+    "native": "99914918476000000"
+  },
+  "decision": {
+    "kind": "HOLD",
+    "reason": "Tỷ trọng đang trong vùng mục tiêu."
+  },
+  "unattended": false,
+  "campaign_qualification": "unconfirmed",
+  "identity_attribution": "chain 56 identity 370316 to chain 97 actions unresolved"
+}
