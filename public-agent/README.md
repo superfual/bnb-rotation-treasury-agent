@@ -14,7 +14,7 @@ Run node tests/endpoint.test.mjs; add --live for a real read-only RPC check. Nin
 
 Registry reference: agent 370316 on chain 56. Mainnet ownerOf(370316) matched the campaign wallet. After the owner signed setAgentURI, a direct tokenURI read on 15 October 2026 returned https://fual-treasury-agent.phamphuanloc.chatgpt.site/registration.json. Original name, avatar, tags and TermiX metadata were preserved. Chain-97 activity attribution and campaign qualification remain unresolved. The signed transaction hash has not yet been retained; tokenURI state is independently verified. The private owner controller is separate.
 
-Source deployment commit: 8ea13902280f621b8637834d4a6688fcde1a2c17. Official A2A reference: https://a2a-protocol.org/v0.3.0/specification/.
+Historical initial deployment commit: 8ea13902280f621b8637834d4a6688fcde1a2c17. Current deployment is Worker 0.1.3 / Site version 6, source b4d0b48fadc1104ba7c1501de6f0f6ce30181043. Official A2A reference: https://a2a-protocol.org/v0.3.0/specification/.
 
 ## 15 October discovery compatibility correction
 
@@ -39,4 +39,4 @@ Worker 0.1.2 / Site version 5 adds bounded semantic A2A response logs, excluding
 
 The external user-browser probe at 2026-10-16T20:37:09Z passed: status message/send returned fresh chain-97 data, HOLD and WBNB 30.2%, with matching request/reply IDs. Production audit logged rpcSuccess true and the same block/time. Evidence: `../evidence/testnet/2026-10-17-a2a-production-success.json`. This supersedes the earlier pending-probe wording. The checker's Cloudflare 1010 persists; general automated-client reachability is still limited.
 
-Current deployment source: `78a2bb8df8d335ee0b095b13f4d4c8643c2ea410`.
+Historical version-5 deployment source: `78a2bb8df8d335ee0b095b13f4d4c8643c2ea410`. Superseded by version 6 above, which preserves this read-only A2A interface and adds the customer-wallet beta.
