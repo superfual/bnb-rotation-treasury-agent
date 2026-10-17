@@ -29,6 +29,13 @@ Current public deployment: Worker 0.1.3 / Site version 6, source `b4d0b48fadc110
 
 ## Gates before claiming completion
 
+Read-only owner execution preparation at 17 October 12:13:54 Vietnam returned
+HOLD at 30.20% WBNB against a 30% target and five-percentage-point drift
+threshold. Contract pins, pool identity and fresh aligned balances passed.
+[Retained result](../evidence/testnet/2026-10-17-midday-execution-check.json).
+No signing, broadcast, candidate swap or execution day was added. This is a
+module/RPC check, not an end-to-end customer-wallet execution.
+
 | Open item | Evidence needed to close it | Current position |
 | --- | --- | --- |
 | Campaign registration | Retained registration confirmation for campaign wallet | Confirmation not retained |

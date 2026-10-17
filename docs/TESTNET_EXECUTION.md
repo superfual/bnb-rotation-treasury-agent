@@ -1,5 +1,15 @@
 # Owner-reviewed testnet treasury rebalancing
 
+> Historical implementation notes: the limitations below describe the initial
+> Python/manual-review prototype. For the currently deployed controller,
+> identity journal, customer-wallet beta, canonical transfer reconciliation and
+> cross-tab signing lock, use [CLIENT_TESTNET_BETA.md](CLIENT_TESTNET_BETA.md),
+> [the controller update](../evidence/testnet/2026-10-17-controller-identity-journal.md)
+> and [the submission review](SUBMISSION_REVIEW.md). The current browser policy
+> has a 300-second plan lifetime. Mainnet readiness, unattended execution and
+> campaign qualification remain unconfirmed; this historical document is not a
+> deployment or transaction-count status report.
+
 This adds a real EVM transaction construction/simulation path, not a claim of
 live deployment. The research strategy remains `FAILED_NOT_LIVE_READY` and
 mainnet execution remains absent. The new experiment has a different input:
