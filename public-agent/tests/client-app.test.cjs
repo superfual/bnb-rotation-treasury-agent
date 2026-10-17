@@ -1,6 +1,6 @@
 const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict'),E=require('../client-ui/engine.js');
 async function trial({chain='0x61',account='0x1111111111111111111111111111111111111111',afterAccount=null,error=4001,double=false,lock=true,switchMode=null,identityFail=false,journalFail=false,confirmJournalFail=false}={}){
- const ids=['connect','walletState','send','prepare','refresh','cash','asset','native','weight','actual','bar','sync','review','decisionBadge','decisionTitle','decisionText','details','expiry','status','txLink','recover','identityState','exportEvidence','walletAddress'];
+ const ids=['connect','walletState','send','prepare','refresh','cash','asset','native','weight','actual','bar','sync','review','decisionBadge','decisionTitle','decisionText','details','expiry','status','txLink','recover','identityState','exportEvidence','walletAddress','evidencePanel','evidenceText','evidenceTransactions','evidenceStatus','copyEvidence','downloadEvidence'];
  const nodes=Object.fromEntries(ids.map(id=>[id,{disabled:false,hidden:true,textContent:'',style:{},replaceChildren(){},append(){}}])),store=new Map();let sends=0,switches=0,adds=0;const events=[];
  const s={now:Math.floor(Date.now()/1000),cash:9n*10n**18n,asset:0n,native:10n**17n,weight:0};
  const p={kind:'APPROVE',snapshot:s,buy:true,approvalAmount:E.C.cap,amount:E.C.cap,cost:10n**13n,created:s.now,expires:s.now+300,tx:{from:E.C.wallet,to:E.C.cash,data:'0x095ea7b3'+E.aw(E.C.router)+E.word(E.C.cap),value:'0x0'}};
