@@ -1,5 +1,17 @@
 # Set & Earn evidence and Build audit — 17 October 2026
 
+## Latest execution update — 20 October 2026, 18:39 Vietnam
+
+A user-approved controller swap succeeded at **18:36:26 Vietnam / 11:36:26 UTC**: [0xd6d038…9447](https://testnet.bscscan.com/tx/0xd6d03860221c6b29053a80e878729ea9ed62df6b94edaf1e734ff8efa3ac9447). Exact input **0.004364604016849305 WBNB**, actual output **0.942393168689151722 U**, fee **0.00001495428 tBNB**. Sender, chain, router, exact calldata, canonical block, confirmation depth and actual token transfers passed verification. [Receipt audit](2026-10-20-owner-rebalance.json).
+
+The user explicitly chose a capital-addition Testnet test by wrapping 0.005 tBNB. The agent then observed 38.45% WBNB and proposed a reduction under its unchanged 30/70 target and 5-percentage-point drift policy. This context is disclosed; the trade is not described as organic market drift, and organizer qualification is not assumed. Wrap and approval are not counted as rebalance swaps.
+
+Post-swap snapshot: **7.857715230394484207 U**, **0.015489593263206734 WBNB**, **29.77% WBNB**, decision **HOLD**. No further swap is warranted by this snapshot. The earlier 31.85% HOLD below precedes the declared capital addition and this swap.
+
+[Updated inventory](2026-10-20-action-inventory.json): **four candidate swaps across two dates, 13 and 20 October**, not four certified qualifying actions. At least one further qualifying action on a third date would meet the numeric minimum only if the recorded candidates are accepted. Original browser identity journal for this swap is still pending; no retroactive journal attestation is claimed. Independent completed hires, registration confirmation and automated-caller reachability remain open as described below.
+
+---
+
 ## Update — 20 October 2026 (supersedes older current-status statements)
 
 - Fresh registry read confirms agent #370316 on chain 56 remains owned by the campaign wallet and resolves to the expected registered URI: [identity](2026-10-20-identity.json). Repository visibility was checked as public on 20 October.

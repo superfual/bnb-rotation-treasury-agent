@@ -1,5 +1,11 @@
 # Set & Earn submission review — 17 October 2026
 
+## Latest onchain execution — 20 October 2026, 18:39 Vietnam
+
+A controller-approved WBNB-to-U swap succeeded after an explicitly declared 0.005 tBNB capital-addition test. Exact token flows and canonical receipt were verified; post-swap WBNB weight is 29.77%, decision HOLD. [Execution audit](../evidence/testnet/2026-10-20-owner-rebalance.json). The inventory now contains [four candidate swaps on two dates](../evidence/testnet/2026-10-20-action-inventory.json); original browser journal and organizer attribution/qualification are not certified. This supersedes older three-swap/one-date statements below, while preserving the test context and other Build blockers. No final campaign submission was made.
+
+---
+
 ## Current update — 20 October 2026
 
 The [20 October status and remaining blockers](../evidence/testnet/CAMPAIGN_PROGRESS.md#update--20-october-2026-supersedes-older-current-status-statements) supersede dated current-state statements below. Build is still incomplete and no final submission was made.
