@@ -1,5 +1,11 @@
 # BNB Rotation & Treasury Agent
 
+## Set & Earn reviewer entry point (updated 20 October 2026)
+
+Campaign agent: **ERC-8004 #370316 on BNB Smart Chain mainnet (56)**, owned by campaign wallet `0xdcf64CdDC4a2b06F756f21a125ca393792DFA709`. Registered URI: https://fual-treasury-agent.phamphuanloc.chatgpt.site/registration.json . The bounded customer-wallet beta executes only on BNB Testnet (97), with each transaction approved by the wallet owner. It is separate from the historical paper-only rotation strategy below; the mainnet rotation research remains NOT LIVE READY.
+
+[Current campaign evidence and open gates](evidence/testnet/CAMPAIGN_PROGRESS.md) · [Submission review](docs/SUBMISSION_REVIEW.md) · [Customer beta scope](docs/CLIENT_TESTNET_BETA.md). **Build completion is not claimed.**
+
 > A defensive Binance Agent OS workflow that detects BNB-led risk-on regimes, ranks liquid Spot altcoins by stable, BTC-adjusted BNB sensitivity, and guards a BNB treasury.
 
 **Binance Agent OS Mini Hackathon — Track A**

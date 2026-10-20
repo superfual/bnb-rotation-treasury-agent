@@ -1,5 +1,13 @@
 # Set & Earn submission review — 17 October 2026
 
+## Current update — 20 October 2026
+
+The [20 October status and remaining blockers](../evidence/testnet/CAMPAIGN_PROGRESS.md#update--20-october-2026-supersedes-older-current-status-statements) supersede dated current-state statements below. Build is still incomplete and no final submission was made.
+
+Fresh registry ownership/URI and public repository visibility passed. A fresh engine read returned HOLD at 31.85% WBNB; no new trade/day was created. Pokter Nagi job #1564 adds verified 0.1 U funding and public UI settlement evidence to the buyer-hire packet. One new rebalancing custom offer is still unaccepted and unpaid. A real voluntary customer beta has verified swap receipts, but no marketplace hire or exported identity journal; private customer data is not published. Public Site version 7 is deployed. Remaining gates are execution count/dates/attribution, qualifying independent usage, campaign registration confirmation and general automated invocation availability.
+
+---
+
 Status: working evidence packet, not a declaration that Build is complete. This review uses retained evidence from 17 October and does not claim a fresh live-chain audit. No submission was sent, no transaction was signed, and no customer was contacted in preparing this packet.
 
 ## Identity and reviewer entry points

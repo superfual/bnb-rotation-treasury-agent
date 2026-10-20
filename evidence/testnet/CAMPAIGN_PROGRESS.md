@@ -1,5 +1,25 @@
 # Set & Earn evidence and Build audit — 17 October 2026
 
+## Update — 20 October 2026 (supersedes older current-status statements)
+
+- Fresh registry read confirms agent #370316 on chain 56 remains owned by the campaign wallet and resolves to the expected registered URI: [identity](2026-10-20-identity.json). Repository visibility was checked as public on 20 October.
+- Fresh read-only engine check at 14:12 Vietnam returned **HOLD, 31.85% WBNB** against a 30% target and 5-percentage-point drift threshold. Pinned contracts, pool identity and aligned balances passed. No transaction or execution day was added: [snapshot](2026-10-20-execution-check.json).
+- Additional buyer hire: **Nagi #2623, Pokter chain 97, job #1564, 0.1 U testnet**. Canonical funding receipt has status 1 and an exact 0.1 U transfer from the campaign wallet to escrow. Public Pokter Work and reviews showed **Settled** on 20 October; no settlement hash was exposed in that row. The buyer reported a good report and submitting a rating; report content and published review were not independently inspected. [Funding and UI evidence](2026-10-20-pokter-nagi-hire.json). This is buyer-hire evidence, never an own-agent rebalance action.
+- One new custom offer for the actual owner-approved Testnet rebalancing service is ACTIVE at 2 USDC / one day. Latest authenticated reads on 20 October showed no acceptance, no payment and no order ID. It is not a completed hire. Private buyer identity, messages and offer identifiers are omitted here.
+- A voluntary customer beta on 17 October did produce successful Testnet swaps whose supplied receipts were checked against canonical blocks, calldata and actual token transfers. The original browser journal was not supplied and there was no associated marketplace hire. This supersedes the earlier blanket statement that no real customer swap had been verified; it does not close paid-hire or own-agent attribution gates. Private customer evidence stays private.
+- Current public deployment is **Site version 7**, source f71bc3d605b2e833cd442f4e664ad66ef552cac5; see [mobile export fix](2026-10-17-mobile-export-fix.md). Older version-6 statements below are historical.
+
+### Remaining blockers
+
+1. Five category-consistent, attributable own-agent actions on three separate dates are not proven. Three historical owner swaps on 13 October remain candidates, not organizer-certified actions. Customer receipts are not automatically added to this count.
+2. Three independent completed engagements for the rebalancing function are not yet proven. Three real research settlements remain documented with their original scope; the pending rebalancing offer is not counted. Independent funding and cross-chain identity attribution remain unconfirmed.
+3. The successful external browser A2A proof remains retained, but unrestricted automated-caller access is not established. The checker's previous Cloudflare 1010 limitation was not bypassed or re-tested in this update. No fresh live-availability claim is made.
+4. Campaign registration confirmation is not retained. No registration or final submission was sent in this update.
+
+Do not change the allocation policy, create artificial drift, self-hire, fund customers or manufacture transactions to complete counters. A HOLD is a correct operational outcome and contributes no execution action/day.
+
+---
+
 Audit time: approximately 03:50 Vietnam / 16 October 20:50 UTC. Campaign wallet: `0xdcf64CdDC4a2b06F756f21a125ca393792DFA709`.
 
 Official rules: https://www.bnbchain.org/en/hackathons/smart-money-era-set-and-earn . Deadline: 5 November 2026 12:00 UTC / 19:00 Vietnam. Organizer verification determines qualification and ranking. No prize or place is claimed here.
