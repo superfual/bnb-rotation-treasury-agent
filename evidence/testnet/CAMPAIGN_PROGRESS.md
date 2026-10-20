@@ -9,6 +9,10 @@
 - A voluntary customer beta on 17 October did produce successful Testnet swaps whose supplied receipts were checked against canonical blocks, calldata and actual token transfers. The original browser journal was not supplied and there was no associated marketplace hire. This supersedes the earlier blanket statement that no real customer swap had been verified; it does not close paid-hire or own-agent attribution gates. Private customer evidence stays private.
 - Current public deployment is **Site version 7**, source f71bc3d605b2e833cd442f4e664ad66ef552cac5; see [mobile export fix](2026-10-17-mobile-export-fix.md). Older version-6 statements below are historical.
 
+### Rebalancing service publication — 20 October 2026
+
+A separate service under the **same existing agent identity** is now PUBLISHED: `cmvgcn16006l5y501irik14hk`, **WBNB/U Testnet Rebalancing Support — Owner-Approved**, 2 USDC / one day, custom scope agreed in chat before purchase (`instantBuyable:false`). An unauthenticated public listing read confirmed status, terms and seller identity. [Listing evidence](2026-10-20-rebalancing-service.json). The previous research listing and historical research orders retain their original scope. Marketplace category remains its broad Market & Protocol Research category; the new title, skill tag and description explicitly state assisted Testnet rebalancing. This improves service/function disclosure and is not a completed customer hire or certified autonomous execution. The public backend's provider token URI/A2A fields are stale relative to the onchain registry read; no claim of backend synchronization is made.
+
 ### Remaining blockers
 
 1. Five category-consistent, attributable own-agent actions on three separate dates are not proven. Three historical owner swaps on 13 October remain candidates, not organizer-certified actions. Customer receipts are not automatically added to this count.
