@@ -17,7 +17,7 @@ Official rules: https://www.bnbchain.org/en/hackathons/smart-money-era-set-and-e
 | Three completed hires from distinct independent wallets | Five retained SETTLED orders from five different buyer wallets: three research orders plus two portfolio/rebalancing-support orders | Different addresses alone do not prove independent control/funding; independence is not certified |
 | At least five actions across three days | **Five canonical successful candidate swaps on 13, 20 and 21 October** | Agent attribution is not certified; original recent signing journals missing; one historical swap manual |
 | Category-consistent execution / public source | WBNB/U adjustments, bounded 30/70 policy, public repository and explicit assisted-execution terms | No autonomous signer is claimed. Capital-addition test context disclosed |
-| Campaign registration | Owner previously reported filling form | Original confirmation, submitted-wallet record and timestamp not recovered |
+| Campaign registration | Owner screenshot confirms official form already responded, with BNB Chain thank-you message | Submitted wallet/agent fields and original timestamp are not visible |
 
 The official completed-hire clause does not explicitly require every hire to execute a swap. Research, partial-support and HOLD jobs retain their true delivered scope; they are not rewritten as completed automated rebalances. Onchain execution/category evidence is presented separately. Final applicability is for the organizer to decide.
 
@@ -70,7 +70,7 @@ Public Site version 7, source `f71bc3d605b2e833cd442f4e664ad66ef552cac5`; Worker
 
 1. **Original signing provenance / attribution:** preserve the real browser journals if recoverable; canonical receipts and reconstructed plans do not replace them. Review chain-56 identity / chain-97 owner-approved execution attribution.
 2. **Public endpoint access:** Cloudflare 403/1010 blocks today's normal automated probe. Hosting-level access remains unresolved; no bypass was attempted.
-3. **Registration confirmation:** [search outcome and official form](2026-10-21-registration-review.md). Recover the original response receipt/edit link and compare its wallet. No duplicate form was submitted.
+3. **Registration field check:** [official-form screenshot review](2026-10-21-registration-review.md) confirms an existing response. Submitted wallet/agent fields and original timestamp remain unseen. Compare them in the existing edit-response page; keep its URL private. No duplicate form was submitted.
 4. **Customer independence:** five completed orders are documented, but independent ownership/funding has not been certified. Do not fund customers or create substitute self-hires.
 
 This audit signed no transaction, sent no customer message and made no new hire or campaign submission. The existing draft PR remains unmerged. The five-swap/three-day numerical record is supported; automatic qualification or a prize is not asserted.

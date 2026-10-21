@@ -18,7 +18,7 @@ Campaign wallet `0xdcf64cddc4a2b06f756f21a125ca393792dfa709`; ERC-8004 **#370316
 | --- | --- |
 | Agent execution attribution | Receipt reconciliation passed; original 20/21 October signing journals absent. One 13 October swap manual; no autonomous signer. Chain-56 identity / chain-97 activity requires review. [Audit](../evidence/testnet/2026-10-21-attribution-audit.md) |
 | Current external access | Card, registration URI and POST /a2a returned Cloudflare 403/1010 in normal automated checks. Historical 17 October browser success is retained. No fix or bypass claimed |
-| Campaign registration | Owner previously reported form filled; original confirmation and submitted-wallet record not recovered. [Registration review](../evidence/testnet/2026-10-21-registration-review.md) |
+| Campaign registration | Owner screenshot confirms official form already responded. Submitted wallet/agent fields and original timestamp remain unseen. [Registration review](../evidence/testnet/2026-10-21-registration-review.md) |
 | Customer independence | Five distinct buyer wallets retained; distinctness does not prove independent control or funding |
 
 ## Reviewer entry points
