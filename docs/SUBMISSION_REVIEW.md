@@ -1,78 +1,34 @@
-# Set & Earn submission review — 17 October 2026
+# Set & Earn submission review — 21 October 2026
 
-## Latest onchain execution — 20 October 2026, 18:39 Vietnam
+Current evidence: [requirement matrix and remaining gaps](../evidence/testnet/CAMPAIGN_PROGRESS.md).
 
-A controller-approved WBNB-to-U swap succeeded after an explicitly declared 0.005 tBNB capital-addition test. Exact token flows and canonical receipt were verified; post-swap WBNB weight is 29.77%, decision HOLD. [Execution audit](../evidence/testnet/2026-10-20-owner-rebalance.json). The inventory now contains [four candidate swaps on two dates](../evidence/testnet/2026-10-20-action-inventory.json); original browser journal and organizer attribution/qualification are not certified. This supersedes older three-swap/one-date statements below, while preserving the test context and other Build blockers. No final campaign submission was made.
+Campaign wallet `0xdcf64cddc4a2b06f756f21a125ca393792dfa709`; ERC-8004 **#370316, chain 56**, execution chain **97**. Public repository: https://github.com/superfual/bnb-rotation-treasury-agent .
 
----
+## Ready for review
 
-## Current update — 20 October 2026
+- Four distinct buyer-hire records across Mandate, HelloFugu and Pokter. Three agents/two marketplaces are covered numerically; provider-call/delivery limitations remain disclosed.
+- Five SETTLED customer orders, preserving actual research, partial-support and HOLD scopes. Independent funding/control remains unconfirmed. The completed-hire rule is not rewritten to require a swap in every order.
+- Five successful candidate swaps on three dates, **13, 20 and 21 October**: [inventory](../evidence/testnet/2026-10-21-action-inventory.json). Approvals, wraps and commerce transactions are excluded.
+- Fresh ERC-8004 owner/URI check: [identity](../evidence/testnet/2026-10-21-identity.json).
+- Public owner-approved Testnet rebalancing-support listing under the same agent identity. Historical research work is not relabeled.
 
-The [20 October status and remaining blockers](../evidence/testnet/CAMPAIGN_PROGRESS.md#update--20-october-2026-supersedes-older-current-status-statements) supersede dated current-state statements below. Build is still incomplete and no final submission was made.
+## Gaps still open
 
-Fresh registry ownership/URI and public repository visibility passed. A fresh engine read returned HOLD at 31.85% WBNB; no new trade/day was created. Pokter Nagi job #1564 adds verified 0.1 U funding and public UI settlement evidence to the buyer-hire packet. One new rebalancing custom offer is still unaccepted and unpaid. A real voluntary customer beta has verified swap receipts, but no marketplace hire or exported identity journal; private customer data is not published. Public Site version 7 is deployed. Remaining gates are execution count/dates/attribution, qualifying independent usage, campaign registration confirmation and general automated invocation availability.
+| Item | Outcome of this audit |
+| --- | --- |
+| Agent execution attribution | Receipt reconciliation passed; original 20/21 October signing journals absent. One 13 October swap manual; no autonomous signer. Chain-56 identity / chain-97 activity requires review. [Audit](../evidence/testnet/2026-10-21-attribution-audit.md) |
+| Current external access | Card, registration URI and POST /a2a returned Cloudflare 403/1010 in normal automated checks. Historical 17 October browser success is retained. No fix or bypass claimed |
+| Campaign registration | Owner previously reported form filled; original confirmation and submitted-wallet record not recovered. [Registration review](../evidence/testnet/2026-10-21-registration-review.md) |
+| Customer independence | Five distinct buyer wallets retained; distinctness does not prove independent control or funding |
 
-A separately scoped owner-approved Testnet rebalancing service is now PUBLISHED under the same agent identity: [listing evidence](../evidence/testnet/2026-10-20-rebalancing-service.json). This does not relabel the research service or add completed hires/actions.
+## Reviewer entry points
 
----
+- Registered URI: https://fual-treasury-agent.phamphuanloc.chatgpt.site/registration.json
+- Card: https://fual-treasury-agent.phamphuanloc.chatgpt.site/.well-known/agent-card.json
+- Public read-only A2A: https://fual-treasury-agent.phamphuanloc.chatgpt.site/a2a
+- Customer-wallet beta: https://fual-treasury-agent.phamphuanloc.chatgpt.site/rebalance/
+- Paid service: https://www.agent.family/listing?id=cmvgcn16006l5y501irik14hk
 
-Status: working evidence packet, not a declaration that Build is complete. This review uses retained evidence from 17 October and does not claim a fresh live-chain audit. No submission was sent, no transaction was signed, and no customer was contacted in preparing this packet.
+Public deployment retained: Site version 7, Worker 0.1.3, source f71bc3d605b2e833cd442f4e664ad66ef552cac5. A2A reads the owner's portfolio; wallet execution remains explicitly user-approved.
 
-## Identity and reviewer entry points
-
-- Campaign wallet: `0xdcf64CdDC4a2b06F756f21a125ca393792DFA709`.
-- ERC-8004 identity: #370316 on BNB Smart Chain mainnet (56).
-- Registration URI: https://fual-treasury-agent.phamphuanloc.chatgpt.site/registration.json .
-- Agent card: https://fual-treasury-agent.phamphuanloc.chatgpt.site/.well-known/agent-card.json .
-- Public read-only A2A endpoint: https://fual-treasury-agent.phamphuanloc.chatgpt.site/a2a .
-- Free customer-wallet execution beta: https://fual-treasury-agent.phamphuanloc.chatgpt.site/rebalance/ . Execution is only on BNB Smart Chain Testnet (97), with each transaction explicitly reviewed and approved by the customer.
-- [Requirement-by-requirement evidence index](../evidence/testnet/CAMPAIGN_PROGRESS.md).
-- [Customer beta scope and limits](CLIENT_TESTNET_BETA.md).
-
-Current public deployment: Worker 0.1.3 / Site version 6, source `b4d0b48fadc1104ba7c1501de6f0f6ce30181043`. The A2A endpoint reads the owner's portfolio; it does not submit customer transactions. Customer execution happens in the customer's wallet browser.
-
-## Evidence that is ready for review
-
-| Area | Retained result | Primary evidence |
-| --- | --- | --- |
-| Registration | Registry ownership and registered public URI verified | [Identity](../evidence/testnet/2026-10-17-identity.json) |
-| Public invocation | Browser message/send passed with matching production success log and fresh chain-97 data | [A2A result](../evidence/testnet/2026-10-17-a2a-production-success.json) |
-| Three buyer hires across two marketplaces | Mandate Yield-1, HelloFugu Venus Rate Router and Mandate Guard-1 have payment evidence; HelloFugu report-call limitation remains disclosed | [Hire records](../evidence/testnet/CAMPAIGN_PROGRESS.md#hire-evidence) |
-| Research commerce | Three settled research orders; actual wallet receipts total 5.88 USDC before expenses | [Sanitized orders](../evidence/testnet/2026-10-17-provider-orders.json) |
-| Historical swaps | Three successful swaps on 13 October, one manual and two controller-approved | [Action inventory](../evidence/testnet/2026-10-17-action-inventory.json) |
-| Identity journal | User-browser HOLD journal validated; no additional swap or execution day | [Browser check](../evidence/testnet/2026-10-17-controller-browser-journal-check.json) |
-| Customer execution software | Bounded beta deployed; real customer swap still unverified | [Deployment and limits](../evidence/testnet/2026-10-17-client-beta.md) |
-
-## Gates before claiming completion
-
-Read-only owner execution preparation at 17 October 12:13:54 Vietnam returned
-HOLD at 30.20% WBNB against a 30% target and five-percentage-point drift
-threshold. Contract pins, pool identity and fresh aligned balances passed.
-[Retained result](../evidence/testnet/2026-10-17-midday-execution-check.json).
-No signing, broadcast, candidate swap or execution day was added. This is a
-module/RPC check, not an end-to-end customer-wallet execution.
-
-| Open item | Evidence needed to close it | Current position |
-| --- | --- | --- |
-| Campaign registration | Retained registration confirmation for campaign wallet | Confirmation not retained |
-| Execution count and dates | At least five accepted category-consistent actions across at least three dates | Three historical candidate swaps on one date; attribution not certified |
-| Qualifying independent customers | Three completed engagements for the qualifying function, with independent wallets/funding | Research settlements are real but do not prove rebalancing-service qualification |
-| Marketplace/function alignment | Truthful listing and agreed scope for the actual rebalancing service | Existing research offer remains research; free beta creates no paid hire |
-| Real customer execution | Voluntary customer plan, explicit approval, successful canonical receipt and exported journal | Awaiting customer test; no artificial allocation changes to create activity |
-| External automated access | Organizer-compatible public invocation | Browser passed; some automated callers remain Cloudflare-1010 blocked |
-
-Two points require organizer interpretation before stronger claims: attribution of chain-97 owner-approved controller actions to identity #370316 registered on chain 56, and whether research-only completed orders satisfy the rebalancing agent's customer criterion. Neither is assumed accepted here.
-
-## Reproducible software check
-
-From `public-agent/`:
-
-```sh
-node --test tests/client-engine.test.cjs tests/client-app.test.cjs tests/client-reconcile.test.cjs tests/client-routes.test.mjs tests/a2a-audit.test.mjs tests/discovery.test.mjs tests/endpoint.test.mjs
-```
-
-Re-run on 17 October: all seven test files passed, including sixteen engine checks and twelve fake-wallet UI checks. This was an offline regression check using fixtures and mocks, not a real-wallet swap, live availability probe or campaign action.
-
-Customer exports are checked with `node scripts/verify-client-journal.cjs /absolute/path/to/export.json`. The verifier deduplicates transaction hashes, verifies receipts and reports candidate dates. HOLD, approval-only transactions, failed/pending swaps and free-page visits do not establish qualifying paid hires or rebalance execution days.
-
-Keep private customer messages, private report URLs and signing material out of the public packet. Do not buy additional agents, fund customer wallets or generate trades merely to fill campaign counters.
+This is a reviewable evidence packet, not certification of campaign eligibility. No campaign form was submitted in this audit. Final acceptance belongs to BNB Chain. Deadline: 5 November 2026 12:00 UTC / 19:00 Vietnam.

@@ -1,0 +1,47 @@
+{
+  "checkedAt": "2026-10-21T07:38:09.471727+00:00",
+  "transactionHash": "0x382f9caabbcbe3f1d33334d71d31661f8d420c1589ca12f073e14e2414392951",
+  "chainId": 97,
+  "identity": {
+    "agentId": 370316,
+    "chainId": 56
+  },
+  "verificationBasis": "Plan reconstructed from actual calldata ONLY for receipt reconciliation; not the original reviewed browser plan or its seal.",
+  "result": {
+    "pending": false,
+    "kind": "SWAP",
+    "hash": "0x382f9caabbcbe3f1d33334d71d31661f8d420c1589ca12f073e14e2414392951",
+    "confirmations": 5074,
+    "fee": {
+      "bigint": "14955864000000"
+    },
+    "input": {
+      "bigint": "3649802933723126"
+    },
+    "output": {
+      "bigint": "799078319423714694"
+    },
+    "block": 138034163,
+    "campaignQualified": false
+  },
+  "inputWBNB": "0.003649802933723126",
+  "outputU": "0.799078319423714694",
+  "minimumU": "0.795082927826596120",
+  "timestampUTC": "2026-10-21T07:00:06.000Z",
+  "scenario": "Explicit owner capital-addition Testnet test: wrapped 0.005 tBNB, raising WBNB weight to 36.50%; unchanged 30/70 target and 5pp band. Not organic market drift.",
+  "wrapHash": "0x39dd4d8a31f95c00a6cf140ac484c9b36d47fa20b9058bc2ddc56420cf019c17",
+  "afterRetainedSnapshot": {
+    "observedAt": "2026-10-21T07:02:18Z",
+    "block": "0x83a3d07",
+    "blockHash": "0xbb0e653dd29efed50682863474734b3aee4082aa078458e21186d0bdc8c45b9a",
+    "U": "8.656793549818198901",
+    "WBNB": "0.016839790329483608",
+    "weightBps": 2980,
+    "decision": "HOLD"
+  },
+  "limitations": [
+    "Original browser signing journal missing. Supplied 21 October export contains only historical HOLD, zero verified receipts.",
+    "Owner-approved execution, not unattended signing. Identity 56 / execution 97 attribution remains subject to organizer review.",
+    "Wrap and approval excluded from swap count."
+  ]
+}

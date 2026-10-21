@@ -1,0 +1,24 @@
+{
+  "checkedAt": "2026-10-21T07:38:08.870090+00:00",
+  "scope": "single normal external HTTP probe; no bypass attempted",
+  "results": [
+    {
+      "path": "/.well-known/agent-card.json",
+      "error": "HTTP Error 403: Forbidden",
+      "httpStatus": 403,
+      "body": "error code: 1010\n"
+    },
+    {
+      "path": "/registration.json",
+      "error": "HTTP Error 403: Forbidden",
+      "httpStatus": 403,
+      "body": "error code: 1010\n"
+    },
+    {
+      "path": "/a2a",
+      "error": "HTTP Error 403: Forbidden",
+      "httpStatus": 403,
+      "body": "error code: 1010\n"
+    }
+  ]
+}
