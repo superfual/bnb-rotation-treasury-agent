@@ -1,0 +1,32 @@
+{
+  "checkedAt": "2026-10-16T21:14:56.539843+00:00",
+  "source": "https://platform-backend.prod.termix.live/api/v1/config/contracts",
+  "chainId": 56,
+  "quantConfigured": true,
+  "quantChainId": 56,
+  "configuredSettlementToken": {
+    "address": "0xcE24439F2D9C6a2289F741120FE202248B666666",
+    "symbol": "USDC",
+    "decimals": 18,
+    "protocol": null,
+    "verified": true,
+    "auditUrl": null,
+    "officialUrl": "https://www.circle.com/usdc"
+  },
+  "selectedTradableTokens": [
+    {
+      "address": "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c",
+      "symbol": "WBNB",
+      "decimals": 18,
+      "priceRoute": "direct",
+      "verified": true,
+      "auditUrl": null,
+      "officialUrl": "https://www.bnbchain.org",
+      "protocol": null
+    }
+  ],
+  "mainnetApplicationSubmitted": false,
+  "encryptionKeyRegistered": false,
+  "reasonNotSubmitted": "Current reviewed treasury execution is testnet-only. Mainnet research readiness gate remains failed; no client capital or commercial terms authorized for this untested mainnet strategy.",
+  "nextScope": "Unpaid public customer-wallet Testnet beta; no marketplace hire count claimed."
+}

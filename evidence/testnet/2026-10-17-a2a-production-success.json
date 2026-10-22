@@ -1,0 +1,28 @@
+{
+  "checkedAt": "2026-10-16T20:38:25.145Z",
+  "scope": "External user-browser to public production A2A, semantic success verified; checker HTTP client remains Cloudflare-1010 blocked",
+  "screenshot": {
+    "libraryFileId": "libfile_b7e14d5dda8c81918289a879b3600992",
+    "requestId": "05c6d1ad-39ad-45d4-861e-fa6f01057374",
+    "replyId": "05c6d1ad-39ad-45d4-861e-fa6f01057374",
+    "checkedAt": "2026-10-16T20:37:14.722Z",
+    "allocationWBNBPercent": 30.2
+  },
+  "production": {
+    "timestamp": "2026-10-16T20:37:09.866Z",
+    "requestId": "881614427b8ad0a55e06c397287d4b30",
+    "rayId": "a4b9dc1e4be584bd",
+    "scriptVersion": "938863aa-eacb-44dc-8415-208aff2e17d6",
+    "rpcSuccess": true,
+    "readOnly": true,
+    "level": "info",
+    "event": "a2a_response",
+    "version": "0.1.2",
+    "probeId": "ac36e434-95fb-4ce5-b718-ad0a09e0c905",
+    "observedAt": "2026-10-16T20:37:09.000Z",
+    "decision": "HOLD",
+    "block": "0x82d5e98",
+    "httpStatus": 200,
+    "chainId": 97
+  }
+}

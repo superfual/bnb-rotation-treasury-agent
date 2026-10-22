@@ -1,0 +1,56 @@
+{
+  "checkedAt": "2026-10-16T20:24:24.823538+00:00",
+  "origin": "https://fual-treasury-agent.phamphuanloc.chatgpt.site",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": "external-20261017",
+    "method": "message/send",
+    "params": {
+      "message": {
+        "role": "user",
+        "messageId": "external-20261017",
+        "parts": [
+          {
+            "kind": "text",
+            "text": "status"
+          }
+        ]
+      }
+    }
+  },
+  "probes": [
+    {
+      "path": "/.well-known/agent-card.json",
+      "method": "GET",
+      "status": 403,
+      "headers": {
+        "Content-Type": "text/plain; charset=UTF-8",
+        "Server": "cloudflare",
+        "CF-RAY": "a4b9c9730e03f833-ORD"
+      },
+      "body": "error code: 1010\n"
+    },
+    {
+      "path": "/health",
+      "method": "GET",
+      "status": 403,
+      "headers": {
+        "Content-Type": "text/plain; charset=UTF-8",
+        "Server": "cloudflare",
+        "CF-RAY": "a4b9c9730e23f833-ORD"
+      },
+      "body": "error code: 1010\n"
+    },
+    {
+      "path": "/a2a",
+      "method": "POST",
+      "status": 403,
+      "headers": {
+        "Content-Type": "text/plain; charset=UTF-8",
+        "Server": "cloudflare",
+        "CF-RAY": "a4b9c9730e07f833-ORD"
+      },
+      "body": "error code: 1010\n"
+    }
+  ]
+}

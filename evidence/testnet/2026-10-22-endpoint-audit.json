@@ -1,0 +1,658 @@
+{
+  "checkedAt": "2026-10-22T16:49:30.773Z",
+  "projectId": "appgprj_6ace389509e08191b0e4caee309ce76f",
+  "accessMode": "public",
+  "deployment": {
+    "id": "appgdep_6ada3e398c388191994d37989f7097cc",
+    "project_id": "appgprj_6ace389509e08191b0e4caee309ce76f",
+    "title": "Fual Treasury Agent",
+    "version_id": "appgprj_6ace389509e08191b0e4caee309ce76f~appgver_16d0e930d1b08191907392d00eb8c533",
+    "type": "publish",
+    "status": "succeeded",
+    "url": "https://fual-treasury-agent.phamphuanloc.chatgpt.site",
+    "has_mcp": false,
+    "screenshot_asset_pointer": null,
+    "provider_deployment_id": "site---6ace389509e08191b0e4caee309ce76f",
+    "failure_message": null,
+    "env_set_revision": 0,
+    "updated_at": "2026-10-22T16:48:04.852657+00:00"
+  },
+  "sourceCommit": "05c44c657a1de4b2ae33ef58eb162c23adaa0ea5",
+  "observations": [
+    {
+      "timestamp": 1792686780097,
+      "route": "GET /.well-known/agent-card.json",
+      "status": 200,
+      "requestId": "590691ec409fee37dce9f1af1e2f824f",
+      "outcome": "ok"
+    },
+    {
+      "timestamp": 1792685571848,
+      "route": "GET /registration.json",
+      "status": 200,
+      "requestId": "b384799c07784928dcfd4727de2f8e4e",
+      "outcome": "ok"
+    },
+    {
+      "timestamp": 1792685369626,
+      "route": "GET /.well-known/agent-card.json",
+      "status": 200,
+      "requestId": "efe9b291710159e867bef2f130f01d92",
+      "outcome": "ok"
+    },
+    {
+      "timestamp": 1792685368721,
+      "route": "GET /registration.json",
+      "status": 200,
+      "requestId": "b4cc3aa3a63bd75f1822fa954ab36073",
+      "outcome": "ok"
+    },
+    {
+      "timestamp": 1792684866369,
+      "route": "GET /.well-known/agent-card.json",
+      "status": 200,
+      "requestId": "f0b9f60f971209659eba12b0a65ea0c2",
+      "outcome": "ok"
+    },
+    {
+      "timestamp": 1792683025618,
+      "route": "GET /.well-known/agent-card.json",
+      "status": 200,
+      "requestId": "53614ce8cf24e58b4d701601f46ba826",
+      "outcome": "ok"
+    },
+    {
+      "timestamp": 1792682044344,
+      "route": "GET /.well-known/agent-card.json",
+      "status": 200,
+      "requestId": "91f7417d5b5c71e5b36116acb124329e",
+      "outcome": "ok"
+    },
+    {
+      "timestamp": 1792680930249,
+      "route": "GET /.well-known/agent-card.json",
+      "status": 200,
+      "requestId": "e4f1149f3885c789ec857b610cc89e78",
+      "outcome": "ok"
+    },
+    {
+      "timestamp": 1792679945344,
+      "route": "GET /registration.json",
+      "status": 200,
+      "requestId": "6ce16f40489afd1accd5782f9a25b990",
+      "outcome": "ok"
+    },
+    {
+      "timestamp": 1792679104430,
+      "route": "GET /.well-known/agent-card.json",
+      "status": 200,
+      "requestId": "4ae8ac36f17006458d3b18e704600be2",
+      "outcome": "ok"
+    },
+    {
+      "timestamp": 1792678773075,
+      "route": "GET /.well-known/agent-card.json",
+      "status": 200,
+      "requestId": "1d6a8bc23616b5807da27af97665e1ba",
+      "outcome": "ok"
+    },
+    {
+      "timestamp": 1792677447113,
+      "route": "GET /registration.json",
+      "status": 200,
+      "requestId": "7c8604ef2b5c7d2dbdeafb1d9112793a",
+      "outcome": "ok"
+    },
+    {
+      "timestamp": 1792677319956,
+      "route": "GET /registration.json",
+      "status": 200,
+      "requestId": "d598c9d2f3333d719cd1f6d939579527",
+      "outcome": "ok"
+    },
+    {
+      "timestamp": 1792676670156,
+      "route": "GET /.well-known/agent-card.json",
+      "status": 200,
+      "requestId": "02741f1506faaa7e3c002266f6d0d6cd",
+      "outcome": "ok"
+    },
+    {
+      "timestamp": 1792675137258,
+      "route": "GET /registration.json",
+      "status": 200,
+      "requestId": "84378d87d9fcaa31594711f50f1c3619",
+      "outcome": "ok"
+    },
+    {
+      "timestamp": 1792674487567,
+      "route": "GET /.well-known/agent-card.json",
+      "status": 200,
+      "requestId": "d48e835f2bad1922992cd9f7e5ef9fda",
+      "outcome": "ok"
+    },
+    {
+      "timestamp": 1792672096637,
+      "route": "GET /.well-known/agent-card.json",
+      "status": 200,
+      "requestId": "f72fbac54f164b07a888139e2d2006c0",
+      "outcome": "ok"
+    },
+    {
+      "timestamp": 1792671255158,
+      "route": "GET /.well-known/agent-card.json",
+      "status": 200,
+      "requestId": "8ef9b632f5fc3c8581735f50de06d77f",
+      "outcome": "ok"
+    },
+    {
+      "timestamp": 1792670808248,
+      "route": "GET /registration.json",
+      "status": 200,
+      "requestId": "8e7050671dae71ceb35e8a210d449c0d",
+      "outcome": "ok"
+    },
+    {
+      "timestamp": 1792670157738,
+      "route": "GET /registration.json",
+      "status": 200,
+      "requestId": "51122a02c6ff1cdced69ad199c83e26d",
+      "outcome": "ok"
+    },
+    {
+      "timestamp": 1792668477635,
+      "route": "GET /registration.json",
+      "status": 200,
+      "requestId": "bafc6ed45f2d491e86588c2dc6140865",
+      "outcome": "ok"
+    },
+    {
+      "timestamp": 1792668348602,
+      "route": "GET /registration.json",
+      "status": 200,
+      "requestId": "866084cf4e62a3a6e48a3d6da706131c",
+      "outcome": "ok"
+    },
+    {
+      "timestamp": 1792666870800,
+      "route": "GET /.well-known/agent-card.json",
+      "status": 200,
+      "requestId": "b06a006fa1a15014d88fe7e84b050392",
+      "outcome": "ok"
+    },
+    {
+      "timestamp": 1792666554228,
+      "route": "GET /registration.json",
+      "status": 200,
+      "requestId": "d34cce556b47414d558c544fcd812d60",
+      "outcome": "ok"
+    },
+    {
+      "timestamp": 1792665909708,
+      "route": "GET /registration.json",
+      "status": 200,
+      "requestId": "18b39b05324bc0a112600757d16a0df9",
+      "outcome": "ok"
+    },
+    {
+      "timestamp": 1792665265086,
+      "route": "GET /.well-known/agent-card.json",
+      "status": 200,
+      "requestId": "8beb85eb226a390fd8fe0f655ce24537",
+      "outcome": "ok"
+    },
+    {
+      "timestamp": 1792664630933,
+      "route": "GET /registration.json",
+      "status": 200,
+      "requestId": "f99ee395fb952f7bfbe68ee0c922a02a",
+      "outcome": "ok"
+    },
+    {
+      "timestamp": 1792663039408,
+      "route": "GET /.well-known/agent-card.json",
+      "status": 200,
+      "requestId": "16984707a5680fd3c08d54a4548e5e3f",
+      "outcome": "ok"
+    },
+    {
+      "timestamp": 1792661965842,
+      "route": "GET /.well-known/agent-card.json",
+      "status": 200,
+      "requestId": "d8417cfa576cc47f9def027bb710d950",
+      "outcome": "ok"
+    },
+    {
+      "timestamp": 1792658832827,
+      "route": "GET /.well-known/agent-card.json",
+      "status": 200,
+      "requestId": "edea77853fb38feb640328ff9794aad6",
+      "outcome": "ok"
+    },
+    {
+      "timestamp": 1792658706505,
+      "route": "GET /registration.json",
+      "status": 200,
+      "requestId": "95a4badd94887ae05412bc784ad3e819",
+      "outcome": "ok"
+    },
+    {
+      "timestamp": 1792658380456,
+      "route": "GET /.well-known/agent-card.json",
+      "status": 200,
+      "requestId": "b2ea1d41207ff47b3d2fd05cc296bca2",
+      "outcome": "ok"
+    },
+    {
+      "timestamp": 1792657539538,
+      "route": "GET /.well-known/agent-card.json",
+      "status": 200,
+      "requestId": "cca9edec508558a0890cd7c29b3fba55",
+      "outcome": "ok"
+    },
+    {
+      "timestamp": 1792656764862,
+      "route": "GET /.well-known/agent-card.json",
+      "status": 200,
+      "requestId": "bef61a02c93262047ab48bf556510c8e",
+      "outcome": "ok"
+    },
+    {
+      "timestamp": 1792656117666,
+      "route": "GET /.well-known/agent-card.json",
+      "status": 200,
+      "requestId": "c513dde69cb5b47bde479c58b85596b3",
+      "outcome": "ok"
+    },
+    {
+      "timestamp": 1792655925202,
+      "route": "GET /.well-known/agent-card.json",
+      "status": 200,
+      "requestId": "262b22770359e9fc0895607e4f7e9a5b",
+      "outcome": "ok"
+    },
+    {
+      "timestamp": 1792655148584,
+      "route": "GET /.well-known/agent-card.json",
+      "status": 200,
+      "requestId": "afe1a876b1de98fb4645918aaadee134",
+      "outcome": "ok"
+    },
+    {
+      "timestamp": 1792653675148,
+      "route": "GET /.well-known/agent-card.json",
+      "status": 200,
+      "requestId": "a71324e354c8506fe02c5399146d3c25",
+      "outcome": "ok"
+    },
+    {
+      "timestamp": 1792651425309,
+      "route": "GET /.well-known/agent-card.json",
+      "status": 200,
+      "requestId": "a47089ac84a524d85143132f182dad10",
+      "outcome": "ok"
+    },
+    {
+      "timestamp": 1792651215936,
+      "route": "GET /.well-known/agent-card.json",
+      "status": 200,
+      "requestId": "24a81e2b5de47945289b52276f875441",
+      "outcome": "ok"
+    },
+    {
+      "timestamp": 1792650878838,
+      "route": "GET /registration.json",
+      "status": 200,
+      "requestId": "4392282d8275b0730fc5d5b2f14b912b",
+      "outcome": "ok"
+    },
+    {
+      "timestamp": 1792650053081,
+      "route": "GET /.well-known/agent-card.json",
+      "status": 200,
+      "requestId": "87390ae363f25acf2b6fc9022ec41667",
+      "outcome": "ok"
+    },
+    {
+      "timestamp": 1792649847412,
+      "route": "GET /registration.json",
+      "status": 200,
+      "requestId": "41c908e34d31a21db9663dcebe7760af",
+      "outcome": "ok"
+    },
+    {
+      "timestamp": 1792648278316,
+      "route": "GET /a2a",
+      "status": 405,
+      "requestId": "ec6af09aab88309a8e1bdd51fdbf4722",
+      "outcome": "ok"
+    },
+    {
+      "timestamp": 1792646680107,
+      "route": "GET /registration.json",
+      "status": 200,
+      "requestId": "f146d511734e72ac4e382fa8809e4cc7",
+      "outcome": "ok"
+    },
+    {
+      "timestamp": 1792646350959,
+      "route": "GET /.well-known/agent-card.json",
+      "status": 200,
+      "requestId": "2352bf8036e565f1aa42d4f73bbaed38",
+      "outcome": "ok"
+    },
+    {
+      "timestamp": 1792646300827,
+      "route": "GET /.well-known/agent-card.json",
+      "status": 200,
+      "requestId": "ba40128830f64b0405ad85802ac4eaab",
+      "outcome": "ok"
+    },
+    {
+      "timestamp": 1792645843921,
+      "route": "GET /registration.json",
+      "status": 200,
+      "requestId": "5ffdae88ebcc2609bf67c49ba2ccd51b",
+      "outcome": "ok"
+    },
+    {
+      "timestamp": 1792644467029,
+      "route": "GET /registration.json",
+      "status": 200,
+      "requestId": "fea1f17c759b5a3de6c7e4b4ac6b0532",
+      "outcome": "ok"
+    },
+    {
+      "timestamp": 1792643596455,
+      "route": "GET /.well-known/agent-card.json",
+      "status": 200,
+      "requestId": "909480d14842a506e8c1bc00b4984ed9",
+      "outcome": "ok"
+    },
+    {
+      "timestamp": 1792643418874,
+      "route": "GET /.well-known/agent-card.json",
+      "status": 200,
+      "requestId": "8dcb62bca44c053a0fc8c55c98fa4457",
+      "outcome": "ok"
+    },
+    {
+      "timestamp": 1792642739287,
+      "route": "GET /.well-known/agent-card.json",
+      "status": 200,
+      "requestId": "72d1bfc7b30b7da9dfd2b491b5b3404e",
+      "outcome": "ok"
+    },
+    {
+      "timestamp": 1792642408019,
+      "route": "GET /registration.json",
+      "status": 200,
+      "requestId": "538dfb992ea6e0f0df25e68b5790ca8c",
+      "outcome": "ok"
+    },
+    {
+      "timestamp": 1792641715532,
+      "route": "GET /registration.json",
+      "status": 200,
+      "requestId": "b4b035e08cd5c44bafa20149ba4f358e",
+      "outcome": "ok"
+    },
+    {
+      "timestamp": 1792641214456,
+      "route": "GET /.well-known/agent-card.json",
+      "status": 200,
+      "requestId": "70a6ba24aa28ed5a20d5537ee185a9ec",
+      "outcome": "ok"
+    },
+    {
+      "timestamp": 1792640183134,
+      "route": "GET /registration.json",
+      "status": 200,
+      "requestId": "7c2e5cca04aaf2e25121bacaf013688f",
+      "outcome": "ok"
+    },
+    {
+      "timestamp": 1792637792494,
+      "route": "GET /registration.json",
+      "status": 200,
+      "requestId": "6a5f9d25cd1a07c22fc9632004816b7a",
+      "outcome": "ok"
+    },
+    {
+      "timestamp": 1792636950267,
+      "route": "GET /.well-known/agent-card.json",
+      "status": 200,
+      "requestId": "cf1ea2192ef8985a1e209c09af8172b2",
+      "outcome": "ok"
+    },
+    {
+      "timestamp": 1792636271805,
+      "route": "GET /.well-known/agent-card.json",
+      "status": 200,
+      "requestId": "0d68f999f828dbce42d701c3a9db7ea9",
+      "outcome": "ok"
+    },
+    {
+      "timestamp": 1792636113457,
+      "route": "GET /registration.json",
+      "status": 200,
+      "requestId": "58c77c5c8a7c57efeff56f388b203961",
+      "outcome": "ok"
+    },
+    {
+      "timestamp": 1792634093923,
+      "route": "GET /registration.json",
+      "status": 200,
+      "requestId": "602c1e814c3a56c6beb18e90db43b87e",
+      "outcome": "ok"
+    },
+    {
+      "timestamp": 1792632691065,
+      "route": "GET /registration.json",
+      "status": 200,
+      "requestId": "59d63e36015ea4c637d1324f5d2c070c",
+      "outcome": "ok"
+    },
+    {
+      "timestamp": 1792631821739,
+      "route": "GET /registration.json",
+      "status": 200,
+      "requestId": "2bd74ab5b791747a75634970ab9383e7",
+      "outcome": "ok"
+    },
+    {
+      "timestamp": 1792631489115,
+      "route": "GET /.well-known/agent-card.json",
+      "status": 200,
+      "requestId": "b2a5ad054349308d7bd785b029daaa51",
+      "outcome": "ok"
+    },
+    {
+      "timestamp": 1792628331855,
+      "route": "GET /.well-known/agent-card.json",
+      "status": 200,
+      "requestId": "86c6fc0c8d6a126d2e818e4b18fa724b",
+      "outcome": "ok"
+    },
+    {
+      "timestamp": 1792628330786,
+      "route": "GET /registration.json",
+      "status": 200,
+      "requestId": "ab0e05b33ea221e054d3119362094c96",
+      "outcome": "ok"
+    },
+    {
+      "timestamp": 1792626953513,
+      "route": "GET /.well-known/agent-card.json",
+      "status": 200,
+      "requestId": "9e940bb3bec89182b40c717b02a0e05a",
+      "outcome": "ok"
+    },
+    {
+      "timestamp": 1792626598127,
+      "route": "GET /.well-known/agent-card.json",
+      "status": 200,
+      "requestId": "cc0e3723c9371f85fa882de0057f03d1",
+      "outcome": "ok"
+    },
+    {
+      "timestamp": 1792625933164,
+      "route": "GET /.well-known/agent-card.json",
+      "status": 200,
+      "requestId": "7b88d6db2ab947a07a2cd32af99c0dfb",
+      "outcome": "ok"
+    },
+    {
+      "timestamp": 1792625424070,
+      "route": "GET /.well-known/agent-card.json",
+      "status": 200,
+      "requestId": "79fe9761b3058e082300a73ae6cb59dc",
+      "outcome": "ok"
+    },
+    {
+      "timestamp": 1792623723813,
+      "route": "GET /.well-known/agent-card.json",
+      "status": 200,
+      "requestId": "41550567463e8e8a4c73f23e1e75fc18",
+      "outcome": "ok"
+    },
+    {
+      "timestamp": 1792622863068,
+      "route": "GET /registration.json",
+      "status": 200,
+      "requestId": "9d53de97b4f59014852c03d984919401",
+      "outcome": "ok"
+    },
+    {
+      "timestamp": 1792620989839,
+      "route": "GET /.well-known/agent-card.json",
+      "status": 200,
+      "requestId": "6e3ccfe1854ba135c9f08bcfb89885ae",
+      "outcome": "ok"
+    },
+    {
+      "timestamp": 1792620577684,
+      "route": "GET /.well-known/agent-card.json",
+      "status": 200,
+      "requestId": "825e3b93276c721d61aea5f9c5443c25",
+      "outcome": "ok"
+    },
+    {
+      "timestamp": 1792618785570,
+      "route": "GET /registration.json",
+      "status": 200,
+      "requestId": "46456aad7c7198bfe669d2a0f47afd80",
+      "outcome": "ok"
+    },
+    {
+      "timestamp": 1792617500211,
+      "route": "GET /.well-known/agent-card.json",
+      "status": 200,
+      "requestId": "3e76d0302d8748850624bf98c670f916",
+      "outcome": "ok"
+    },
+    {
+      "timestamp": 1792616957163,
+      "route": "GET /.well-known/agent-card.json",
+      "status": 200,
+      "requestId": "45d09aee003fe0bda9168af23304d1eb",
+      "outcome": "ok"
+    },
+    {
+      "timestamp": 1792616611931,
+      "route": "GET /registration.json",
+      "status": 200,
+      "requestId": "9d330848b0109a9e1bbf1e6efc358c40",
+      "outcome": "ok"
+    },
+    {
+      "timestamp": 1792616241721,
+      "route": "GET /.well-known/agent-card.json",
+      "status": 200,
+      "requestId": "57c500172600dafa4c9b7ac2b6bb034a",
+      "outcome": "ok"
+    },
+    {
+      "timestamp": 1792616042760,
+      "route": "GET /.well-known/agent-card.json",
+      "status": 200,
+      "requestId": "e1d477a90443b6c140775bb404612410",
+      "outcome": "ok"
+    },
+    {
+      "timestamp": 1792615003517,
+      "route": "GET /.well-known/agent-card.json",
+      "status": 200,
+      "requestId": "b020623f9788a0dd4100fc83d5481068",
+      "outcome": "ok"
+    },
+    {
+      "timestamp": 1792614490350,
+      "route": "GET /registration.json",
+      "status": 200,
+      "requestId": "aec912ade5724c5eae890380bcf0f6da",
+      "outcome": "ok"
+    },
+    {
+      "timestamp": 1792613773606,
+      "route": "GET /registration.json",
+      "status": 200,
+      "requestId": "5821184a66f2fde2198fee6e42b2e845",
+      "outcome": "ok"
+    },
+    {
+      "timestamp": 1792613426394,
+      "route": "GET /.well-known/agent-card.json",
+      "status": 200,
+      "requestId": "51b8d38107881a001132b297c0744143",
+      "outcome": "ok"
+    },
+    {
+      "timestamp": 1792613217661,
+      "route": "GET /registration.json",
+      "status": 200,
+      "requestId": "9e62fc06514995fc117a5f1435f918c8",
+      "outcome": "ok"
+    },
+    {
+      "timestamp": 1792612149869,
+      "route": "GET /registration.json",
+      "status": 200,
+      "requestId": "622759aa307cad477798ebb2016aa742",
+      "outcome": "ok"
+    },
+    {
+      "timestamp": 1792611695558,
+      "route": "POST /a2a",
+      "requestId": "24e9634be2314cc4fde22bb1d6f2b902",
+      "semantic": {
+        "rpcSuccess": false,
+        "readOnly": false,
+        "level": "info",
+        "event": "a2a_response",
+        "version": "0.1.3",
+        "probeId": "8ab8bc18-fd06-4998-87b9-060dc58632c0",
+        "httpStatus": 200,
+        "errorCode": -32601
+      }
+    },
+    {
+      "timestamp": 1792610509811,
+      "route": "GET /registration.json",
+      "status": 200,
+      "requestId": "9cdd79e246b88be4c9342d4ea5ac1cfc",
+      "outcome": "ok"
+    }
+  ],
+  "changes": [
+    "GET /a2a returns discovery card and explicit POST message/send instructions; it performs no chain read and is not claimed as successful invocation.",
+    "GET/HEAD /.well-known/agent-registration.json redirects to registered /registration.json.",
+    "POST JSON-RPC semantics remain unchanged and fail closed on RPC errors."
+  ],
+  "tests": "4 Node test files passed: endpoint-discovery, endpoint, discovery, a2a-audit.",
+  "limitations": [
+    "Normal external Python probes after deployment still returned HTTP 403 for card and /a2a. Platform-level filtering is unresolved; no firewall-control tool is exposed.",
+    "Production logs show other clients reached card/registration with HTTP 200; this does not establish universal access or semantic POST invocation today.",
+    "No caller IPs, cookies or credential headers retained in public log extract."
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "checkedAt": "2026-10-20T07:12:30.928143+00:00",
+  "marketplace": "Pokter",
+  "chainId": 97,
+  "agentId": 2623,
+  "jobId": 1564,
+  "amount": "0.1",
+  "currency": "U testnet",
+  "fundingReceipt": {
+    "type": "0x0",
+    "from": "0xdcf64cddc4a2b06f756f21a125ca393792dfa709",
+    "to": "0xa206c0517b6371c6638cd9e4a42cc9f02a33b0de",
+    "status": "0x1",
+    "cumulativeGasUsed": "0x19ba4",
+    "logsBloom": "0x00000000020000000000000002200200000000000000000000000000000000000000000000000000000000000000000000000000000000000000010020200000000000000000000802000008000000000000000010000000010000000000000000000000000000000000008000000000000000000000001400000010000000000000000000000000000000000000000000000004000000080000080000000000024000000000000000000000000000000000000000000000000000000000000000001002000001000000000000000000000000000000000000000000000200000010000000000200000000000000000000000000000000000000000000000000",
+    "logs": [
+      {
+        "address": "0xc70b8741b8b07a6d61e54fd4b20f22fa648e5565",
+        "topics": [
+          "0x8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925",
+          "0x000000000000000000000000dcf64cddc4a2b06f756f21a125ca393792dfa709",
+          "0x000000000000000000000000a206c0517b6371c6638cd9e4a42cc9f02a33b0de"
+        ],
+        "data": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "blockNumber": "0x836158e",
+        "transactionHash": "0x08b6dd8b9609f0c3e848364a2e704ed6ea98776e373c1f30ddf976e47a8acc15",
+        "transactionIndex": "0x0",
+        "blockHash": "0x1ce31677da5b65c06321cf23eef74df39754ad25f1088b593baf0a7f34240d57",
+        "blockTimestamp": "0x6ad67bb7",
+        "logIndex": "0x0",
+        "removed": false
+      },
+      {
+        "address": "0xc70b8741b8b07a6d61e54fd4b20f22fa648e5565",
+        "topics": [
+          "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+          "0x000000000000000000000000dcf64cddc4a2b06f756f21a125ca393792dfa709",
+          "0x000000000000000000000000a206c0517b6371c6638cd9e4a42cc9f02a33b0de"
+        ],
+        "data": "0x000000000000000000000000000000000000000000000000016345785d8a0000",
+        "blockNumber": "0x836158e",
+        "transactionHash": "0x08b6dd8b9609f0c3e848364a2e704ed6ea98776e373c1f30ddf976e47a8acc15",
+        "transactionIndex": "0x0",
+        "blockHash": "0x1ce31677da5b65c06321cf23eef74df39754ad25f1088b593baf0a7f34240d57",
+        "blockTimestamp": "0x6ad67bb7",
+        "logIndex": "0x1",
+        "removed": false
+      },
+      {
+        "address": "0xa206c0517b6371c6638cd9e4a42cc9f02a33b0de",
+        "topics": [
+          "0xbdb056de345bfeadca7c9fd7df6430bdb83c677c8eefbb601dff56f34d3dac52",
+          "0x000000000000000000000000000000000000000000000000000000000000061c",
+          "0x000000000000000000000000dcf64cddc4a2b06f756f21a125ca393792dfa709",
+          "0x0000000000000000000000003ee8cfa277a612b5a2ec26c69001f545ad4e95ff"
+        ],
+        "data": "0x000000000000000000000000000000000000000000000000016345785d8a0000",
+        "blockNumber": "0x836158e",
+        "transactionHash": "0x08b6dd8b9609f0c3e848364a2e704ed6ea98776e373c1f30ddf976e47a8acc15",
+        "transactionIndex": "0x0",
+        "blockHash": "0x1ce31677da5b65c06321cf23eef74df39754ad25f1088b593baf0a7f34240d57",
+        "blockTimestamp": "0x6ad67bb7",
+        "logIndex": "0x2",
+        "removed": false
+      }
+    ],
+    "transactionHash": "0x08b6dd8b9609f0c3e848364a2e704ed6ea98776e373c1f30ddf976e47a8acc15",
+    "contractAddress": null,
+    "gasUsed": "0x19ba4",
+    "blockHash": "0x1ce31677da5b65c06321cf23eef74df39754ad25f1088b593baf0a7f34240d57",
+    "blockNumber": "0x836158e",
+    "transactionIndex": "0x0",
+    "effectiveGasPrice": "0x7de2900"
+  },
+  "settlementEvidence": {
+    "source": "Public Pokter agent Work and reviews UI observed 2026-10-20",
+    "url": "https://pokter.xyz/agents/97/2623#work",
+    "status": "Settled",
+    "settlementTransactionHash": null
+  },
+  "deliveryAssessment": "Buyer reported report very good; report content not independently inspected",
+  "review": "Buyer reported submitting a rating; review not independently verified",
+  "scope": "Buyer hire evidence only; not an own-agent rebalance action"
+}

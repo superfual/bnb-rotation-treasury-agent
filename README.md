@@ -1,5 +1,11 @@
 # BNB Rotation & Treasury Agent
 
+## Set & Earn reviewer entry point (updated 20 October 2026)
+
+Campaign agent: **ERC-8004 #370316 on BNB Smart Chain mainnet (56)**, owned by campaign wallet `0xdcf64CdDC4a2b06F756f21a125ca393792DFA709`. Registered URI: https://fual-treasury-agent.phamphuanloc.chatgpt.site/registration.json . The bounded customer-wallet beta executes only on BNB Testnet (97), with each transaction approved by the wallet owner. It is separate from the historical paper-only rotation strategy below; the mainnet rotation research remains NOT LIVE READY.
+
+[Current campaign evidence and open gates](evidence/testnet/CAMPAIGN_PROGRESS.md) · [Submission review](docs/SUBMISSION_REVIEW.md) · [Customer beta scope](docs/CLIENT_TESTNET_BETA.md). **Build completion is not claimed.**
+
 > A defensive Binance Agent OS workflow that detects BNB-led risk-on regimes, ranks liquid Spot altcoins by stable, BTC-adjusted BNB sensitivity, and guards a BNB treasury.
 
 **Binance Agent OS Mini Hackathon — Track A**
@@ -103,6 +109,30 @@ intake schema, reproduction command, review boundary and remaining deployment.
 
 ## Guarded live-execution vision
 
+### Owner-reviewed on-chain testnet experiment
+
+The chain-97 treasury adapter reads balances and DEX quotes, builds one bounded
+simulated approval/swap plan, and hands it to the owner's keyless wallet for
+review. Receipt verification distinguishes approval from DEX call success.
+One owner-reviewed swap was executed manually through BscScan in Binance
+Wallet on 13 October 2026; see [verified testnet evidence](evidence/testnet/README.md).
+The HTML signing page is not deployed or wallet-tested; there is no unattended
+runner. This experiment does not override the failed mainnet research gate or
+establish Set & Earn qualification. See [testnet execution](docs/TESTNET_EXECUTION.md).
+
 V1 stops at deterministic paper decisions. Its next safe deployment target is a dedicated Binance Agentic sub-account—not a master account—with a Spot-only tool allowlist, capped exposure, idempotent client order IDs, an explicit human confirmation step, post-trade reconciliation, and an emergency stop. Margin, Futures, Convert, withdrawal, and cross-wallet transfer remain denied.
 
 This is an architectural extension, not a claim that V1 submits orders. See the [guarded execution roadmap](docs/LIVE_EXECUTION_ROADMAP.md).
+
+### Private testnet controller
+
+The owner-private controller is deployed at
+https://fual-treasury-control.phamphuanloc.chatgpt.site. Its browser runtime
+reads live balances, builds and simulates exact bounded calls, and opens the
+owner wallet only after an explicit review click. It automatically fills the
+transaction fields; no BscScan form entry or private-key import is required.
+Source and 24 mock engine/UI checks are in `control-ui/`. A live public-RPC
+check returned an exact 1 U approval candidate; no transaction was broadcast.
+The owner completed two swaps through this controller in Binance Wallet on 13 October 2026, followed by a HOLD decision; see the retained evidence.
+It is neither an unattended signer nor a public A2A endpoint, and it does not
+establish campaign attribution to the existing mainnet identity.

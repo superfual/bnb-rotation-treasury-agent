@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="vi"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Fual Treasury — duyệt giao dịch testnet</title>
+<style>body{font:16px/1.6 system-ui;margin:30px auto;padding:20px;max-width:850px;color:#182230}button{padding:12px;margin:12px 0}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f3f5f8;padding:18px}strong{color:#a64b00}</style>
+<h1>Duyệt tái cân bằng testnet</h1>
+<p><strong>Chỉ BNB Smart Chain Testnet (97).</strong> Thử nghiệm theo tỷ trọng chủ ví duyệt, chưa phải dịch vụ tự động hoặc bằng chứng đủ điều kiện chương trình.</p>
+<p>Mở trong trình duyệt ví có hỗ trợ EIP-1193. Chọn kế hoạch mới do bộ lập kế hoạch tạo; kiểm tra địa chỉ, token, số lượng và phí trước khi ký.</p>
+<input type="file" id="file" accept="application/json,.json"><pre id="view">Chưa chọn kế hoạch.</pre>
+<button id="sign" disabled>Kết nối ví và ký đúng một giao dịch</button><pre id="result"></pre>
+<script>
+let plan;
+const view=document.getElementById('view'), result=document.getElementById('result'), button=document.getElementById('sign');
+const addr=x=>{if(typeof x!=='string'||!/^0x[0-9a-fA-F]{40}$/.test(x)||BigInt(x)===0n)throw Error('Địa chỉ không hợp lệ');return x.toLowerCase();};
+const word=x=>BigInt(x).toString(16).padStart(64,'0');
+const aw=x=>addr(x).slice(2).padStart(64,'0');
+const canonical=x=>JSON.stringify(x===null||typeof x!=='object'?x:Array.isArray(x)?x.map(y=>JSON.parse(canonical(y))):Object.fromEntries(Object.keys(x).sort().map(k=>[k,JSON.parse(canonical(x[k]))])));
+const digest=async bytes=>Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',bytes))).map(x=>x.toString(16).padStart(2,'0')).join('');
+const units=(v,d)=>{if(typeof v!=='string'||!/^\d+(\.\d+)?$/.test(v))throw Error('Số lượng phải là chuỗi thập phân chính xác');const [a,b='']=v.split('.');if(b.length>d)throw Error('Quá độ chính xác token');return BigInt(a)*10n**BigInt(d)+BigInt(b.padEnd(d,'0')||'0');};
+const policyCheck=p=>{for(const [k,lo,hi] of [['target_asset_bps',0,5000],['drift_bps',50,1000],['slippage_bps',1,100],['max_price_impact_bps',1,200],['ttl_seconds',30,300]])if(!Number.isInteger(p[k])||p[k]<lo||p[k]>hi)throw Error('Chính sách vượt giới hạn');if(units(p.max_trade_settlement,18)<=0n||units(p.max_trade_settlement,18)>10n*10n**18n||units(p.max_gas_bnb,18)<=0n||units(p.max_gas_bnb,18)>10n**15n)throw Error('Vượt ngân sách thử nghiệm');const contracts=[p.router,p.settlement,p.asset].map(addr);if(new Set(contracts).size!==3||Object.keys(p.code_sha256).length!==3||contracts.some(a=>!Object.hasOwn(p.code_sha256,a)||!/^\w{64}$/.test(p.code_sha256[a])))throw Error('Không đủ hợp đồng đã xác minh');};
+const requireLive=p=>{const n=Math.floor(Date.now()/1000);if(p.chain_id!==97||p.policy.chain_id!==97||p.policy.mode!=='OWNER_TARGET_TESTNET'||p.executed!==false||p.transactions.length!==1||n<p.created_at||n>=p.expires_at||p.expires_at-p.created_at>300)throw Error('Kế hoạch sai mạng, đã hết hạn hoặc không được hỗ trợ');};
+document.getElementById('file').onchange=async e=>{
+ button.disabled=true;plan=null;
+ try{const p=JSON.parse(await e.target.files[0].text());requireLive(p);policyCheck(p.policy);const c={...p};delete c.plan_sha256;
+ if(await digest(new TextEncoder().encode(canonical(c)))!==p.plan_sha256)throw Error('Nội dung kế hoạch đã đổi');
+ if(await digest(new TextEncoder().encode(canonical(p.policy)))!==p.policy_sha256)throw Error('Chính sách đã đổi');
+ const tx=p.transactions[0],pol=p.policy,path=p.path; if(addr(tx.from)!==addr(p.wallet)||addr(p.wallet)!==addr(pol.wallet)||BigInt(tx.value)!==0n||path.length!==2)throw Error('Ví hoặc giá trị giao dịch không khớp');
+ const input=p.side==='buy'?pol.settlement:pol.asset,output=p.side==='buy'?pol.asset:pol.settlement;
+ if(addr(path[0])!==addr(input)||addr(path[1])!==addr(output))throw Error('Đường swap không khớp');
+ let data;
+ if(p.status==='APPROVE_THEN_REPLAN'){
+  const amount=BigInt('0x'+tx.data.slice(-64));if(amount!==0n&&amount!==BigInt(p.amount_in))throw Error('Cấp quyền vượt số lượng');
+  data='0x095ea7b3'+aw(pol.router)+word(amount);if(addr(tx.to)!==addr(input))throw Error('Sai hợp đồng cấp quyền');
+ }else if(p.status==='SWAP_REQUIRES_WALLET_SIGNATURE'){
+  data='0x38ed1739'+word(p.amount_in)+word(p.min_amount_out)+word(160)+aw(p.wallet)+word(p.expires_at)+word(2)+path.map(aw).join('');if(addr(tx.to)!==addr(pol.router))throw Error('Sai router');
+ }else throw Error('Không có giao dịch để ký');
+ if(tx.data.toLowerCase()!==data.toLowerCase())throw Error('Calldata không khớp phạm vi');
+ plan=p;view.textContent=JSON.stringify({status:p.status,network:'BNB Testnet 97',wallet:p.wallet,policy:p.policy,weightBps:p.asset_weight_bps,transaction:tx,expiresAt:new Date(p.expires_at*1000).toISOString()},null,2);button.disabled=false;
+ }catch(e){view.textContent=e.message;}
+};
+button.onclick=async()=>{
+ button.disabled=true;
+ try{requireLive(plan);policyCheck(plan.policy);const provider=window.ethereum;if(!provider)throw Error('Không tìm thấy ví trình duyệt; mở bằng trình duyệt ví keyless.');
+ const req=(method,params=[])=>provider.request({method,params});
+ if(BigInt(await req('eth_chainId'))!==97n)throw Error('Chuyển sang BNB Smart Chain Testnet trước; không gửi trên mainnet.');
+ const accounts=await req('eth_requestAccounts');if(!accounts.some(a=>addr(a)===addr(plan.wallet)))throw Error('Ví kết nối không đúng ví kế hoạch');
+ for(const [contract,pin] of Object.entries(plan.policy.code_sha256)){const code=await req('eth_getCode',[contract,'latest']);if(!/^0x(?:[a-fA-F0-9]{2})+$/.test(code))throw Error('Hợp đồng không tồn tại');const bytes=Uint8Array.from(code.slice(2).match(/../g),h=>parseInt(h,16));if(await digest(bytes)!==pin)throw Error('Bytecode hợp đồng đã thay đổi');}
+ const tx={...plan.transactions[0]};
+ const dec=async token=>{const d=BigInt(await req('eth_call',[{to:token,data:'0x313ce567'},'latest']));if(d>18n)throw Error('Độ chính xác token không hỗ trợ');return Number(d);};
+ const sd=await dec(plan.policy.settlement),ad=await dec(plan.policy.asset),cap=units(plan.policy.max_trade_settlement,sd),amount=BigInt(plan.amount_in);
+ const quote=async(a,path)=>{const q=await req('eth_call',[{to:plan.policy.router,data:'0xd06ca61f'+word(a)+word(64)+word(2)+path.map(aw).join('')},'latest']);if(q.length!==258||BigInt('0x'+q.slice(2,66))!==32n||BigInt('0x'+q.slice(66,130))!==2n||BigInt('0x'+q.slice(130,194))!==a)throw Error('Quote không hợp lệ');const out=BigInt('0x'+q.slice(194));if(out<=0n)throw Error('Pool rỗng');return out;};
+ const call=async(to,data)=>req('eth_call',[{to,data},'latest']);
+ const returnedAddress=x=>{if(!/^0x0{24}[a-fA-F0-9]{40}$/.test(x))throw Error('Địa chỉ pool không hợp lệ');return addr('0x'+x.slice(-40));};
+ const factory=returnedAddress(await call(plan.policy.router,'0xc45a0155'));if(factory!=='0x6725f303b657a9451d8ba641348b6761a6cc7a17')throw Error('Factory không đúng Testnet');
+ const pair=returnedAddress(await call(factory,'0xe6a43905'+aw(plan.policy.settlement)+aw(plan.policy.asset)));
+ const token0=returnedAddress(await call(pair,'0x0dfe1681')),token1=returnedAddress(await call(pair,'0xd21220a7'));
+ if(new Set([token0,token1]).size!==2||![token0,token1].includes(addr(plan.policy.settlement))||![token0,token1].includes(addr(plan.policy.asset)))throw Error('Token trong pool không đúng');
+ const reserves=await call(pair,'0x0902f1ac');if(!/^0x[a-fA-F0-9]{192}$/.test(reserves))throw Error('Dự trữ pool không hợp lệ');
+ const r0=BigInt('0x'+reserves.slice(2,66)),r1=BigInt('0x'+reserves.slice(66,130)),stamp=BigInt('0x'+reserves.slice(130));if(r0<=0n||r1<=0n||r0>=2n**112n||r1>=2n**112n||stamp>=2n**32n)throw Error('Pool rỗng hoặc dự trữ không hợp lệ');
+ const [sr,ar]=token0===addr(plan.policy.settlement)?[r0,r1]:[r1,r0];
+ const notional=plan.side==='buy'?amount:amount*sr/ar;if(notional<=0n||notional>cap)throw Error('Lệnh vượt ngân sách thử nghiệm');
+ const bal=async token=>BigInt(await req('eth_call',[{to:token,data:'0x70a08231'+aw(plan.wallet)},'latest']));
+ const sb=await bal(plan.policy.settlement),ab=await bal(plan.policy.asset),av=ab*sr/ar,total=sb+av;if(total<=0n)throw Error('Ví thử nghiệm rỗng');
+ const delta=total*BigInt(plan.policy.target_asset_bps)/10000n-av;
+ if((plan.side==='buy'&&delta<=0n)||(plan.side==='sell'&&delta>=0n)||notional>(delta<0n?-delta:delta))throw Error('Danh mục đã đổi; tạo kế hoạch mới');
+ if(plan.status==='SWAP_REQUIRES_WALLET_SIGNATURE'){
+  const quoteData='0xd06ca61f'+word(plan.amount_in)+word(64)+word(2)+plan.path.map(aw).join('');const q=await req('eth_call',[{to:plan.policy.router,data:quoteData},'latest']);
+  if(q.length!==258||BigInt('0x'+q.slice(2,66))!==32n||BigInt('0x'+q.slice(66,130))!==2n||BigInt('0x'+q.slice(130,194))!==BigInt(plan.amount_in)||BigInt('0x'+q.slice(194))<BigInt(plan.min_amount_out))throw Error('Giá mới không đạt ngưỡng, tạo kế hoạch mới');
+  const out=BigInt('0x'+q.slice(194)),expected=plan.side==='buy'?amount*ar/sr:amount*sr/ar;if(expected<=0n||out*10000n<expected*BigInt(10000-plan.policy.max_price_impact_bps)||BigInt(plan.min_amount_out)*10000n<out*BigInt(10000-plan.policy.slippage_bps))throw Error('Giá hoặc ngưỡng trượt giá đã đổi, tạo kế hoạch mới');
+ }
+ await req('eth_call',[tx,'latest']);const gas=(BigInt(await req('eth_estimateGas',[tx]))*120n+99n)/100n;const price=BigInt(await req('eth_gasPrice'));const cost=gas*price;
+ if(cost>BigInt(plan.max_gas_wei)||cost>BigInt(await req('eth_getBalance',[plan.wallet,'latest'])))throw Error('Phí vượt giới hạn hoặc thiếu tBNB');
+ tx.gas='0x'+gas.toString(16);tx.gasPrice='0x'+price.toString(16);requireLive(plan);
+ const hash=await req('eth_sendTransaction',[tx]);result.textContent='Đã gửi: '+hash+'\nChưa xác nhận thành công. Kiểm tra receipt bằng verify_testnet_receipt.py. Cấp quyền xong phải tạo kế hoạch mới.';
+ plan=null;
+ }catch(e){result.textContent=e.message+'\nKhông tự động thử lại. Kiểm tra lịch sử ví trước khi tạo yêu cầu mới.';}
+};
+</script></html>

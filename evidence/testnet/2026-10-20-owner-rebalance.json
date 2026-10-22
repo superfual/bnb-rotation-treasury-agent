@@ -1,0 +1,45 @@
+{
+  "checkedAt": "2026-10-20T11:39:05.322Z",
+  "transactionHash": "0xd6d03860221c6b29053a80e878729ea9ed62df6b94edaf1e734ff8efa3ac9447",
+  "chainId": 97,
+  "agentIdentity": {
+    "id": 370316,
+    "registryChain": 56
+  },
+  "wallet": "0xdcf64cddc4a2b06f756f21a125ca393792dfa709",
+  "router": "0xd99d1c33f9fc3444f8101754abc46c52416550d1",
+  "status": "success",
+  "block": 137879983,
+  "blockHash": "0x2beea62423b5fa2da841481cdb10afb20cf2fab42eaa955aa6f241dd77ad6f50",
+  "timestampUTC": "2026-10-20T11:36:26.000Z",
+  "dateUTC": "2026-10-20",
+  "dateVietnam": "2026-10-20",
+  "inputWBNB": "0.004364604016849305",
+  "outputU": "0.942393168689151722",
+  "minimumU": "0.937681202845705963",
+  "feeTBNB": "0.00001495428",
+  "confirmations": 296,
+  "after": {
+    "U": "7.857715230394484207",
+    "WBNB": "0.015489593263206734",
+    "tBNB": "0.094064832745344502",
+    "assetWeightBps": 2977,
+    "decision": "HOLD",
+    "block": "0x837e2fa",
+    "blockHash": "0x9c9add5ba7f1c2b30433dc9e4b50ee2ba2974ea0033641ca8fb2b9ad28102f5b"
+  },
+  "scenario": "Operator-declared Testnet capital-addition test: user wrapped 0.005 tBNB and agent observed 38.45% WBNB before recommending this reduction under the unchanged 30/70 policy and 5pp drift threshold. Wrap hash not supplied. This is not represented as organic market drift.",
+  "verification": [
+    "chain and wallet",
+    "router, exact calldata and reviewed amounts",
+    "canonical receipt block",
+    "3 or more confirmations",
+    "actual input/output token transfers",
+    "minimum output and actual gas fee"
+  ],
+  "limitations": [
+    "Original browser identity journal not supplied; receipt verification is not journal verification.",
+    "Organizer acceptance of agent attribution and campaign test-scenario qualification is unconfirmed.",
+    "Approval and wrap are not added as rebalance swaps."
+  ]
+}

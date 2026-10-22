@@ -1,0 +1,15 @@
+{
+  "observed_at": 1791881033,
+  "chain_id": 97,
+  "wallet": "0xdcf64cddc4a2b06f756f21a125ca393792dfa709",
+  "U_balance_raw": "9000000000000000000",
+  "WBNB_balance_raw": "5040429466318224",
+  "asset_value_U_raw": "1004475423478643788",
+  "asset_weight_bps": 1004,
+  "target_asset_bps": 3000,
+  "drift_bps": 500,
+  "allowance_U_raw": "0",
+  "decision": "BUY_CANDIDATE_REQUIRES_NEW_EXACT_APPROVAL",
+  "executed": false,
+  "confirmations": 549
+}

@@ -1,0 +1,27 @@
+{
+  "checkedAt": "2026-10-20T07:12:37.412Z",
+  "scope": "Read-only fixed-policy engine snapshot; no signing or execution",
+  "chainId": 97,
+  "wallet": "0xdcf64cddc4a2b06f756f21a125ca393792dfa709",
+  "decision": "HOLD",
+  "reason": "Tỷ trọng đang trong vùng mục tiêu.",
+  "block": "0x8375bae",
+  "blockHash": "0x76f35bc1702cf4f3e36f1061ac622818af472fa6f4a65dd5279ec0cf3dbacf11",
+  "cashRaw": "6915322061705332485",
+  "assetRaw": "14854197280056039",
+  "nativeRaw": "99089555289344502",
+  "assetWeightBps": 3185,
+  "targetBps": 3000,
+  "driftThresholdBps": 500,
+  "valuation": "Verified test pool reserve ratio, not USD market price",
+  "checks": [
+    "fresh aligned block",
+    "runtime bytecode pins",
+    "router/factory/pair and token order",
+    "token decimals",
+    "balances and allowances"
+  ],
+  "newBroadcasts": 0,
+  "addedCandidateSwaps": 0,
+  "addedExecutionDays": 0
+}

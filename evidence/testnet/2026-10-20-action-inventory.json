@@ -1,0 +1,70 @@
+{
+  "source": "Retained 13 October receipts plus canonical 20 October controller swap verification",
+  "actions": [
+    {
+      "role": "manual_swap",
+      "hash": "0xf4c9421b4b9c99bd0448505a2d7a187119db65ffc422ec51bcb646f876d9e3c4",
+      "receiptStatus": "0x1",
+      "chainId": 97,
+      "from": "0xdcf64cddc4a2b06f756f21a125ca393792dfa709",
+      "to": "0xd99d1c33f9fc3444f8101754abc46c52416550d1",
+      "timestampUTC": "2026-10-13T08:39:46+00:00",
+      "dateUTC": "2026-10-13",
+      "dateVietnam": "2026-10-13",
+      "qualification": "candidate only: manual/owner-signed and cross-chain attribution unresolved"
+    },
+    {
+      "role": "controller_swap_1",
+      "hash": "0x6f1d2b1a5048e03a0f6fad886dd1778c7b1256e53e8c915ec31fc909bc0cf335",
+      "receiptStatus": "0x1",
+      "chainId": 97,
+      "from": "0xdcf64cddc4a2b06f756f21a125ca393792dfa709",
+      "to": "0xd99d1c33f9fc3444f8101754abc46c52416550d1",
+      "timestampUTC": "2026-10-13T13:05:08+00:00",
+      "dateUTC": "2026-10-13",
+      "dateVietnam": "2026-10-13",
+      "qualification": "candidate only: manual/owner-signed and cross-chain attribution unresolved"
+    },
+    {
+      "role": "controller_swap_2",
+      "hash": "0xc369f993a5ad7d17754bc4bd5b2f5fcfc1616175345650f899f3a1be6db64d14",
+      "receiptStatus": "0x1",
+      "chainId": 97,
+      "from": "0xdcf64cddc4a2b06f756f21a125ca393792dfa709",
+      "to": "0xd99d1c33f9fc3444f8101754abc46c52416550d1",
+      "timestampUTC": "2026-10-13T13:36:31+00:00",
+      "dateUTC": "2026-10-13",
+      "dateVietnam": "2026-10-13",
+      "qualification": "candidate only: manual/owner-signed and cross-chain attribution unresolved"
+    },
+    {
+      "role": "owner_approved_controller_swap",
+      "hash": "0xd6d03860221c6b29053a80e878729ea9ed62df6b94edaf1e734ff8efa3ac9447",
+      "receiptStatus": "0x1",
+      "chainId": 97,
+      "from": "0xdcf64cddc4a2b06f756f21a125ca393792dfa709",
+      "to": "0xd99d1c33f9fc3444f8101754abc46c52416550d1",
+      "timestampUTC": "2026-10-20T11:36:26.000Z",
+      "dateUTC": "2026-10-20",
+      "dateVietnam": "2026-10-20",
+      "qualification": "candidate only: explicit capital-addition Testnet scenario; attribution and organizer qualification unconfirmed; original browser journal pending"
+    }
+  ],
+  "candidateActionCount": 4,
+  "uniqueDatesUTC": [
+    "2026-10-13",
+    "2026-10-20"
+  ],
+  "uniqueDatesVietnam": [
+    "2026-10-13",
+    "2026-10-20"
+  ],
+  "requirements": {
+    "actions": 5,
+    "separateDays": 3
+  },
+  "confirmedQualifyingActionCount": null,
+  "exclusions": [
+    "Hire payments, token approvals, report submission/settlement and read-only A2A calls are not rebalancing actions."
+  ]
+}

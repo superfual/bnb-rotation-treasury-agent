@@ -1,0 +1,12 @@
+{
+  "chainId": 56,
+  "agentId": 370316,
+  "registry": "0x8004a169fb4a3325136eb29fa0ceb6d2e539a432",
+  "owner": "0xdcf64cddc4a2b06f756f21a125ca393792dfa709",
+  "registrationURI": "https://fual-treasury-agent.phamphuanloc.chatgpt.site/registration.json",
+  "executionChainId": 97,
+  "registryBlock": "0x7aed9db",
+  "registryBlockHash": "0x6e5096d47e71adba948a537c3ca39a0e37b3056a737ffa2f8c4a2c3ead663acd",
+  "checkedAt": "2026-10-21T07:39:34.000Z",
+  "registryObservedAt": "2026-10-21T07:39:25.000Z"
+}
