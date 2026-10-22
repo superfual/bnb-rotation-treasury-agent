@@ -1,10 +1,18 @@
-# Set & Earn evidence and Build audit — 21 October 2026
+# Set & Earn evidence and Build audit — 22 October 2026
 
 This is the current evidence index. It replaces outdated live-status statements in earlier revisions; dated JSON evidence retains its original observation time. Organizer qualification is not claimed.
 
 Campaign wallet: `0xdcf64cddc4a2b06f756f21a125ca393792dfa709`. Identity: **ERC-8004 #370316, chain 56**. Execution chain: **97**.
 
 Official rules: https://www.bnbchain.org/en/hackathons/smart-money-era-set-and-earn . Deadline: **5 November 2026, 12:00 UTC / 19:00 Vietnam**. Registration must precede qualifying tasks. The final qualifying onchain timestamp determines provisional position; organizer verification determines acceptance.
+
+## Latest update — 22 October 2026
+
+- **MGent order cmvibjeiz2lce0z0168hnf5dv is SETTLED.** Fresh chain-56 receipt status is 1, with 1.96 USDC to the campaign wallet and 0.04 USDC protocol fee. [Settlement audit](2026-10-22-mgent-settlement.json). The delivered report confirms a within-band final portfolio observation and discloses missing individual swap hashes/original browser journal. This is a completed paid engagement; its settlement is not counted as a rebalance swap. No further customer proof requests are required.
+- Completed commerce is now **six orders from six distinct buyer addresses**, totaling **11.76 USDC received before expenses**. Independent control/funding is still not certified.
+- **Five historical candidate swaps on three dates were re-read against canonical transactions, receipts and blocks.** [Fresh execution recheck](2026-10-22-execution-recheck.json). No action/day was added. This strengthens receipt evidence, not original signing provenance.
+- **Public Site version 8 deployed**, source `05c44c657a1de4b2ae33ef58eb162c23adaa0ea5`. GET /a2a now returns discovery data and POST message/send instructions; it does not return a synthetic live decision. The conventional /.well-known/agent-registration.json redirects to /registration.json. POST semantics remain fail-closed.
+- Production logs show repeated successful card/registration GETs from external clients; some probes used GET /a2a and previously received 405. The route compatibility fix is deployed and four test files passed. **Normal Python requests after deployment still receive 403.** General automated-caller access remains unresolved; no platform firewall modification or bypass is claimed. [Sanitized production observations and deployment](2026-10-22-endpoint-audit.json).
 
 ## Current requirement matrix
 
@@ -14,7 +22,7 @@ Official rules: https://www.bnbchain.org/en/hackathons/smart-money-era-set-and-e
 | Registered, owned and listed | Fresh owner/registered URI check for #370316; published TermiX research and owner-approved Testnet support listings | Registry identity is on 56, execution on 97; marketplace provider metadata has stale URI/A2A fields |
 | Discoverable card and declared category | Registered URI and historical reachable card declare rebalancing with explicit owner approval | Fresh automated HTTP checks are blocked, so current general reachability is not established |
 | Live invocation | Historical browser A2A success and matching semantic production logs on 17 October | 21 October external requests received Cloudflare 403/1010; unresolved |
-| Three completed hires from distinct independent wallets | Five retained SETTLED orders from five different buyer wallets: three research orders plus two portfolio/rebalancing-support orders | Different addresses alone do not prove independent control/funding; independence is not certified |
+| Three completed hires from distinct independent wallets | Six retained SETTLED orders from six different buyer wallets: three research orders plus three portfolio/rebalancing-support orders | Different addresses alone do not prove independent control/funding; independence is not certified |
 | At least five actions across three days | **Five canonical successful candidate swaps on 13, 20 and 21 October** | Agent attribution is not certified; original recent signing journals missing; one historical swap manual |
 | Category-consistent execution / public source | WBNB/U adjustments, bounded 30/70 policy, public repository and explicit assisted-execution terms | No autonomous signer is claimed. Capital-addition test context disclosed |
 | Campaign registration | Owner screenshot confirms official form already responded, with BNB Chain thank-you message | Submitted wallet/agent fields and original timestamp are not visible |
@@ -46,8 +54,9 @@ Wraps, approvals, hire payments, deliveries, settlements, HOLD/read-only calls a
 | cmvaluzar08qlw701y5nhx3gh | Research | SETTLED, 16 October |
 | cmvgptyf39r1iro0148jqq29w | Owner-approved Testnet support; partial report with final target unverified | SETTLED, 21 October; buyer accepted the disclosed report |
 | cmvhpqp9o0bxgue01b58keqcn | Paid portfolio review; HOLD/no swap warranted | SETTLED, 21 October |
+| cmvibjeiz2lce0z0168hnf5dv | Portfolio/rebalancing support; final state verified, per-swap proofs missing and disclosed | SETTLED, 22 October |
 
-Each retained settlement paid **1.96 USDC** to the campaign wallet and **0.04 USDC** protocol fee; five orders total **9.80 USDC received before expenses**, not net profit. Private reports, messages and customer portfolio balances are excluded. Customer approval-only transactions are not described as completed swaps.
+Each retained settlement paid **1.96 USDC** to the campaign wallet and **0.04 USDC** protocol fee; six orders total **11.76 USDC received before expenses**, not net profit. Private reports, messages and customer portfolio balances are excluded. Customer approval-only transactions are not described as completed swaps.
 
 ## Buyer-hire evidence
 
@@ -64,13 +73,13 @@ Each retained settlement paid **1.96 USDC** to the campaign wallet and **0.04 US
 
 [Fresh identity](2026-10-21-identity.json). [Published assisted service](2026-10-20-rebalancing-service.json): https://www.agent.family/listing?id=cmvgcn16006l5y501irik14hk . Same agent identity, 2 USDC / one day, custom agreed scope, each wallet transaction requires user approval. The research service remains research. A free beta visit is not a paid hire.
 
-Public Site version 7, source `f71bc3d605b2e833cd442f4e664ad66ef552cac5`; Worker 0.1.3. [17 October browser A2A success](2026-10-17-a2a-production-success.json); [21 October external checks](2026-10-21-external-check.json). The public read-only endpoint and customer-wallet execution are separate. No current blanket availability guarantee is made.
+Public Site version 8, source `05c44c657a1de4b2ae33ef58eb162c23adaa0ea5`; Worker protocol metadata remains 0.1.3. GET discovery compatibility is documented in the latest update. [17 October browser A2A success](2026-10-17-a2a-production-success.json); [21 October external checks](2026-10-21-external-check.json). The public read-only endpoint and customer-wallet execution are separate. No current blanket availability guarantee is made.
 
 ## Remaining evidence gaps
 
 1. **Original signing provenance / attribution:** preserve the real browser journals if recoverable; canonical receipts and reconstructed plans do not replace them. Review chain-56 identity / chain-97 owner-approved execution attribution.
 2. **Public endpoint access:** Cloudflare 403/1010 blocks today's normal automated probe. Hosting-level access remains unresolved; no bypass was attempted.
 3. **Registration field check:** [official-form screenshot review](2026-10-21-registration-review.md) confirms an existing response. Submitted wallet/agent fields and original timestamp remain unseen. Compare them in the existing edit-response page; keep its URL private. No duplicate form was submitted.
-4. **Customer independence:** five completed orders are documented, but independent ownership/funding has not been certified. Do not fund customers or create substitute self-hires.
+4. **Customer independence:** six completed orders are documented, but independent ownership/funding has not been certified. Do not fund customers or create substitute self-hires.
 
 This audit signed no transaction, sent no customer message and made no new hire or campaign submission. The existing draft PR remains unmerged. The five-swap/three-day numerical record is supported; automatic qualification or a prize is not asserted.
